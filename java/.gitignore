@@ -2,3 +2,5 @@
 /target/
 /.classpath
 /.project
+/qr_code_MultiFormatWriter.png
+/qr_code_QRCodeWriter.png
