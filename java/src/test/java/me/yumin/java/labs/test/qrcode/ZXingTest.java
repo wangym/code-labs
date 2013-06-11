@@ -32,9 +32,9 @@ public class ZXingTest {
 			Map<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
 			hints = new HashMap<EncodeHintType, Object>();
 			hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.Q); // 容错率
-			hints.put(EncodeHintType.MARGIN, 0); // 边缘
+			hints.put(EncodeHintType.MARGIN, 1); // 边缘
 			hints.put(EncodeHintType.CHARACTER_SET, "GBK"); // 字符集
-			BitMatrix matrix = new QRCodeWriter().encode(content, BarcodeFormat.QR_CODE, 279, 279, hints);
+			BitMatrix matrix = new QRCodeWriter().encode(content, BarcodeFormat.QR_CODE, 300, 300, hints);
 			MatrixToImageWriter.writeToFile(matrix, "png", new File("qr_code.png"));
 			// 最终结果
 			result = true;
