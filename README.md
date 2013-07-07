@@ -1,4 +1,4 @@
-code-labs
+labs
 ====
 
-yumin's code labs
+yumin's labs
