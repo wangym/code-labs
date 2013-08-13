@@ -14,5 +14,6 @@ alias stat_file_cur='/home/yumin/source/labs/shell/other/stat_file_cur.sh'
 alias vimhosts='/home/yumin/source/labs/shell/other/vimhosts.sh'
 alias cpvimhosts='/home/yumin/source/labs/shell/other/cpvimhosts.sh'
 alias week='/home/yumin/source/labs/shell/other/week.sh'
+alias mvndetail='/home/yumin/source/labs/shell/other/mvndetail.sh'
 
 #toilet -f bigmono9 -F gay coding
