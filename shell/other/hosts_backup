@@ -9,6 +9,8 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
 ##### local #####
+#detail
+#127.0.0.1 item.daily.taobao.net
 #ma
 #127.0.0.1 ma.daily.taobao.net
 #maadmin

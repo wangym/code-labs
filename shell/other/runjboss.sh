@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: package.sh
+#          FILE: runjboss.sh
 # 
-#         USAGE: ./package.sh 
+#         USAGE: ./runjboss.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,10 +13,11 @@
 #         NOTES: ---
 #        AUTHOR: YOUR NAME (), 
 #  ORGANIZATION: 
-#       CREATED: 2013年08月27日 10时53分57秒 CST
+#       CREATED: 2013年08月27日 11时11分25秒 CST
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-rm -rf ~/workspace/taobao/detail/deploy/target/;cd ~/workspace/taobao/detail;mvn clean:clean;mvn -Dmaven.test.skip=true install;cd deploy;mvn assembly:assembly;cd target/;tar -zxvf detail.tar.gz;cd ~/workspace/taobao/detail;
+cd ~/program/jboss-4.2.2.GA_taobao/bin;sudo ./run.sh
+
