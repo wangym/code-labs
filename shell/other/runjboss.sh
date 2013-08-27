@@ -19,5 +19,5 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-cd ~/program/jboss-4.2.2.GA_taobao/bin;sudo ./run.sh
+cd ~/program/jboss-4.2.2.GA_taobao/bin;sudo bash ./run.sh
 
