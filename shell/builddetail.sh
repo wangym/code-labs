@@ -19,4 +19,4 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-sudo rm -rf ~/workspace/taobao/detail/deploy/target/;sudo rm -rf ~/workspace/taobao/detail/web/target/exploded/detail.war;cd ~/workspace/taobao/detail;mvn clean:clean;mvn -Dmaven.test.skip=true install;cd deploy;mvn assembly:assembly;cd target/;tar -zxvf detail.tar.gz;cd ~/workspace/taobao/detail;
+sudo rm -rf ~/workspace/taobao/detail/web/target/exploded/detail.war;cd ~/workspace/taobao/detail;mvn clean:clean;mvn -Dmaven.test.skip=true install;cd deploy;mvn assembly:assembly;cd target/;cd ~/workspace/taobao/detail;
