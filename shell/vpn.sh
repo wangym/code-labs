@@ -19,4 +19,4 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-sudo /usr/bin/openconnect -u xuanyin --script=/etc/vpnc/vpnc-script --no-dtls vpn.alibaba-inc.com
+nohup sudo /usr/bin/openconnect -u xuanyin --script=/etc/vpnc/vpnc-script --no-dtls vpn.alibaba-inc.com &
