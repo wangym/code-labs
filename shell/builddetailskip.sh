@@ -19,4 +19,4 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-cp /home/yumin/source/labs/other/antx.properties.detail ~/antx.properties;sudo rm -rf ~/workspace/taobao/detail/web/target/exploded/detail.war;cd ~/workspace/taobao/detail;mvn clean:clean;mvn -Dmaven.test.skip=true install;cd deploy;mvn assembly:assembly;cd target/;cd ~/workspace/taobao/detail;rm ~/antx.properties
+cp /home/yumin/source/labs/other/antx.properties.detailskip ~/antx.properties;sudo rm -rf /home/yumin/workspace/taobao/detailskip/detailskip-web/target/detailskip.war;cd ~/workspace/taobao/detailskip;mvn -Dmaven.test.skip=true clean install;cd deploy;mvn assembly:assembly;cd /home/yumin/workspace/taobao/detailskip/detailskip-web/target;rm -rf detailskip.war;mv detailskip detailskip.war;rm ~/antx.properties
