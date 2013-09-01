@@ -16,6 +16,7 @@ alias statfileall='/home/yumin/source/labs/shell/statfileall.sh'
 alias statfilecur='/home/yumin/source/labs/shell/statfilecur.sh'
 alias vimcphosts='/home/yumin/source/labs/shell/vimcphosts.sh'
 alias vimhosts='/home/yumin/source/labs/shell/vimhosts.sh'
+alias vpn='/home/yumin/source/labs/shell/vpn.sh'
 alias week='/home/yumin/source/labs/shell/week.sh'
 
 #toilet -f bigmono9 -F gay coding
