@@ -8,9 +8,15 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
+##### ued #####
+#10.13.16.35 a.tbcdn.cn assets.daily.taobao.net
+#10.13.16.35 allen.local.item.taobao.com
+
 ##### local #####
 #detail
 #127.0.0.1 item.daily.taobao.net
+#detailskip
+#127.0.0.1 detailskip.daily.taobao.net
 #ma
 #127.0.0.1 ma.daily.taobao.net
 #maadmin
