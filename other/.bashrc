@@ -9,6 +9,7 @@ alias mysqlstart='sudo /opt/lampp/bin/mysql.server start'
 alias mysqlstop='sudo /opt/lampp/bin/mysql.server stop'
 #diy
 alias builddetail='/home/yumin/source/labs/shell/builddetail.sh'
+alias builddetailskip='/home/yumin/source/labs/shell/builddetailskip.sh'
 alias runjboss='/home/yumin/source/labs/shell/runjboss.sh'
 alias sshmenu='/home/yumin/source/labs/shell/sshmenu.sh'
 alias statdirall='/home/yumin/source/labs/shell/statdirall.sh'
