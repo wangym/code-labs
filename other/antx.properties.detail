@@ -1,0 +1,537 @@
+ali.vmcommon.gitServer  = g.assets.daily.taobao.net
+
+alimama.common.domainName  = alimama.net
+
+alipay.http.url  = http://www.${detail.alipayServer.host}:${detail.alipayServer.port}
+
+ark.alipay.account.commission.email  = pinpaiticheng@taobao.com
+ark.alipay.account.commission.id     = 2088002007296082
+ark.alipay.account.point.email       = jifenb2c@taobao.com
+ark.alipay.account.point.id          = 2088001007298601
+ark.alipay.account.promotion.email   = p-b2c-taobaomall@taobao.com
+ark.alipay.account.promotion.id      = 2088001725691269
+ark.alipay.account.promotion.seller  = 1170
+ark.alipay.account.service.email     = renzheng@taobao.com
+ark.alipay.account.service.id        = 2088002007296073
+ark.alipay.httpMethod                = GET
+ark.alipay.orderFrom                 = 100001
+ark.alipay.partnerId                 = 2088002003046155
+ark.alipay.serviceUrl                = http://www.alipay60.net/cooperate/gateway.do
+ark.alipay.serviceUrl.queryCertify   = http://www.alipay5.net/certify/certPublicScreen.do
+ark.alipay.signFrom                  = taobaomall
+ark.alipay.typeCode                  = B2C100021000301
+
+ark.domainName  = mall.daily.taobao.net
+
+ark.dsa.key.alipay.public   = /home/admin/arkadmin/target/arkadmin.ear/key/alipay_pubkey.dat
+ark.dsa.key.taobao.private  = /home/admin/arkadmin/target/arkadmin.ear/key/taobao_prikey.da
+ark.dsa.key.taobao.public   = /home/admin/arkshop/target/arkshop.ear/key/taobao_pubkey.dat
+
+arkshop.domainName  = shop.${ark.domainName}
+arkshop.port  = 80
+
+catserver.register.config.group  = millau.daily
+
+denali.descserver.domain  = ${detail.domainName}
+denali.descserver.port  = 8883
+
+detail.affinity.host  = affinity.config-vip.taobao.net
+detail.affinity.port  = 2222
+
+detail.ajax.server  = detailskip.daily.taobao.net
+
+detail.alimama.encrypter.key  = taobao123
+
+detail.alipay.http.url  = http://${detail.alipayServer.host}:${detail.alipayServer.port}
+
+detail.alipayServer.host  = alipay.net
+detail.alipayServer.port  = 80
+
+detail.app.useTomcat  = false
+
+detail.ark.domainName       = mall.daily.taobao.net
+detail.ark.help.domainName  = service.${detail.ark.domainName}
+detail.ark.help.port        = 80
+
+detail.arklist.domainName  = list.${detail.ark.domainName}
+detail.arklist.port  = 80
+
+detail.arkshop.domainName      = shop.${ark.domainName}
+detail.arkshop.port            = 80
+detail.arkshop.shopurl.useseo  = false
+
+detail.async.server  = detailskip.daily.taobao.net
+
+detail.auction.searchServer.url  = http://auction-search-test.config-vip.taobao.net:2088/bin/search?
+
+detail.auction1Server.host  = auction1.${detail.domainName}
+detail.auction1Server.port  = 80
+
+detail.baoxian.domain  = baoxian.daily.taobao.net
+
+detail.benDiTuan.domain  = hui.daily.taobao.net
+
+detail.betabucket.config.server.address   = tair2.config-vip.taobao.net:5198
+detail.betabucket.config.server.address2  = tair2.config-vip.taobao.net:5198
+detail.betabucket.tair.group.name         = group_1
+
+detail.bizordercache.tair.configserver.address1  = tair.config-vip.taobao.net:5198
+detail.bizordercache.tair.configserver.address2  = tair.config-vip.taobao.net:5198
+detail.bizordercache.tair.groupname              = group_1
+
+detail.cache.groupname  = im_group
+
+detail.cacheserver.list  = cache.config-host.taobao.net:5388
+
+detail.category.server.host                = catserver.config-vip.taobao.net
+detail.category.server.port                = 4000
+detail.category.server.reconnect.interval  = 20000
+detail.category.server.timeout             = 1000000
+
+detail.catserver.path       = /home/admin/detail/forest/
+detail.catserver.storepath  = /home/admin/detail/forest
+
+detail.checkcode.server         = http://checkcode.daily.taobao.net:8888
+detail.checkcode.server.wap     = http://checkcode-wap.config-vip.taobao.net
+detail.checkcode.serverurl      = http://checkcode.config-vip.taobao.net:8888/bin/confirm
+detail.checkcode.serverurl.wap  = http://checkcode-wap.config-vip.taobao.net/bin/confirm
+detail.checkcode.usecookie      = false
+detail.checkcode.vip.server     = http://checkcode.config-vip.taobao.net:8888
+
+detail.cms.path  = /opt/cms/include
+
+detail.consume.auth.service.version        = 1.1.1.daily
+detail.consume.bridge.service.version      = 1.0.0.daily
+detail.consume.dc.service.version          = 1.0.0.daily
+detail.consume.ic.service.version          = 1.0.0.daily
+detail.consume.kfc.service.version         = 1.0.0.daily
+detail.consume.mc.service.version          = 1.0.0.daily
+detail.consume.pc.service.version          = 1.0.0.daily
+detail.consume.pic.service.version         = 1.0.0.daily
+detail.consume.sc.service.version          = 1.0.0.daily
+detail.consume.tc.archive.service.version  = 1.0.0.archive
+detail.consume.tc.service.version          = 1.0.0.daily
+detail.consume.uic.service.version         = 1.0.0.daily
+detail.consume.wlb.service.version         = 1.0.0.daily
+
+detail.coolyCdn.server  = count.config-vip.taobao.net:8888
+
+detail.count.cdnCountServer   = http://count.config-vip.taobao.net:8888
+detail.count.rateCountServer  = http://count.config-vip.taobao.net:8888
+detail.count.server           = http://count.config-vip.taobao.net:8888
+
+detail.cssServer.host  = www.${detail.domainName}
+detail.cssServer.port  = 80
+
+detail.dbconfig.DB1.1    = tbdb1_cm2
+detail.dbconfig.DB1.2    = tbdb1_cm3
+detail.dbconfig.DB2.1    = tbdb2_cm2
+detail.dbconfig.DB2.2    = tbdb2_cm3
+detail.dbconfig.DBC.1    = tbdbcommon_cm2
+detail.dbconfig.DBC.2    = tbdbcommon_cm3
+detail.dbconfig.HEART.1  = heart_cm2
+detail.dbconfig.HEART.2  = heart_cm3
+
+detail.dc.client.consume.dc.service.version  = 1.0.0.daily
+detail.dc.client.newsearch.server.url      = http://new-shop-auction-search.config-vip.taobao.net:2088/bin/search?
+detail.dc.client.search.server.url         = http://shop-auction-search.config-vip.taobao.net:2089/bin/search?
+detail.dc.client.tair.group.name           = group_1
+detail.dc.client.tair.module.namespace     = 49
+detail.dc.client.tair.page.namespace       = 49
+detail.dc.client.tair.server1              = tair.config-vip.taobao.net:5198
+detail.dc.client.tair.server2              = tair.config-vip.taobao.net:5198
+detail.dc.client.tfs.rcServer.url          = 10.232.4.42:3300
+detail.dc.client.tfs.server.url            = image-tfs.config-vip.taobao.net:3100
+detail.dc.client.tms.site.id.list          = 0
+detail.dc.simpleclient.env                 = daily
+detail.dc.simpleclient.multiTair.configID  = item-daily
+
+detail.dcAsynCdn.domainName   = item.daily.taobao.net
+detail.dcAsynCdn.environment  = daily
+
+detail.delivery.service.version    = 1.0.0.daily
+detail.delivery.tair.expiretime    = 86400
+detail.delivery.tair.group         = group_1
+detail.delivery.tair.namespace     = 218
+detail.delivery.tair.server        = tair2.config-vip.taobao.net:5198
+detail.delivery.tair.server.slave  = tair2.config-vip.taobao.net:5198
+
+detail.denali.domainName        = ${detail.domainName}
+detail.denali.port              = 80
+detail.denali.subimage.host     = img.${detail.domainName}
+detail.denali.subimage.port     = 80
+detail.denali.upload.hasApache  = true
+
+detail.desc.basedir  = /mnt/image/desc
+
+detail.desccache.tair.configserver.address1  = tair.config-vip.taobao.net:5198
+detail.desccache.tair.configserver.address2  = tair.config-vip.taobao.net:5198
+detail.desccache.tair.groupname              = group_1
+
+detail.descserver.domain  = daily.taobaocdn.net
+detail.descserver.port  = 8883
+
+detail.dingZhi.common.domainName  = print.dingzhi.daily.taobao.net
+
+detail.domainName  = daily.taobao.net
+
+detail.dsc.domain  = daily.taobaocdn.net
+detail.dsc.port  = 8883
+
+detail.ecard.domainName  = ecard.daily.taobao.net
+detail.ecard.port  = 80
+
+detail.et.host  = jipiao.daily.taobao.net
+detail.et.port  = 80
+
+detail.extends.server.host                = catserver.config-vip.taobao.net
+detail.extends.server.port                = 4002
+detail.extends.server.reconnect.interval  = 20000
+detail.extends.server.timeout             = 1000000
+
+detail.favoriteServer.host  = favorite.${detail.domainName}
+detail.favoriteServer.port  = 80
+
+detail.forest.file.dir                 = /home/admin/detail/forest
+detail.forest.register.config.version  = daily.cat1
+detail.forest.server.addr              = forest.config-vip.taobao.net:1234
+
+detail.fortuna.domainName  = fortuna.daily.taobao.net
+detail.fortuna.port  = 80
+
+detail.forum.port  = 80
+
+detail.hesper.domainName  = ${detail.domainName}
+detail.hesper.port  = 80
+
+detail.ic.server.ip    = ic.config-vip.taobao.net
+detail.ic.server.port  = 12200
+
+detail.im.domainName  = ${detail.domainName}
+detail.im.port  = 80
+
+detail.imageServer.host  = img.${detail.domainName}
+detail.imageServer.port  = 80
+
+detail.insuranceServer.host  = baoxian.${detail.domainName}
+detail.insuranceServer.port  = 80
+
+detail.ipdata.init  = true
+
+detail.item.instant.search.feed.server  = realtime-search.config-vip.taobao.net:2083
+detail.item.instant.search.url  = http://realtime-search.config-vip.taobao.net:2088/bin/search?
+detail.item.search.url          = http://kingso-search-test.config-vip.taobao.net:2087/bin/search?
+
+detail.itemServer.host  = item.${detail.domainName}
+detail.itemServer.port  = 80
+
+detail.itemcache.tair.compressionThreshold   = 8192
+detail.itemcache.tair.configserver.address1  = tair.config-vip.taobao.net:5198
+detail.itemcache.tair.configserver.address2  = tair.config-vip.taobao.net:5198
+detail.itemcache.tair.groupname              = group_1
+
+detail.itemcenter.new.tfs.rsAddr  = restful-store.daily.tbsite.net:3800
+
+detail.jianghu.domainName  = jianghu.daily.taobao.net
+detail.jianghu.port  = 80
+
+detail.liveMap.domain  = map.daily.taobao.net
+
+detail.loggingLevel  = debug
+detail.loggingRoot  = ${detail.output}/logs
+
+detail.logistics.domainName  = wuliu.${detail.domainName}
+detail.logistics.port  = 80
+
+detail.lottery.domainName  = taobao.wozhongle.com
+detail.lottery.port  = 80
+
+detail.lotteryNew.domainName  = lottery.taobao.com
+detail.lotteryNew.port  = 80
+
+detail.mall.domainName                 = daily.tmall.net
+detail.mall.item.domainName            = item.daily.tmall.net
+detail.mall.item.search.url            = http://b2c-spu-search.config-vip.taobao.net:2086/bin/search?
+detail.mall.recommend.algorithm.app    = 87
+detail.mall.recommend.algorithm.point  = 7
+
+detail.mealServer.host  = meal.${detail.domainName}
+detail.mealServer.port  = 80
+
+detail.member1Server.host  = member1.${detail.domainName}
+detail.member1Server.port  = 80
+
+detail.mercury.domainName  = ${detail.domainName}
+detail.mercury.port  = 80
+
+detail.myServer.host  = my.${detail.domainName}
+detail.myServer.port  = 80
+
+detail.netShop.domain  = wt.daily.taobao.net
+
+detail.newpromotion.tair.conf.id  = market1-daily
+
+detail.offer.domain  = s.tongcheng.daily.taobao.net
+
+detail.output  = /home/admin/detail
+
+detail.page.check.seconds  = 3
+detail.page.loader.cache  = false
+
+detail.pagecache.groupname                            = group_1
+detail.pagecache.local.fileconfig                     = true
+detail.pagecache.local.fileconfig.globalcache.enable  = false
+detail.pagecache.mincompresslen                       = 2048
+detail.pagecache.serveraddrs                          = tair.config-vip.taobao.net:5198
+detail.pagecache.tair.configID                        = item-daily
+detail.pagecache.timeout                              = 200
+
+detail.paiMaiServer.domain  = paimai.daily.taobao.net
+
+detail.passcookie.new.domain             = .daily.tmall.net
+detail.passcookie.old.domain             = item.daily.taobao.net
+detail.passcookie.vritaul.addcookie.url  = http://detail.daily.tmall.net/addCookie.htm
+detail.passcookie.vritual.pass.url       = http://item.daily.taobao.net/pass.htm
+
+detail.pc.domainName  = daily.taobao.net
+
+detail.peachFlower.domain  = item.daily.taohua.net
+
+detail.pic.cache.server1         = tair.config-vip.taobao.net:5198
+detail.pic.cache.server2         = tair.config-vip.taobao.net:5198
+detail.pic.tair.cache.groupname  = group_1
+
+detail.picsServer.host  = pics.taobao.com
+detail.picsServer.port  = 80
+
+detail.port  = 80
+
+detail.port.legacy  = 80
+
+detail.postage.tair.compressionThreshold   = 2048
+detail.postage.tair.configserver.address1  = tair.config-vip.taobao.net:5198
+detail.postage.tair.configserver.address2  = tair.config-vip.taobao.net:5198
+detail.postage.tair.groupname              = group_1
+
+detail.promotion.ic.enablelog           = true
+detail.promotion.ic.namespaceForICTair  = 100
+detail.promotion.tair.foric.group1      = group_mseckill
+detail.promotion.tair.group.foric       = group_1
+detail.promotion.tair.group.forpc       = group_1
+detail.promotion.tair.host.foric        = tair.config-vip.taobao.net:5198
+detail.promotion.tair.host.forpc        = tair.config-vip.taobao.net:5198
+detail.promotion.tairforic.host1        = 10.232.12.141:5198
+detail.promotion.tairforic.host2        = 10.232.12.141:5198
+
+detail.rate.detailcommon  = rate.daily.taobao.net
+detail.rate.domainName  = ${detail.domainName}
+detail.rate.port        = 80
+
+detail.rdbtair.configID  = ic_staticize_tair_rdb_test
+
+detail.render.group.name     = group_1
+detail.render.namespace      = 107
+detail.render.tair2.server1  = tair2.config-vip.taobao.net:5198
+detail.render.tair2.server2  = tair2.config-vip.taobao.net:5198
+
+detail.search.connection.time.out  = 4000
+detail.search.time.out  = 4000
+
+detail.sellerinfo.tair.conf.id  = market1-daily
+
+detail.shop.searchServer.url  = http://forum-search.config-vip.taobao.net:2088/bin/search?
+
+detail.shopLogoServer.host  = image.${detail.domainName}
+detail.shopLogoServer.port  = 80
+
+detail.shopcss.domain  = img01.daily.taobao.net
+
+detail.shopsystem.b2c.domainName  = mall.daily.taobao.net
+detail.shopsystem.port  = 80
+
+detail.shoptemplate.group.name     = group_1
+detail.shoptemplate.tair2.server1  = tair.config-vip.taobao.net:5198
+detail.shoptemplate.tair2.server2  = tair.config-vip.taobao.net:5198
+
+detail.sns.domain  = share.jianghu.daily.taobao.net
+
+detail.space.domainName  = daily.taobao.net
+detail.space.port  = 80
+
+detail.spu.search.url  = http://new-spu-search.config-vip.taobao.net:2088/bin/search?
+
+detail.storeServer.host  = store.${detail.domainName}
+detail.storeServer.port  = 80
+
+detail.subimage.host  = img.${detail.domainName}
+detail.subimage.port  = 80
+
+detail.switcher.blocked  = false
+
+detail.t.mall.domain  = detail.daily.tmall.net
+
+detail.tadget.tair.configID  = market2-daily
+
+detail.tair.ldb.configId  = ldbcommon-daily
+
+detail.taoCoin.domain  = taojinbi.daily.taobao.net
+
+detail.taobao.domainName     = daily.taobao.net
+detail.taobao.encrypter.key  = taobao123
+detail.taobao.port           = 80
+
+detail.tbBaike.domain  = baike.daily.taobao.net
+
+detail.tbMarket.domain  = 24.daily.taobao.net
+
+detail.tbStoreServer.host1  = 10.1.6.4:5388
+detail.tbStoreServer.host2  = 10.1.6.4:5388
+
+detail.tbcp.tair.configserver.address1  = tair.config-vip.taobao.net:5198
+detail.tbcp.tair.configserver.address2  = tair.config-vip.taobao.net:5198
+detail.tbcp.tair.groupname              = group_1
+
+detail.tbskip.appName  = detailskip
+
+detail.tc.archive.server.host  = tc-archive.config-vip.taobao.net
+detail.tc.archive.server.port  = 9999
+detail.tc.configServer.host    = config.config-vip.taobao.net
+detail.tc.configServer.port    = 6668
+detail.tc.group.id             = testgroup_daily_${fix.group.domainName}
+detail.tc.server.host          = tc.config-vip.taobao.net
+detail.tc.server.port          = 9999
+detail.tc.tair.public.group    = group_1
+detail.tc.tair.public.host1    = tair.config-vip.taobao.net:5198
+detail.tc.tair.public.host2    = tair.config-vip.taobao.net:5198
+
+detail.timer.loggingLevel  = warn
+detail.timer.threshold  = 100
+
+detail.tmallMeal.domainName  = detail.daily.taobao.net
+
+detail.tpcp.tair.conf.id  = item-daily
+
+detail.trade.count.tair.data.id  = mdbcomm-daily
+
+detail.transmit.server  = transmit.config-vip.taobao.com:2240
+
+detail.tuiServer.domain  = tui.daily.taobao.net
+
+detail.ui.domainName  = assets.daily.taobao.net
+detail.ui.port  = 80
+
+detail.uic.security.configservice.version  = 1.0.0.daily
+detail.uic.server.ip      = uic2.config-vip.taobao.net
+detail.uic.server.port    = 1234
+detail.uic.server.timout  = 3000
+detail.uic.slb.servers    = uic2.config-vip.taobao.net:1234
+
+detail.upload  = /mnt
+
+detail.upload.hasApache  = true
+detail.upload.temp  = ${detail.output}/temp
+
+detail.upp.tair.groupname  = group_1
+detail.upp.tair.host1  = tair2.config-vip.taobao.net:5198
+detail.upp.tair.host2  = tair2.config-vip.taobao.net:5198
+
+detail.viewtimes.server  = http://count.config-vip.taobao.net:8888
+
+detail.vmcommon.path  = /home/admin/vmcommon
+
+detail.waimai.domain  = waimai.daily.taobao.net
+
+detail.wap.domainName  = waptest.taobao.com
+detail.wap.iswap.dev  = true
+detail.wap.port       = 8888
+
+detail.webcache.host  = auction|10.1.6.1:4001|default|10.1.6.1:4001
+
+detail.wlb.tair.configserver.address1  = tair2.config-vip.taobao.net:5198
+detail.wlb.tair.configserver.address2  = tair2.config-vip.taobao.net:5198
+detail.wlb.tair.groupname              = group_1
+
+detail.wui.tdbm.group.name  = group1
+detail.wui.tdbm.server1  = 10.1.6.153:5189
+detail.wui.tdbm.server2  = 10.1.6.153:5189
+
+detail.xinxiServer.host  = xinxi.${detail.domainName}
+detail.xinxiServer.port  = 80
+
+detail.yahoo.autouser.inbound.url  = http://taobao.mail.cn.yahoo.com/tmc/yahoocnmailinbound.php
+detail.yahoo.mail.auto.bind.url  = http://taobao.mail.cn.yahoo.com/tmc/autobind.php
+
+detail_itemcache_tair_dataId  = item-daily
+
+ds.taoke.domain  = taoke.alimama.com
+
+ecard.domainName  = ecard.taobao.net
+ecard.port  = 80
+
+fang.domain  = fang.daily.taobao.net
+
+fix.group.domainName  = daily_taobao_net
+
+lottery.domainName  = taobao.wozhongle.com
+lottery.port  = 80
+
+lotteryNew.domainName  = lottery.taobao.com
+lotteryNew.port  = 80
+
+serverclient.category.admin.port   = 4001
+serverclient.category.server.port  = 4000
+
+serverclient.cms.jdbc.maxactive  = 2
+serverclient.cms.jdbc.minidle   = 2
+serverclient.cms.jdbc.password  = ark
+serverclient.cms.jdbc.url       = jdbc:oracle:oci:@dev-ark
+serverclient.cms.jdbc.username  = ark
+serverclient.cms.site_id        = 28
+
+serverclient.extends.admin.port   = 4003
+serverclient.extends.server.port  = 4002
+
+serverclient.jdbc.maxactive  = 4
+serverclient.jdbc.minidle   = 2
+serverclient.jdbc.password  = taobao
+serverclient.jdbc.url       = jdbc:oracle:oci:@dev-dbc
+serverclient.jdbc.username  = taobao
+
+serverclient.output  = ${detail.output}/catserver
+
+taobao.common.domainName                 = daily.taobao.net
+taobao.common.uri.localTimestampMapPath  = /home/admin/detail/timestamp
+taobao.common.uri.uriDynamicGroup        = daily_new
+taobao.common.uri.useConfigServer        = true
+
+taobao.domainName  = daily.taobao.net
+
+taobao.encrypter.key  = taobao123
+
+taobao.port  = 80
+
+taobao.tbskipCdn.domainName  = detailskip.daily.taobao.net
+
+taobaocdn.assets.common.domainName     = assets.daily.taobao.net
+taobaocdn.assets.common.oldDomainName  = assets.daily.taobao.net
+
+taobaocdn.common.domainName  = daily.taobao.net
+
+tmall.domainName  = list.daily.tmall.net
+
+uic.appName  = detail
+
+uic.appowner.email  = mengzhen@taobao.com
+
+uic.configservice.version  = 1.0.0.daily
+
+uic.version  = 1.0.0.daily
+
+video.tair.cache.configid  = market2-daily
+
+wmlp.domainName  = lp.daily.taobao.net
+
+yahoo.autouser.inbound.url  = http://taobao.mail.cn.yahoo.com/tmc/yahoocnmailinbound.php
+
+yahoo.mail.auto.bind.url  = http://taobao.mail.cn.yahoo.com/tmc/autobind.php
+
