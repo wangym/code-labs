@@ -372,7 +372,8 @@ detail.t.mall.domain  = detail.daily.tmall.net
 
 detail.tadget.tair.configID  = market2-daily
 
-detail.tair.ldb.configId  = ldbcommon-daily
+detail.tair.ldb.configId       = ldbcommon-daily
+detail.tair.mdb.comm.configID  = mdbcomm-daily
 
 detail.taoCoin.domain  = taojinbi.daily.taobao.net
 

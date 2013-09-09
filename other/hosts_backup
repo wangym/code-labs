@@ -35,3 +35,7 @@ ff02::2 ip6-allrouters
 #110.75.14.29 ma.taobao.com
 #maadmin
 #121.0.25.126 ma.admin.taobao.org
+#detail
+#42.120.82.62 detailskip.taobao.com m.ajax.taobao.com ajax.tbcdn.cn as.taobao.com tds.alicdn.com
+#42.120.82.62 pre.detailskip.taobao.com pre.ajax.tbcdn.cn m.ajax.taobao.com pre.tds.alicdn.com
+
