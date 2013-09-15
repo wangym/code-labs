@@ -1,0 +1,41 @@
+127.0.0.1 localhost
+127.0.0.1 E6410
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+##### ued #####
+#10.13.16.35 a.tbcdn.cn assets.daily.taobao.net
+#10.13.16.35 allen.local.item.taobao.com
+
+##### local #####
+#detail
+#127.0.0.1 item.daily.taobao.net
+#detailskip
+#127.0.0.1 detailskip.daily.taobao.net
+#ma
+#127.0.0.1 ma.daily.taobao.net
+#maadmin
+#10.232.101.107 v101107.sqa.cm4
+#127.0.0.1 ma.admin.taobao.org
+#10.235.164.190 auth.admin.taobao.org
+
+##### daily #####
+#maadmin
+#10.235.164.190 auth.admin.taobao.org
+#10.232.101.153 ma.admin.taobao.org
+#10.232.10.162 marketing.admin.taobao.org
+
+##### pre #####
+#ma
+#110.75.14.29 ma.taobao.com
+#maadmin
+#121.0.25.126 ma.admin.taobao.org
+#detail
+#42.120.82.62 detailskip.taobao.com m.ajax.taobao.com ajax.tbcdn.cn as.taobao.com tds.alicdn.com
+#42.120.82.62 pre.detailskip.taobao.com pre.ajax.tbcdn.cn m.ajax.taobao.com pre.tds.alicdn.com
+
