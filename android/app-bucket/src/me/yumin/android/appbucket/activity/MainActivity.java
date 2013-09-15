@@ -1,5 +1,6 @@
-package me.yumin.android.appbucket;
+package me.yumin.android.appbucket.activity;
 
+import me.yumin.android.appbucket.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
