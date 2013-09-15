@@ -8,7 +8,6 @@ import com.google.zxing.BinaryBitmap;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.LuminanceSource;
 import com.google.zxing.Result;
-import com.google.zxing.ResultMetadataType;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
@@ -62,7 +61,7 @@ public class ZXingTest {
 			BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(luminanceSource));
 			result = new QRCodeReader().decode(binaryBitmap);
 			if (null != result) {
-				result.putMetadata(ResultMetadataType.OTHER , "my metadata");
+				System.out.println(result);
 				System.out.println(result.getResultMetadata());
 			}
 		} catch (Exception e) {
