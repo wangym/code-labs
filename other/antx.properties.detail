@@ -201,6 +201,8 @@ detail.fortuna.port  = 80
 
 detail.forum.port  = 80
 
+detail.fuwu.url  = http://fuwu.home.daily.taobao.net
+
 detail.hesper.domainName  = ${detail.domainName}
 detail.hesper.port  = 80
 
@@ -263,6 +265,8 @@ detail.member1Server.port  = 80
 
 detail.mercury.domainName  = ${detail.domainName}
 detail.mercury.port  = 80
+
+detail.modulet.assets.url  = http://g.assets.daily.taobao.net
 
 detail.myServer.host  = my.${detail.domainName}
 detail.myServer.port  = 80
@@ -456,6 +460,8 @@ detail.wui.tdbm.group.name  = group1
 detail.wui.tdbm.server1  = 10.1.6.153:5189
 detail.wui.tdbm.server2  = 10.1.6.153:5189
 
+detail.wwh5.url  = http://h5.waptest.taobao.com
+
 detail.xinxiServer.host  = xinxi.${detail.domainName}
 detail.xinxiServer.port  = 80
 
@@ -514,6 +520,7 @@ taobao.port  = 80
 taobao.tbskipCdn.domainName  = detailskip.daily.taobao.net
 
 taobaocdn.assets.common.domainName     = assets.daily.taobao.net
+taobaocdn.assets.common.domainName.g   = g.assets.daily.taobao.net
 taobaocdn.assets.common.oldDomainName  = assets.daily.taobao.net
 
 taobaocdn.common.domainName  = daily.taobao.net
