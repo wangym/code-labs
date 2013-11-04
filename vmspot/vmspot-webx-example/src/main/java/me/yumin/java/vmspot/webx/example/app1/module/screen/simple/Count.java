@@ -17,8 +17,6 @@
 
 package me.yumin.java.vmspot.webx.example.app1.module.screen.simple;
 
-import static com.alibaba.citrus.util.StringEscapeUtil.*;
-
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletResponse;
 

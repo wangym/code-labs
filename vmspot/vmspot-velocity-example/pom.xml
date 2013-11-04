@@ -4,7 +4,7 @@
 	<groupId>me.yumin.java</groupId>
 	<artifactId>vmspot-velocity-example</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>vmspot-velocity-example Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<build>
