@@ -1,0 +1,3 @@
+<h1>It default.</h1>
+#parse('/screen/test/head.vm')
+#parse('/screen/test/body.vm')
