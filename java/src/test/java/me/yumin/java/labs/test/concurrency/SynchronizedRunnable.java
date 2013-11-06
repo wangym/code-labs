@@ -15,23 +15,21 @@ public class SynchronizedRunnable implements Runnable {
 	/**
 	 * 使用synchronized方法
 	 */
-	public static synchronized void testSyncMethod(String name) {
+	public static synchronized void method(String name) {
 
-		long now = System.currentTimeMillis();
-		for (int i = 0; i < 100; i++) {
-			System.out.println(String.format("[%s-%s]%s[testSyncMethod]", name, now, i));
+		for (int i = 0; i < 20; i++) {
+			System.out.println(String.format("[method@%s]%s", name, i));
 		}
 	}
 
 	/**
-	 * 使用synchronized代码块
+	 * 使用synchronized结构
 	 */
-	public void testSyncBlock(String name) {
+	public void struct(String name) {
 
-		long now = System.currentTimeMillis();
 		synchronized (SynchronizedRunnable.class) {
-			for (int i = 0; i < 100; i++) {
-				System.out.println(String.format("[%s-%s]%s[testSyncBlock]", name, now, i));
+			for (int i = 0; i < 20; i++) {
+				System.out.println(String.format("[struct@%s]%s", name, i));
 			}
 		}
 	}
@@ -43,8 +41,8 @@ public class SynchronizedRunnable implements Runnable {
 	public void run() {
 
 		String name = Thread.currentThread().getName();
-		// testSyncMethod(name);
-		testSyncBlock(name);
+		method(name);
+		struct(name);
 	}
 
 	/**
@@ -52,9 +50,9 @@ public class SynchronizedRunnable implements Runnable {
 	 */
 	public static void main(String[] args) {
 
-		ExecutorService executorService = Executors.newFixedThreadPool(2);
-		executorService.execute(new SynchronizedRunnable());
-		executorService.execute(new SynchronizedRunnable());
-		executorService.shutdown();
+		ExecutorService executor = Executors.newFixedThreadPool(2);
+		executor.execute(new SynchronizedRunnable());
+		executor.execute(new SynchronizedRunnable());
+		executor.shutdown();
 	}
 }
