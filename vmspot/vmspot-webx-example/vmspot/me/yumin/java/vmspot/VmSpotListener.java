@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.yumin.java.vmspot.listener;
+package me.yumin.java.vmspot;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

@@ -7,7 +7,7 @@
 
     <!-- vmspot -->
     <listener>
-        <listener-class>me.yumin.java.vmspot.listener.VmSpotListener</listener-class>
+        <listener-class>me.yumin.java.vmspot.VmSpotListener</listener-class>
     </listener>
 
     <!-- 初始化日志系统 -->
