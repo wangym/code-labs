@@ -15,7 +15,7 @@
         <listener-class>com.alibaba.citrus.webx.context.WebxContextLoaderListener</listener-class>
     </listener>
  
-    <!-- vmspot -->
+    <!-- vmspot_filter -->
 	<filter>
 		<filter-name>vmspot</filter-name>
 		<filter-class>me.yumin.java.vmspot.VmSpotFilter</filter-class>
@@ -40,6 +40,7 @@
         </init-param>
     </filter>
 
+    <!-- vmspot_filter-mapping -->
     <filter-mapping>
         <filter-name>vmspot</filter-name>
         <url-pattern>/*</url-pattern>

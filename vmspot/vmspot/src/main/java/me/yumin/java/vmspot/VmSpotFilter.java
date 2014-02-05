@@ -20,7 +20,7 @@ public class VmSpotFilter extends AbstractFilter {
 	@Override
 	public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-		Profiler.start("[Profiler]start");
+		Profiler.start();
 
 		try {
 			chain.doFilter(request, response);
