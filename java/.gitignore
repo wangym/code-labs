@@ -1,5 +1,10 @@
+/.idea/
 /.settings/
+/bin/
+/gen/
+/out/
 /target/
-/.classpath
-/.project
-/qr_code.png
+*.iml
+.classpath
+.project
+
