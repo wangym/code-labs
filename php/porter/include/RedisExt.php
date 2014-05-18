@@ -3,6 +3,7 @@
 // RedisExt.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
+(!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
 
 /**
  *
