@@ -11,4 +11,4 @@ git status
 git add *
 git commit -m"update"
 git push
-
+cd $SRC_DIR

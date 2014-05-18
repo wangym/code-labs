@@ -5,6 +5,67 @@
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
+ * 数组转换成字符串支持KeyValue对应
+ *
+ * @param array $array
+ * @return string key1=value1,key2=value2,....
+ */
+function array_to_string($array) {
+
+	$string = '';
+
+	if (!empty($array) && is_array($array)) {
+		foreach ($array as $key => $value) {
+			$string .= ",$key=$value";
+		}
+		$string = substr($string, 1);
+	}
+
+	return $string;
+}
+
+/**
+ * 按数组键名从数组中获取一个值
+ *
+ * @param mixed $key
+ * @param array $array
+ * @return mixed $value
+ */
+function get_array_value($key, $array) {
+
+	$value = '';
+
+	if (!empty($key) && !empty($array) && is_array($array)) {
+		$value = isset($array[$key]) ? $array[$key] : '';
+	}
+
+	return $value;
+}
+
+/**
+ * 获取访问客户端的真实IP地址(加强版)
+ *
+ * @return string IP地址
+
+ */
+function get_ip() {
+
+	$ip = '';
+
+	if (getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
+		$ip = getenv('HTTP_CLIENT_IP');
+	} else if (getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
+		$ip = getenv('HTTP_X_FORWARDED_FOR');
+	} else if (getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
+		$ip = getenv('REMOTE_ADDR');
+	} else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
+		$ip = $_SERVER['REMOTE_ADDR'];
+	}
+
+	return $ip;
+}
+
+/**
  * 将数据集POST到指定URL并获取返回结果
  *
  * @param string $url 请求的地址
@@ -63,77 +124,22 @@ function http_receive($key, $default = '') {
  */
 function response_json($status, $data = '') {
 
+	global $_message;
+
 	$json = json_encode(!is_array($data) 
 		? array(
-			'status' => $status
+			'status' => $status,
+			'message' => $_message[$status]
 		)
 		: array(
 			'status' => $status, 
+			'message' => $_message[$status],
 			'data' => $data
 		)
 	);
+	unset($_message);
 
 	return $json;
-}
-
-/**
- * 获取访问客户端的真实IP地址(加强版)
- *
- * @return string IP地址
- */
-function get_ip() {
-
-	$ip = '';
-
-	if (getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
-		$ip = getenv('HTTP_CLIENT_IP');
-	} else if (getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
-		$ip = getenv('HTTP_X_FORWARDED_FOR');
-	} else if (getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
-		$ip = getenv('REMOTE_ADDR');
-	} else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
-		$ip = $_SERVER['REMOTE_ADDR'];
-	}
-
-	return $ip;
-}
-
-/**
- * 数组转换成字符串支持KeyValue对应
- *
- * @param array $array
- * @return string key1=value1,key2=value2,....
- */
-function array_to_string($array) {
-
-	$string = '';
-
-	if (!empty($array) && is_array($array)) {
-		foreach ($array as $key => $value) {
-			$string .= ",$key=$value";
-		}
-		$string = substr($string, 1);
-	}
-
-	return $string;
-}
-
-/**
- * 按数组键名从数组中获取一个值
- *
- * @param mixed $key
- * @param array $array
- * @return mixed $value
- */
-function get_array_value($key, $array) {
-
-	$value = '';
-
-	if (!empty($key) && !empty($array) && is_array($array)) {
-		$value = isset($array[$key]) ? $array[$key] : '';
-	}
-
-	return $value;
 }
 
 /**

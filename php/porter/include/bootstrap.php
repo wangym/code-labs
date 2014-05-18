@@ -2,7 +2,7 @@
 
 // bootstrap.php
 
-// setting
+// set
 //error_reporting(0);
 date_default_timezone_set('Asia/Shanghai');
 
@@ -12,18 +12,16 @@ $_pathinfo = pathinfo($_dirname);
 
 // constant
 define('_APP', 'porter');
+define('_DATETIME', date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']));
 define('_ENV', ('localhost' === $_SERVER['HTTP_HOST'] ? 'dev' : 'prod'));
 define('_FILENAME', basename($_SERVER['SCRIPT_NAME']));
-define('_DATETIME', date('Y-m-d H:i:s', _TIME));
+define('_SECRET_KEY', 'porter_my_20140518*#');
 define('_TIME', $_SERVER['REQUEST_TIME']);
 
-// status
-define('STATUS_OK', 200);
-define('STATUS_ERROR', 500);
-define('STATUS_PARAMETER_ERROR', 501);
-
 // require
-require('redis.php');
-require('service.php');
+require('config.php');
+require('RedisExt.php');
+require('Service.php');
 require('util.php');
+require('validator.php');
 
