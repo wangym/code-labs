@@ -20,8 +20,7 @@ define('_TIME', $_SERVER['REQUEST_TIME']);
 
 // require
 require('config.php');
-require('RedisExt.php');
+require('Dao.php');
 require('Service.php');
 require('util.php');
 require('validator.php');
-

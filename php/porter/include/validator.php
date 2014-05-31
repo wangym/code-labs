@@ -13,16 +13,16 @@ function api_sign_verify() {
 
 	$result = array();
 
-	$data= http_receive('data');
+	$params = http_receive('params');
 	$time = http_receive('time');
-	if (empty($data) || empty($time)) {
+	if (empty($params) || empty($time)) {
 		exit(response_json(STATUS_PARAMETER_ERROR));
 	}
 	$sign = http_receive('sign');
-	if (!sign_verify($sign, $data . $time)) {
+	if (!sign_verify($sign, $params . $time)) {
 		exit(response_json(STATUS_SIGN_ERROR));
 	}
-	$result = json_decode($data, true);
+	$result = json_decode($params, true);
 	if (empty($result) || !is_array($result)) {
 		exit(response_json(STATUS_PARAMETER_ERROR));
 	}
@@ -35,7 +35,7 @@ function api_sign_verify() {
  *
  * @param string $sign
  * @param string $content
- * @return boolean 
+ * @return boolean
  */
 function sign_verify($sign, $content) {
 
@@ -51,4 +51,3 @@ function sign_verify($sign, $content) {
 
 	return $result;
 }
-

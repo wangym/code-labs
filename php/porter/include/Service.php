@@ -13,6 +13,7 @@ class Service {
 	 *
 	 */
 	public $dao;
+	public $params;
 
 	/**
 	 *
