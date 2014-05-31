@@ -124,21 +124,22 @@ function http_receive($key, $default = '') {
  */
 function response_json($status, $data = '') {
 
+	$json = '';
 	global $_message;
 
 	$json = json_encode(!is_array($data) 
 		? array(
 			'status' => $status,
-			'message' => $_message[$status]
+			'message' => get_array_value($status, $_message)
 		)
 		: array(
-			'status' => $status, 
-			'message' => $_message[$status],
+			'status' => $status,
+			'message' => get_array_value($status, $_message),
 			'data' => $data
 		)
 	);
-	unset($_message);
 
+	unset($_message);
 	return $json;
 }
 

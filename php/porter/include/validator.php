@@ -9,7 +9,8 @@
  *
  * @return array 参数集合
  */
-function api_sign_verify() {
+function api_sign_verify()
+{
 
 	$result = array();
 
@@ -37,11 +38,12 @@ function api_sign_verify() {
  * @param string $content
  * @return boolean
  */
-function sign_verify($sign, $content) {
+function sign_verify($sign, $content)
+{
 
 	$result = false;
 
-	$key = _SECRET_KEY.$content;
+	$key = _SECRET_KEY . $content;
 	if ('dev' === _ENV) {
 		echo "<!--" . md5($key) . "-->";
 	}
@@ -51,3 +53,4 @@ function sign_verify($sign, $content) {
 
 	return $result;
 }
+

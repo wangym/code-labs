@@ -1,13 +1,13 @@
 #!/bin/bash 
 set -o nounset
 
-SRC_DIR="~/source/github/labs/php/porter"
-DST_DIR="~/source/yun/bae/porter"
+SRC_DIR="/home/yumin/source/github/labs/php/porter"
+DST_DIR="/home/yumin/source/yun/bae/porter"
 
-cp -r ./ $DST_DIR
 cd $DST_DIR
-pwd
-git status
+git rm -rf *
+git commit -m"delete"
+cp -r $SRC_DIR/. $DST_DIR
 git add *
 git commit -m"update"
 git push

@@ -7,18 +7,22 @@
 /**
  *
  */
-interface INoSqlDao {
+interface IDao {
 
-	public function set($key, $value);
-
-	public function get($key);
+	/**
+	 * 建立连接
+	 *
+	 * @param array $database
+	 * @return boolean $result
+	 */
+	public function connection($database);
 }
 
 /**
  *
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
-class RedisDao extends Redis implements INoSqlDao {
+class RedisDao extends Redis implements IDao {
 
 	/**
 	 *
@@ -26,18 +30,7 @@ class RedisDao extends Redis implements INoSqlDao {
 	public function __construct() {
 
 		global $_database;
-		try {
-			$ret = $this->connect($_database[_ENV]['host'], $_database[_ENV]['port']);
-			if (false === $ret) {
-				exit($this->getLastError());
-			}
-			$ret = $this->auth($_database[_ENV]['username'] . "-" . $_database[_ENV]['password'] . "-" . $_database[_ENV]['dbname']);
-			if (false === $ret) {
-				exit($this->getLastError());
-			}
-		} catch (RedisException $e) {
-			exit("Uncaught exception " . $e->getMessage());
-		}
+		$this->connection($_database);
 		unset($_database);
 	}
 
@@ -50,18 +43,24 @@ class RedisDao extends Redis implements INoSqlDao {
 	/**
 	 *
 	 */
-	public function set($key, $value) {
+	public function connection($database) {
 
 		$result = false;
 
 		try {
-			$ret = $this->set($key, $value);
-			if (true === $ret) {
-				$result = true;
+			$result = $this->connect($database[_ENV]['host'], $database[_ENV]['port']);
+			if (false === $result) {
+				exit($this->getLastError());
 			}
-		}  catch (RedisException $e) {
-			exit("Uncaught exception " . $e->getMessage());
+			$result = $this->auth($database[_ENV]['username'] . "-" . $database[_ENV]['password'] . "-" . $database[_ENV]['dbname']);
+			if (false === $result) {
+				exit($this->getLastError());
+			}
+		} catch (RedisException $e) {
+			exit($e->getMessage());
 		}
+
+		return $result;
 	}
 }
 
