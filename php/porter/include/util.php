@@ -13,16 +13,16 @@ function api_sign_verify() {
 
     $json = http_receive('json');
     if (empty($json)) {
-        exit(response_json(STATUS_PARAMETER_ERROR));
+        exit(response_json(_STATUS_PARAMETER_ERROR));
     }
     $sign = http_receive('sign');
     $time = http_receive('time');
-    if (!_DEBUG && !sign_verify($sign, $json . $time)) {
-        exit(response_json(STATUS_SIGN_ERROR));
+    if (!_DEBUG && !sign_verify($sign, $json.$time)) {
+        exit(response_json(_STATUS_SIGN_ERROR));
     }
     $params = json_decode($json, true);
     if (empty($params) || !is_array($params)) {
-        exit(response_json(STATUS_PARAMETER_ERROR));
+        exit(response_json(_STATUS_PARAMETER_ERROR));
     }
 
     return $params;
@@ -137,6 +137,23 @@ function http_receive($key, $default = '') {
 }
 
 /**
+ * 状态值是否是正确
+ *
+ * @param int $status
+ * @return boolean $result
+ */
+function is_true_status($status) {
+
+    $result = false;
+
+    if (200 === $status) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+/**
  * 依据入参生成接口响应用的JSON字符串
  *
  * @param int $status
@@ -173,7 +190,7 @@ function sign_verify($sign, $content) {
 
     $result = false;
 
-    $key = _SECRET_KEY . $content;
+    $key = _SECRET_KEY.$content;
     if ('dev' === _ENV) {
         echo "<!-- md5($key) -->";
     }

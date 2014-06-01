@@ -57,7 +57,7 @@ class MySqliDriver extends mysqli implements IMySqlDriver {
             $database[_ENV]['password'],
             $database[_ENV]['database']
         );
-        (mysqli_connect_errno() ? exit('Connect failed:' . mysqli_connect_error()) : '');
+        (mysqli_connect_errno() ? exit('Connect failed:'.mysqli_connect_error()) : '');
         $this->query("set names $database[_ENV]['charset']");
     }
 

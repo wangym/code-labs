@@ -11,9 +11,15 @@ interface IGoodsService {
 
     /**
      * @param array $params
-     * @return boolean $result
+     * @return int $status
      */
-    public function handlingText($params);
+    public function postText($params);
+
+    /**
+     * @param array $params
+     * @return string $text
+     */
+    public function getText($params);
 }
 
 /**
@@ -36,7 +42,7 @@ class GoodsService implements IGoodsService {
 	 */
 	public function __construct() {
 
-		$this->dao = new GoodsDao();
+		$this->dao = new PorterDao();
 	}
 
 	/**
@@ -47,35 +53,37 @@ class GoodsService implements IGoodsService {
 		unset($this->dao);
 	}
 
-	public function handlingText($params) {
+    public function postText($params) {
 
-        $result = false;
+        $status = _STATUS_ERROR;
 
         if (!empty($params) && !is_array($params)) {
+            $userId = get_array_value('userId', $params);
             $text = get_array_value('text', $params);
-            if (!empty($text)) {
+            if (!empty($userId) && !empty($text)) {
+                if ($this->dao->set("user-$userId-", $text, TTL)) {
+                    $status = _STATUS_OK;
+                } else {
+                    $status = _STATUS_GOODS_POST_ERROR;
+                }
             }
         }
 
-        return $result;
+        return $status;
     }
 
-    /**
-	 * @param string $name
-	 * @return mixed $value
-	 */
-	public function __get($name) {
+    public function getText($params) {
 
-		return $this->$name;
-	}
+        $text = '';
 
-	/**
-	 * @param string $name
-	 * @param mixed $value
-	 */
-	public function __set($name, $value) {
+        if (!empty($params) && !is_array($params)) {
+            $userId = get_array_value('userId', $params);
+            if (!empty($userId)) {
+                $text = $this->dao->get("user-$userId-");
+            }
+        }
 
-		$this->$name = $value;
-	}
+        return $text;
+    }
 }
 

@@ -48,7 +48,7 @@ class RedisNoSqlDriver extends Redis implements INoSqlDriver {
 			if (false === $result) {
 				exit($this->getLastError());
 			}
-			$result = $this->auth($database[_ENV]['username'] . "-" . $database[_ENV]['password'] . "-" . $database[_ENV]['dbname']);
+			$result = $this->auth($database[_ENV]['username']."-".$database[_ENV]['password']."-".$database[_ENV]['dbname']);
 			if (false === $result) {
 				exit($this->getLastError());
 			}

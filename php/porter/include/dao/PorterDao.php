@@ -7,7 +7,7 @@
 /**
  *
  */
-interface IGoodsDao {
+interface IPorterDao {
 
     /**
      * @param string $key
@@ -16,12 +16,24 @@ interface IGoodsDao {
      * @return boolean $result
      */
     public function set($key, $value, $ttl);
+
+    /**
+     * @param string $key
+     * @return string $value
+     */
+    public function get($key);
+
+    /**
+     * @param string $pattern
+     * @return array $array
+     */
+    public function keys($pattern);
 }
 
 /**
  *
  */
-class GoodsDao implements IGoodsDao {
+class PorterDao implements IPorterDao {
 
     /**
      *
@@ -57,6 +69,28 @@ class GoodsDao implements IGoodsDao {
         }
 
         return $result;
+    }
+
+    public function get($key) {
+
+        $value = '';
+
+        if (!empty($key)) {
+            $value = $this->driver->get($key);
+        }
+
+        return $value;
+    }
+
+    public function keys($pattern) {
+
+        $array = array();
+
+        if (!empty($pattern)) {
+            $array = $this->driver->keys($pattern);
+        }
+
+        return $array;
     }
 }
 
