@@ -9,25 +9,25 @@
  */
 interface IPorterDao {
 
-    /**
-     * @param string $key
-     * @param string $value
-     * @param int $ttl (optional)
-     * @return boolean $result
-     */
-    public function set($key, $value, $ttl);
+	/**
+	 * @param string $key
+	 * @param string $value
+	 * @param int $ttl (optional)
+	 * @return boolean $result
+	 */
+	public function set($key, $value, $ttl);
 
-    /**
-     * @param string $key
-     * @return string $value
-     */
-    public function get($key);
+	/**
+	 * @param string $key
+	 * @return string $value
+	 */
+	public function get($key);
 
-    /**
-     * @param string $pattern
-     * @return array $array
-     */
-    public function keys($pattern);
+	/**
+	 * @param string $pattern
+	 * @return array $array
+	 */
+	public function keys($pattern);
 }
 
 /**
@@ -35,62 +35,62 @@ interface IPorterDao {
  */
 class PorterDao implements IPorterDao {
 
-    /**
-     *
-     */
-    private $driver;
+	/**
+	 *
+	 */
+	private $driver;
 
-    /**
-     *
-     */
-    public function __construct() {
+	/**
+	 *
+	 */
+	public function __construct() {
 
-        $this->driver = new RedisNoSqlDriver();
-    }
+		$this->driver = new RedisNoSqlDriver();
+	}
 
-    /**
-     *
-     */
-    public function __destruct() {
+	/**
+	 *
+	 */
+	public function __destruct() {
 
-        unset($this->driver);
-    }
+		unset($this->driver);
+	}
 
-    public function set($key, $value, $ttl = 0) {
+	public function set($key, $value, $ttl = 0) {
 
-        $result = false;
+		$result = false;
 
-        if (!empty($key) && !empty($value)) {
-            if (0 <= $ttl) {
-                $result = $this->driver->setex($key, $ttl, $value);
-            } else {
-                $result = $this->driver->set($key, $value);
-            }
-        }
+		if (!empty($key) && !empty($value)) {
+			if (0 <= $ttl) {
+				$result = $this->driver->setex($key, $ttl, $value);
+			} else {
+				$result = $this->driver->set($key, $value);
+			}
+		}
 
-        return $result;
-    }
+		return $result;
+	}
 
-    public function get($key) {
+	public function get($key) {
 
-        $value = '';
+		$value = '';
 
-        if (!empty($key)) {
-            $value = $this->driver->get($key);
-        }
+		if (!empty($key)) {
+			$value = $this->driver->get($key);
+		}
 
-        return $value;
-    }
+		return $value;
+	}
 
-    public function keys($pattern) {
+	public function keys($pattern) {
 
-        $array = array();
+		$array = array();
 
-        if (!empty($pattern)) {
-            $array = $this->driver->keys($pattern);
-        }
+		if (!empty($pattern)) {
+			$array = $this->driver->keys($pattern);
+		}
 
-        return $array;
-    }
+		return $array;
+	}
 }
 

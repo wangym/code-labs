@@ -11,21 +11,21 @@
  */
 function api_sign_verify() {
 
-    $json = http_receive('json');
-    if (empty($json)) {
-        exit(response_json(_STATUS_PARAMETER_ERROR));
-    }
-    $sign = http_receive('sign');
-    $time = http_receive('time');
-    if (!_DEBUG && !sign_verify($sign, $json.$time)) {
-        exit(response_json(_STATUS_SIGN_ERROR));
-    }
-    $params = json_decode($json, true);
-    if (empty($params) || !is_array($params)) {
-        exit(response_json(_STATUS_PARAMETER_ERROR));
-    }
+	$json = http_receive('json');
+	if (empty($json)) {
+		exit(response_json(_STATUS_PARAMETER_ERROR));
+	}
+	$sign = http_receive('sign');
+	$time = http_receive('time');
+	if (!_DEBUG && !sign_verify($sign, $json.$time)) {
+		exit(response_json(_STATUS_SIGN_ERROR));
+	}
+	$params = json_decode($json, true);
+	if (empty($params) || !is_array($params)) {
+		exit(response_json(_STATUS_PARAMETER_ERROR));
+	}
 
-    return $params;
+	return $params;
 }
 
 /**
@@ -144,13 +144,13 @@ function http_receive($key, $default = '') {
  */
 function is_true_status($status) {
 
-    $result = false;
+	$result = false;
 
-    if (200 === $status) {
-        $result = true;
-    }
+	if (200 === $status) {
+		$result = true;
+	}
 
-    return $result;
+	return $result;
 }
 
 /**
@@ -162,21 +162,21 @@ function is_true_status($status) {
  */
 function response_json($status, $data = '') {
 
-    global $_message;
-    $json = json_encode(!empty($data) && is_array($data)
-            ? array(
-                'status' => $status,
-                'message' => get_array_value($status, $_message),
-                'data' => $data
-            )
-            : array(
-                'status' => $status,
-                'message' => get_array_value($status, $_message)
-            )
-    );
-    unset($_message);
+	global $_message;
+	$json = json_encode(!empty($data) && is_array($data)
+		? array(
+			'status' => $status,
+			'message' => get_array_value($status, $_message),
+			'data' => $data
+		)
+		: array(
+			'status' => $status,
+			'message' => get_array_value($status, $_message)
+		)
+	);
+	unset($_message);
 
-    return $json;
+	return $json;
 }
 
 /**
@@ -188,17 +188,17 @@ function response_json($status, $data = '') {
  */
 function sign_verify($sign, $content) {
 
-    $result = false;
+	$result = false;
 
-    $key = _SECRET_KEY.$content;
-    if ('dev' === _ENV) {
-        echo "<!-- md5($key) -->";
-    }
-    if (!empty($sign) && $sign === md5($key)) {
-        $result = true;
-    }
+	$key = _SECRET_KEY.$content;
+	if ('dev' === _ENV) {
+		echo "<!-- md5($key) -->";
+	}
+	if (!empty($sign) && $sign === md5($key)) {
+		$result = true;
+	}
 
-    return $result;
+	return $result;
 }
 
 /**
@@ -216,7 +216,7 @@ function to_kv_array($keys, $values, $defaults = array()) {
 	if (!empty($defaults) && is_array($defaults)) {
 		foreach($defaults as $key => $value) {
 			if (!isset($values[$key])) {
-                $values[$key] = $value;
+				$values[$key] = $value;
 			}
 		}
 	}

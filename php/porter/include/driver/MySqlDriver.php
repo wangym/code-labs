@@ -9,20 +9,20 @@
  */
 interface IMySqlDriver {
 
-    /**
-     * 建立连接
-     *
-     * @param array $database
-     */
-    public function connect($database);
+	/**
+	 * 建立连接
+	 *
+	 * @param array $database
+	 */
+	public function connect($database);
 
-    /**
-     * 获取全部
-     *
-     * @param object $result
-     * @return array $array
-     */
-    public function fetchAll($result);
+	/**
+	 * 获取全部
+	 *
+	 * @param object $result
+	 * @return array $array
+	 */
+	public function fetchAll($result);
 }
 
 /**
@@ -36,9 +36,9 @@ class MySqliDriver extends mysqli implements IMySqlDriver {
 	 */
 	public function __construct() {
 
-        global $_database;
-        $this->connect($_database);
-        unset($_database);
+		global $_database;
+		$this->connect($_database);
+		unset($_database);
 	}
 
 	/**
@@ -49,19 +49,19 @@ class MySqliDriver extends mysqli implements IMySqlDriver {
 		$this->close();
 	}
 
-    public function connect($database) {
+	public function connect($database) {
 
-        parent::__construct(
-            $database[_ENV]['host'],
-            $database[_ENV]['username'],
-            $database[_ENV]['password'],
-            $database[_ENV]['database']
-        );
-        (mysqli_connect_errno() ? exit('Connect failed:'.mysqli_connect_error()) : '');
-        $this->query("set names $database[_ENV]['charset']");
-    }
+		parent::__construct(
+			$database[_ENV]['host'],
+			$database[_ENV]['username'],
+			$database[_ENV]['password'],
+			$database[_ENV]['database']
+		);
+		(mysqli_connect_errno() ? exit(mysqli_connect_error()) : '');
+		$this->query("set names $database[_ENV]['charset']");
+	}
 
-    public function fetchAll($result) {
+	public function fetchAll($result) {
 
 		$array = array();
 

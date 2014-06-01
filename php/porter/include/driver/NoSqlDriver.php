@@ -38,7 +38,7 @@ class RedisNoSqlDriver extends Redis implements INoSqlDriver {
 	 */
 	public function __destruct() {
 
-        $this->close();
+		$this->close();
 	}
 
 	public function connect($database) {
