@@ -10,14 +10,14 @@
 interface IGoodsService {
 
     /**
-     * @param array $params
-     * @return int $status
+     * @param array $params 原始参数举例:json={"userId":"1","text":"yumin"}
+     * @return object $result
      */
     public function postText($params);
 
     /**
-     * @param array $params
-     * @return string $text
+     * @param array $params 原始参数举例:json={"userId":"1"}
+     * @return object $result
      */
     public function getText($params);
 }
@@ -35,7 +35,7 @@ class GoodsService implements IGoodsService {
     /**
      *
      */
-    const TTL = 604800;
+    const TTL = 2592000; // 30-days
 
 	/**
 	 *
@@ -55,35 +55,58 @@ class GoodsService implements IGoodsService {
 
     public function postText($params) {
 
-        $status = _STATUS_ERROR;
+        $result = new GoodsResultPojo();
+        $result->status = _STATUS_ERROR;
+        $data = new KvPojo();
 
-        if (!empty($params) && !is_array($params)) {
-            $userId = get_array_value('userId', $params);
-            $text = get_array_value('text', $params);
-            if (!empty($userId) && !empty($text)) {
-                if ($this->dao->set("user-$userId-", $text, TTL)) {
-                    $status = _STATUS_OK;
-                } else {
-                    $status = _STATUS_GOODS_POST_ERROR;
-                }
+        if (!empty($params) && is_array($params)) {
+            $key = self::getTextKey($params);
+            $value = get_array_value('text', $params);
+            if (!empty($key) && !empty($value)) {
+                $result->status = ($this->dao->set($key, $value, self::TTL) ? _STATUS_OK : _STATUS_POST_ERROR);
+                $data->key = $key;
+                $data->value = $value;
             }
         }
 
-        return $status;
+        $result->data = $data;
+        return $result;
     }
 
     public function getText($params) {
 
-        $text = '';
+        $result = new GoodsResultPojo();
+        $result->status = _STATUS_ERROR;
+        $data = new KvPojo();
 
-        if (!empty($params) && !is_array($params)) {
-            $userId = get_array_value('userId', $params);
-            if (!empty($userId)) {
-                $text = $this->dao->get("user-$userId-");
+        if (!empty($params) && is_array($params)) {
+            $key = self::getTextKey($params);
+            if (!empty($key)) {
+                $value = $this->dao->get($key);
+                $result->status = (!empty($value) ? _STATUS_OK : _STATUS_GET_ERROR);
+                $data->key = $key;
+                $data->value = $value;
             }
         }
 
-        return $text;
+        $result->data = $data;
+        return $result;
+    }
+
+    /**
+     * @param array $params
+     * @return string $key
+     */
+    private function getTextKey($params) {
+
+        $key = '';
+
+        $userId = get_array_value('userId', $params);
+        if (!empty($userId)) {
+            $key = "text-user-$userId";
+        }
+
+        return $key;
     }
 }
 

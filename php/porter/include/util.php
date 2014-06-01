@@ -162,21 +162,21 @@ function is_true_status($status) {
  */
 function response_json($status, $data = '') {
 
-	global $_message;
-	$json = json_encode(!is_array($data) 
-		? array(
-			'status' => $status,
-			'message' => get_array_value($status, $_message)
-		)
-		: array(
-			'status' => $status,
-			'message' => get_array_value($status, $_message),
-			'data' => $data
-		)
-	);
-	unset($_message);
+    global $_message;
+    $json = json_encode(!empty($data) && is_array($data)
+            ? array(
+                'status' => $status,
+                'message' => get_array_value($status, $_message),
+                'data' => $data
+            )
+            : array(
+                'status' => $status,
+                'message' => get_array_value($status, $_message)
+            )
+    );
+    unset($_message);
 
-	return $json;
+    return $json;
 }
 
 /**

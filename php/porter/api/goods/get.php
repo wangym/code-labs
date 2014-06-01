@@ -9,9 +9,9 @@ $params = api_sign_verify();
 
 /* 执行逻辑 */
 $goodsService = new GoodsService();
-$text = $goodsService->getText($params);
+$result = $goodsService->getText($params);
 unset($goodsService);
 
 /* 响应结果 */
-exit(response_json(_STATUS_OK, $text));
+exit(response_json($result->status, $result->data->toArray()));
 

@@ -13,7 +13,7 @@ $_pathinfo = pathinfo($_dirname);
 /* constant */
 define('_APP', 'APP');
 define('_DATETIME', date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']));
-define('_DEBUG', true);
+define('_DEBUG', (true && isset($_REQUEST['_debug']) ? true : false));
 define('_ENV', ('localhost' === $_SERVER['HTTP_HOST'] ? 'dev' : 'prod'));
 define('_FILENAME', basename($_SERVER['SCRIPT_NAME']));
 define('_SECRET_KEY', 'my_app_19831028*#');

@@ -1,0 +1,59 @@
+<?php
+
+// ResultPojo.php
+
+/**
+ *
+ */
+class KvPojo {
+
+    /**
+     * @var
+     */
+    private $key;
+    private $value;
+
+    public function toArray() {
+
+        $array = array();
+
+        if (!empty($this->key) && !empty($this->value)) {
+            $array = array(
+                'key' => $this->key,
+                'value' => $this->value
+            );
+        }
+
+        return $array;
+    }
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+}
+
+/**
+ *
+ */
+class GoodsResultPojo
+{
+
+    /**
+     * @var
+     */
+    private $status;
+    private $data;
+
+    public function __get($name) {
+        return $this->$name;
+    }
+
+    public function __set($name, $value) {
+        $this->$name = $value;
+    }
+}
+
