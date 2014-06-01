@@ -16,7 +16,7 @@ function array_to_string($array) {
 
 	if (!empty($array) && is_array($array)) {
 		foreach ($array as $key => $value) {
-			$string .= ",$key=$value";
+			$string .= ',$key=$value';
 		}
 		$string = substr($string, 1);
 	}

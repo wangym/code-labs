@@ -1,13 +1,19 @@
 <?php
 
-// Service.php
+// GoodsService.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-class Service {
+interface IGoodsService {
+}
+
+/**
+ *
+ */
+class GoodsService implements IGoodsService {
 
 	/**
 	 *

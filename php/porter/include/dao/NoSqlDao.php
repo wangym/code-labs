@@ -1,13 +1,13 @@
 <?php
 
-// Dao.php
+// NoSqlDao.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-interface IDao {
+interface INoSqlDao {
 
 	/**
 	 * 建立连接
@@ -22,7 +22,7 @@ interface IDao {
  *
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
-class RedisDao extends Redis implements IDao {
+class RedisNoSqlDao extends Redis implements INoSqlDao {
 
 	/**
 	 *

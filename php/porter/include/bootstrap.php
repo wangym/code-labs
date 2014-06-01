@@ -53,8 +53,8 @@ $_database = array(
 );
 
 // require
-require($_SERVER['DOCUMENT_ROOT'] . 'include/Dao.php');
-require($_SERVER['DOCUMENT_ROOT'] . 'include/Service.php');
+require($_SERVER['DOCUMENT_ROOT'] . 'include/dao.php');
+require($_SERVER['DOCUMENT_ROOT'] . 'include/service.php');
 require($_SERVER['DOCUMENT_ROOT'] . 'include/util.php');
 require($_SERVER['DOCUMENT_ROOT'] . 'include/validator.php');
 

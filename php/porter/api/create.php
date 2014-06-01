@@ -9,7 +9,7 @@ require($_SERVER['DOCUMENT_ROOT'] . 'include/bootstrap.php');
 //$params = api_sign_verify();
 
 /* 业务逻辑 */
-$dao = new RedisDao();
+$dao = new RedisNoSqlDao();
 //$dao->flushdb();
 $result = $dao->setex("key", 10, "hello");
 //if ($result === false) {

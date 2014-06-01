@@ -45,7 +45,7 @@ function sign_verify($sign, $content)
 
 	$key = _SECRET_KEY . $content;
 	if ('dev' === _ENV) {
-		echo "<!--" . md5($key) . "-->";
+		echo '<!--' . md5($key) . '-->';
 	}
 	if (!empty($sign) && $sign === md5($key)) {
 		$result = true;
