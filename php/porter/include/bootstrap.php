@@ -14,6 +14,7 @@ $_pathinfo = pathinfo($_dirname);
 // TODO:use 'parse_ini_file()'
 define('_APP', 'porter');
 define('_DATETIME', date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']));
+define('_DEBUG', true);
 define('_ENV', ('localhost' === $_SERVER['HTTP_HOST'] ? 'dev' : 'prod'));
 define('_FILENAME', basename($_SERVER['SCRIPT_NAME']));
 define('_SECRET_KEY', 'porter_my_20140518*#');

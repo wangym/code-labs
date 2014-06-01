@@ -45,7 +45,7 @@ function get_array_value($key, $array) {
 /**
  * 获取访问客户端的真实IP地址(加强版)
  *
- * @return string IP地址
+ * @return string $ip IP地址
 
  */
 function get_ip() {
@@ -76,11 +76,9 @@ function get_ip() {
  *  'key2' => 'val2',
  *  'key3' => 'val3'
  * );
- * @return string URL服务器的返回结果
+ * @return string $result URL服务器的返回结果
  */
 function http_post($url, array $data = array()) {
-
-	$result = '';
 
 	$query = (!empty($data) && is_array($data) ? http_build_query($data) : '');
 	$options = array('http' => 
@@ -102,7 +100,7 @@ function http_post($url, array $data = array()) {
  *
  * @param string $key 键名称
  * @param mixed $default 默认值
- * @return string 获取值
+ * @return string $value 获取值
  */
 function http_receive($key, $default = '') {
 
@@ -120,13 +118,11 @@ function http_receive($key, $default = '') {
  *
  * @param int $status
  * @param mixed $data
- * @return string JSON
+ * @return string $json
  */
 function response_json($status, $data = '') {
 
-	$json = '';
 	global $_message;
-
 	$json = json_encode(!is_array($data) 
 		? array(
 			'status' => $status,
@@ -138,8 +134,8 @@ function response_json($status, $data = '') {
 			'data' => $data
 		)
 	);
-
 	unset($_message);
+
 	return $json;
 }
 
@@ -147,25 +143,25 @@ function response_json($status, $data = '') {
  * 按键数组生成KV对应的数组
  *
  * @param array $keys 键数组
- * @param array $vals 值数组
+ * @param array $values 值数组
  * @param array $defaults 默认补充,可选
- * @return array
+ * @return array $result
  */
-function to_kv_array($keys, $vals, $defaults = array()) {
+function to_kv_array($keys, $values, $defaults = array()) {
 
 	$result = array();
 
 	if (!empty($defaults) && is_array($defaults)) {
 		foreach($defaults as $key => $value) {
-			if (!isset($vals[$key])) {
-				$vals[$key] = $value;
+			if (!isset($values[$key])) {
+                $values[$key] = $value;
 			}
 		}
 	}
 	//print_r($keys);exit;
 
 	foreach($keys as $value) {
-		$result[$value] = &$vals[$value];
+		$result[$value] = &$values[$value];
 	}
 	//var_dump($result);
 

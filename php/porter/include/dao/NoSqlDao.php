@@ -13,7 +13,6 @@ interface INoSqlDao {
 	 * 建立连接
 	 *
 	 * @param array $database
-	 * @return boolean $result
 	 */
 	public function connection($database);
 }
@@ -38,14 +37,11 @@ class RedisNoSqlDao extends Redis implements INoSqlDao {
 	 *
 	 */
 	public function __destruct() {
+
+        $this->close();
 	}
 
-	/**
-	 *
-	 */
 	public function connection($database) {
-
-		$result = false;
 
 		try {
 			$result = $this->connect($database[_ENV]['host'], $database[_ENV]['port']);
@@ -59,8 +55,24 @@ class RedisNoSqlDao extends Redis implements INoSqlDao {
 		} catch (RedisException $e) {
 			exit($e->getMessage());
 		}
+	}
 
-		return $result;
+	/**
+	 * @param string $name
+	 * @return mixed $value
+	 */
+	public function __get($name) {
+
+		return $this->$name;
+	}
+
+	/**
+	 * @param string $name
+	 * @param mixed $value
+	 */
+	public function __set($name, $value) {
+
+		$this->$name = $value;
 	}
 }
 
