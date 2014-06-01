@@ -1,27 +1,27 @@
 <?php
 
-// NoSqlDao.php
+// NoSqlDriver.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-interface INoSqlDao {
+interface INoSqlDriver {
 
 	/**
 	 * 建立连接
 	 *
 	 * @param array $database
 	 */
-	public function connection($database);
+	public function connect($database);
 }
 
 /**
  *
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
-class RedisNoSqlDao extends Redis implements INoSqlDao {
+class RedisNoSqlDriver extends Redis implements INoSqlDriver {
 
 	/**
 	 *
@@ -29,7 +29,7 @@ class RedisNoSqlDao extends Redis implements INoSqlDao {
 	public function __construct() {
 
 		global $_database;
-		$this->connection($_database);
+		$this->connect($_database);
 		unset($_database);
 	}
 
@@ -41,10 +41,10 @@ class RedisNoSqlDao extends Redis implements INoSqlDao {
         $this->close();
 	}
 
-	public function connection($database) {
+	public function connect($database) {
 
 		try {
-			$result = $this->connect($database[_ENV]['host'], $database[_ENV]['port']);
+			$result = parent::connect($database[_ENV]['host'], $database[_ENV]['port']);
 			if (false === $result) {
 				exit($this->getLastError());
 			}
@@ -55,24 +55,6 @@ class RedisNoSqlDao extends Redis implements INoSqlDao {
 		} catch (RedisException $e) {
 			exit($e->getMessage());
 		}
-	}
-
-	/**
-	 * @param string $name
-	 * @return mixed $value
-	 */
-	public function __get($name) {
-
-		return $this->$name;
-	}
-
-	/**
-	 * @param string $name
-	 * @param mixed $value
-	 */
-	public function __set($name, $value) {
-
-		$this->$name = $value;
 	}
 }
 

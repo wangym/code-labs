@@ -1,20 +1,20 @@
 <?php
 
-// MySqlDao.php
+// MySqlDriver.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-interface IMySqlDao {
+interface IMySqlDriver {
 
     /**
      * 建立连接
      *
      * @param array $database
      */
-    public function connection($database);
+    public function connect($database);
 
     /**
      * 获取全部
@@ -29,7 +29,7 @@ interface IMySqlDao {
  *
  */
 (!class_exists('mysqli') ? exit('Fatal error: Class mysqli not found!') : '');
-class MySqliDao extends mysqli implements IMySqlDao {
+class MySqliDriver extends mysqli implements IMySqlDriver {
 
 	/**
 	 *
@@ -37,7 +37,7 @@ class MySqliDao extends mysqli implements IMySqlDao {
 	public function __construct() {
 
         global $_database;
-        $this->connection($_database);
+        $this->connect($_database);
         unset($_database);
 	}
 
@@ -49,7 +49,7 @@ class MySqliDao extends mysqli implements IMySqlDao {
 		$this->close();
 	}
 
-    public function connection($database) {
+    public function connect($database) {
 
         parent::__construct(
             $database[_ENV]['host'],

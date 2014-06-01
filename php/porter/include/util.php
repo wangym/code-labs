@@ -5,9 +5,33 @@
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
+ * 接口签名验证入口
+ *
+ * @return array $params 参数集合
+ */
+function api_sign_verify() {
+
+    $json = http_receive('json');
+    if (empty($json)) {
+        exit(response_json(STATUS_PARAMETER_ERROR));
+    }
+    $sign = http_receive('sign');
+    $time = http_receive('time');
+    if (!_DEBUG && !sign_verify($sign, $json . $time)) {
+        exit(response_json(STATUS_SIGN_ERROR));
+    }
+    $params = json_decode($json, true);
+    if (empty($params) || !is_array($params)) {
+        exit(response_json(STATUS_PARAMETER_ERROR));
+    }
+
+    return $params;
+}
+
+/**
  * 数组转换成字符串支持KeyValue对应
  *
- * @param array $array
+ * @param array $array 必需是一维数组
  * @return string key1=value1,key2=value2,....
  */
 function array_to_string($array) {
@@ -16,7 +40,7 @@ function array_to_string($array) {
 
 	if (!empty($array) && is_array($array)) {
 		foreach ($array as $key => $value) {
-			$string .= ',$key=$value';
+			$string .= ",$key=$value";
 		}
 		$string = substr($string, 1);
 	}
@@ -36,7 +60,7 @@ function get_array_value($key, $array) {
 	$value = '';
 
 	if (!empty($key) && !empty($array) && is_array($array)) {
-		$value = isset($array[$key]) ? $array[$key] : '';
+		$value = (isset($array[$key]) ? $array[$key] : '');
 	}
 
 	return $value;
@@ -46,7 +70,6 @@ function get_array_value($key, $array) {
  * 获取访问客户端的真实IP地址(加强版)
  *
  * @return string $ip IP地址
-
  */
 function get_ip() {
 
@@ -137,6 +160,28 @@ function response_json($status, $data = '') {
 	unset($_message);
 
 	return $json;
+}
+
+/**
+ * 签名验证最小方法
+ *
+ * @param string $sign
+ * @param string $content
+ * @return boolean $result true=签名验证正确|false=失败
+ */
+function sign_verify($sign, $content) {
+
+    $result = false;
+
+    $key = _SECRET_KEY . $content;
+    if ('dev' === _ENV) {
+        echo "<!-- md5($key) -->";
+    }
+    if (!empty($sign) && $sign === md5($key)) {
+        $result = true;
+    }
+
+    return $result;
 }
 
 /**

@@ -8,6 +8,12 @@
  *
  */
 interface IGoodsService {
+
+    /**
+     * @param array $params
+     * @return boolean $result
+     */
+    public function handlingText($params);
 }
 
 /**
@@ -20,12 +26,17 @@ class GoodsService implements IGoodsService {
 	 */
 	private $dao;
 
+    /**
+     *
+     */
+    const TTL = 604800;
+
 	/**
 	 *
 	 */
 	public function __construct() {
 
-		$this->dao = new RedisNoSqlDao();
+		$this->dao = new GoodsDao();
 	}
 
 	/**
@@ -36,11 +47,20 @@ class GoodsService implements IGoodsService {
 		unset($this->dao);
 	}
 
-	public function create($params) {
+	public function handlingText($params) {
 
-	}
+        $result = false;
 
-	/**
+        if (!empty($params) && !is_array($params)) {
+            $text = get_array_value('text', $params);
+            if (!empty($text)) {
+            }
+        }
+
+        return $result;
+    }
+
+    /**
 	 * @param string $name
 	 * @return mixed $value
 	 */
