@@ -1,13 +1,13 @@
 <?php
 
-// NoSqlDriver.php
+// NoSqlAdapter.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-interface INoSqlDriver {
+interface INoSqlAdapter {
 
     /**
      * 与数据库建立个短连接
@@ -49,7 +49,7 @@ interface INoSqlDriver {
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
 
-abstract class RedisNoSqlDriver extends Redis implements INoSqlDriver{
+class RedisNoSqlAdapter extends Redis implements INoSqlAdapter {
 
     /**
      *
@@ -96,7 +96,7 @@ abstract class RedisNoSqlDriver extends Redis implements INoSqlDriver{
         $value = '';
 
         if (!empty($key)) {
-            $value = $this->driver->get($key);
+            $value = parent::get($key);
         }
 
         return $value;
@@ -107,7 +107,7 @@ abstract class RedisNoSqlDriver extends Redis implements INoSqlDriver{
         $array = array();
 
         if (!empty($pattern)) {
-            $array = $this->driver->keys($pattern);
+            $array = parent::keys($pattern);
         }
 
         return $array;
@@ -119,9 +119,9 @@ abstract class RedisNoSqlDriver extends Redis implements INoSqlDriver{
 
         if (!empty($key) && !empty($value)) {
             if (0 <= $ttl) {
-                $result = $this->driver->setex($key, $ttl, $value);
+                $result = parent::setex($key, $ttl, $value);
             } else {
-                $result = $this->driver->set($key, $value);
+                $result = parent::set($key, $value);
             }
         }
 

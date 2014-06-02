@@ -11,7 +11,6 @@ $userId = http_receive('userId', 0);
 /* 执行逻辑 */
 // flushDB
 if ('flushDB' === $action) {
-
     $adminService = new AdminService();
     $result = $adminService->flushDB();
     unset($adminService);

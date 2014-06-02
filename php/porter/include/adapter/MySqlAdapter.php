@@ -1,13 +1,13 @@
 <?php
 
-// MySqlDriver.php
+// MySqlAdapter.php
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
  *
  */
-interface IMySqlDriver {
+interface IMySqlAdapter {
 
 	/**
 	 * 建立连接
@@ -30,7 +30,7 @@ interface IMySqlDriver {
  */
 (!class_exists('mysqli') ? exit('Fatal error: Class mysqli not found!') : '');
 
-abstract class MySqliDriver extends mysqli implements IMySqlDriver {
+class MySqliAdapter extends mysqli implements IMySqlAdapter {
 
 	/**
 	 *

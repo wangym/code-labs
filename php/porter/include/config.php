@@ -42,7 +42,7 @@ $_database = array(
         'port' => '80',
         'username' => '0lNAAGGEQNQ0a2M9GbdKYFaw',
         'password' => 'yEPaNPgEld5jU6xe4jvAGuCYrF8O4yw8',
-        'dbname' => 'bBVhEajyQnpEjIxBUwmv',
+        'dbname' => 'agSSlrsJSjUzdphovsiD',
         'charset' => 'utf8'
     ),
 );

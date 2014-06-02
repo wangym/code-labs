@@ -13,18 +13,20 @@ interface IPorterNoSqlDao {
 /**
  *
  */
-class PorterNoSqlDao extends RedisNoSqlDriver implements IPorterNoSqlDao {
+class PorterNoSqlDao extends RedisNoSqlAdapter implements IPorterNoSqlDao {
 
     /**
      *
      */
     public function __construct() {
+        parent::__construct();
     }
 
     /**
      *
      */
     public function __destruct() {
+        parent::__destruct();
     }
 }
 

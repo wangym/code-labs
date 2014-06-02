@@ -4,11 +4,11 @@
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
+// adapter
+require($_SERVER['DOCUMENT_ROOT'] . 'include/adapter/MySqlAdapter.php');
+require($_SERVER['DOCUMENT_ROOT'] . 'include/adapter/NoSqlAdapter.php');
 // dao
 require($_SERVER['DOCUMENT_ROOT'] . 'include/dao/PorterNoSqlDao.php');
-// driver
-require($_SERVER['DOCUMENT_ROOT'] . 'include/driver/MySqlDriver.php');
-require($_SERVER['DOCUMENT_ROOT'] . 'include/driver/NoSqlDriver.php');
 // pojo
 require($_SERVER['DOCUMENT_ROOT'] . 'include/pojo/ResultPojo.php');
 // service
