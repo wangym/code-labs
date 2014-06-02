@@ -9,52 +9,67 @@
  */
 interface INoSqlDriver {
 
-	/**
-	 * 建立连接
-	 *
-	 * @param array $database
-	 */
-	public function connect($database);
+    /**
+     * 与数据库建立个短连接
+     *
+     * @param array $database
+     */
+    public function connect($database);
+
+    /**
+     * 移除当前库内所有实体
+     *
+     * @return boolean $result
+     */
+    public function flushDB();
 }
 
 /**
  *
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
-class RedisNoSqlDriver extends Redis implements INoSqlDriver {
 
-	/**
-	 *
-	 */
-	public function __construct() {
+class RedisNoSqlDriver extends Redis implements INoSqlDriver{
 
-		global $_database;
-		$this->connect($_database);
-		unset($_database);
-	}
+    /**
+     *
+     */
+    public function __construct() {
 
-	/**
-	 *
-	 */
-	public function __destruct() {
+        global $_database;
+        $this->connect($_database);
+        unset($_database);
+    }
 
-		$this->close();
-	}
+    /**
+     *
+     */
+    public function __destruct() {
 
-	public function connect($database) {
+        $this->close();
+    }
 
-		try {
-			$result = parent::connect($database[_ENV]['host'], $database[_ENV]['port']);
-			if (false === $result) {
-				exit($this->getLastError());
-			}
-			$result = $this->auth($database[_ENV]['username']."-".$database[_ENV]['password']."-".$database[_ENV]['dbname']);
-			if (false === $result) {
-				exit($this->getLastError());
-			}
-		} catch (RedisException $e) {
-			exit($e->getMessage());
-		}
-	}
+    public function connect($database) {
+
+        try {
+            $result = parent::connect($database[_ENV]['host'], $database[_ENV]['port']);
+            if (false === $result) {
+                exit($this->getLastError());
+            }
+            $result = $this->auth($database[_ENV]['username'] . "-" . $database[_ENV]['password'] . "-" . $database[_ENV]['dbname']);
+            if (false === $result) {
+                exit($this->getLastError());
+            }
+        } catch (RedisException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+    public function flushDB() {
+
+        $result = parent::flushDB();
+
+        return $result;
+    }
 }
 

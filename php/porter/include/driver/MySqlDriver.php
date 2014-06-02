@@ -29,6 +29,7 @@ interface IMySqlDriver {
  *
  */
 (!class_exists('mysqli') ? exit('Fatal error: Class mysqli not found!') : '');
+
 class MySqliDriver extends mysqli implements IMySqlDriver {
 
 	/**
