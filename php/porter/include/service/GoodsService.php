@@ -27,29 +27,27 @@ interface IGoodsService {
  */
 class GoodsService implements IGoodsService {
 
-	/**
-	 *
-	 */
-	private $dao;
+    /**
+     * @var PorterNoSqlDao
+     */
+    private $dao;
 
-	/**
-	 *
-	 */
-	const TTL = 2592000; // 30-days
+    /**
+     *
+     */
+    const TTL = 2592000; // 30-days
 
-	/**
-	 *
-	 */
-	public function __construct() {
-
-		$this->dao = new PorterDao();
+    /**
+     *
+     */
+    public function __construct() {
+		$this->dao = new PorterNoSqlDao();
 	}
 
 	/**
 	 *
 	 */
 	public function __destruct() {
-
 		unset($this->dao);
 	}
 
@@ -68,8 +66,8 @@ class GoodsService implements IGoodsService {
 				$data->value = $value;
 			}
 		}
-
 		$result->data = $data;
+
 		return $result;
 	}
 
@@ -88,8 +86,8 @@ class GoodsService implements IGoodsService {
 				$data->value = $value;
 			}
 		}
-
 		$result->data = $data;
+
 		return $result;
 	}
 

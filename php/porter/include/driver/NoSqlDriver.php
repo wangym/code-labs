@@ -22,6 +22,26 @@ interface INoSqlDriver {
      * @return boolean $result
      */
     public function flushDB();
+
+    /**
+     * @param string $key
+     * @return string $value
+     */
+    public function get($key);
+
+    /**
+     * @param string $pattern
+     * @return array $array
+     */
+    public function keys($pattern);
+
+    /**
+     * @param string $key
+     * @param string $value
+     * @param int $ttl (optional)
+     * @return boolean $result
+     */
+    public function set($key, $value, $ttl);
 }
 
 /**
@@ -29,7 +49,7 @@ interface INoSqlDriver {
  */
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
 
-class RedisNoSqlDriver extends Redis implements INoSqlDriver{
+abstract class RedisNoSqlDriver extends Redis implements INoSqlDriver{
 
     /**
      *
@@ -45,7 +65,6 @@ class RedisNoSqlDriver extends Redis implements INoSqlDriver{
      *
      */
     public function __destruct() {
-
         $this->close();
     }
 
@@ -68,6 +87,43 @@ class RedisNoSqlDriver extends Redis implements INoSqlDriver{
     public function flushDB() {
 
         $result = parent::flushDB();
+
+        return $result;
+    }
+
+    public function get($key) {
+
+        $value = '';
+
+        if (!empty($key)) {
+            $value = $this->driver->get($key);
+        }
+
+        return $value;
+    }
+
+    public function keys($pattern) {
+
+        $array = array();
+
+        if (!empty($pattern)) {
+            $array = $this->driver->keys($pattern);
+        }
+
+        return $array;
+    }
+
+    public function set($key, $value, $ttl = 0) {
+
+        $result = false;
+
+        if (!empty($key) && !empty($value)) {
+            if (0 <= $ttl) {
+                $result = $this->driver->setex($key, $ttl, $value);
+            } else {
+                $result = $this->driver->set($key, $value);
+            }
+        }
 
         return $result;
     }

@@ -17,7 +17,7 @@ function api_sign_verify() {
 	}
 	$sign = http_receive('sign');
 	$time = http_receive('time');
-	if (!_DEBUG && !sign_verify($sign, $json.$time)) {
+	if (!_DEBUG && !sign_verify($sign, $json . $time)) {
 		exit(response_json(_STATUS_SIGN_ERROR));
 	}
 	$params = json_decode($json, true);
@@ -190,7 +190,7 @@ function sign_verify($sign, $content) {
 
 	$result = false;
 
-	$key = _SECRET_KEY.$content;
+	$key = _SECRET_KEY . $content;
 	if ('dev' === _ENV) {
 		echo "<!-- md5($key) -->";
 	}

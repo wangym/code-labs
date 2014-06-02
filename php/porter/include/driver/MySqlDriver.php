@@ -30,7 +30,7 @@ interface IMySqlDriver {
  */
 (!class_exists('mysqli') ? exit('Fatal error: Class mysqli not found!') : '');
 
-class MySqliDriver extends mysqli implements IMySqlDriver {
+abstract class MySqliDriver extends mysqli implements IMySqlDriver {
 
 	/**
 	 *
@@ -46,7 +46,6 @@ class MySqliDriver extends mysqli implements IMySqlDriver {
 	 *
 	 */
 	public function __destruct() {
-
 		$this->close();
 	}
 
