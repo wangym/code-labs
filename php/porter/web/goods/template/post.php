@@ -1,3 +1,6 @@
+<?php
+
+$html = <<<EOF
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,4 +41,7 @@
 </div>
 </body>
 </html>
+EOF;
+
+return $html;
 

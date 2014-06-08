@@ -2,7 +2,10 @@
 
 // post.php
 
-require($_SERVER['DOCUMENT_ROOT'] . '/include/bootstrap.php');
+require(dirname(dirname(__DIR__)) . '/include/bootstrap.php');
+
+$test = 'hello, world!';
 // render
-require($_SERVER['DOCUMENT_ROOT'] . '/web/goods/template/post.tpl');
+$html = render(dirname(__FILE__), 'post');
+echo $html;
 

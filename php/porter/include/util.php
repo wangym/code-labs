@@ -154,6 +154,18 @@ function is_true_status($status) {
 }
 
 /**
+ * 渲染页面并传参数
+ *
+ * @param string $dirname
+ * @param string $template
+ * @return string $html
+ */
+function render($dirname, $template) {
+
+    return require($dirname . '/template/' . $template . '.php');
+}
+
+/**
  * 依据入参生成接口响应用的JSON字符串
  *
  * @param int $status
