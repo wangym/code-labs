@@ -20,7 +20,7 @@ define('_SECRET_KEY', 'my_app_19831028*#');
 define('_TIME', $_SERVER['REQUEST_TIME']);
 
 /* require */
-require($_SERVER['DOCUMENT_ROOT'] . 'include/business.php');
-require($_SERVER['DOCUMENT_ROOT'] . 'include/config.php');
-require($_SERVER['DOCUMENT_ROOT'] . 'include/util.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/include/business.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/include/config.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/include/util.php');
 
