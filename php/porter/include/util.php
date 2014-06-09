@@ -162,10 +162,12 @@ function is_true_status($status) {
  */
 function render_html($dirname, $template, $data = '') {
 
-    $data;
-    header('Content-type: text/html');
-    echo require($dirname . '/template/' . $template . '.php');
+    $html = file_get_contents($dirname . '/template/' . $template . '.html');
     unset($data);
+
+    header('Content-type: text/html');
+    echo $html;
+    unset($html);
 }
 
 /**
