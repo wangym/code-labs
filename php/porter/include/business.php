@@ -2,7 +2,7 @@
 
 // business.php
 
-(!defined('_APP') ? exit('Access Denied!') : '');
+(!defined('_APP') || !defined('_DIR_NAME') ? exit('Access Denied!') : '');
 
 // adapter
 require(_DIR_NAME . '/adapter/MySqlAdapter.php');
