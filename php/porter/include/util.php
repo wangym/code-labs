@@ -158,11 +158,14 @@ function is_true_status($status) {
  *
  * @param string $dirname
  * @param string $template
+ * @param mixed $data
  */
-function render_html($dirname, $template) {
+function render_html($dirname, $template, $data = '') {
 
+    $data;
     header('Content-type: text/html');
     echo require($dirname . '/template/' . $template . '.php');
+    unset($data);
 }
 
 /**
@@ -189,6 +192,7 @@ function response_json($status, $data = '') {
 
     header('Content-type: application/json');
     echo $json;
+    unset($json);
 }
 
 /**
