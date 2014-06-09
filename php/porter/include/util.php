@@ -158,16 +158,18 @@ function is_true_status($status) {
  *
  * @param string $dirname
  * @param string $template
- * @param mixed $data
+ * @param array $data
  */
-function render_html($dirname, $template, $data = '') {
+function render_html($dirname, $template, array $data = array()) {
 
-    $html = file_get_contents($dirname . '/template/' . $template . '.html');
-    unset($data);
-
-    header('Content-type: text/html');
-    echo $html;
-    unset($html);
+    if (is_array($data)) {
+        $html = require($dirname . '/template/' . $template . '.tpl.php');
+        unset($data);
+        // 渲染
+        header('Content-type: text/html');
+        echo $html;
+        unset($html);
+    }
 }
 
 /**
@@ -191,7 +193,7 @@ function response_json($status, $data = '') {
 		)
 	);
 	unset($_message);
-
+    // 渲染
     header('Content-type: application/json');
     echo $json;
     unset($json);

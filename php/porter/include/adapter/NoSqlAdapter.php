@@ -47,9 +47,9 @@ interface INoSqlAdapter {
 /**
  *
  */
-// (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
+(!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
 
-class RedisNoSqlAdapter implements INoSqlAdapter {
+class RedisNoSqlAdapter extends Redis implements INoSqlAdapter {
 
     /**
      *

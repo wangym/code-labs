@@ -17,7 +17,18 @@ define('_SECRET_KEY', 'my_app_19831028*#');
 define('_TIME', $_SERVER['REQUEST_TIME']);
 
 /* require */
-require(_DIR_NAME . '/business.php');
 require(_DIR_NAME . '/config.php');
 require(_DIR_NAME . '/util.php');
+
+/* business */
+// adapter
+require(_DIR_NAME . '/adapter/MySqlAdapter.php');
+require(_DIR_NAME . '/adapter/NoSqlAdapter.php');
+// dao
+require(_DIR_NAME . '/dao/PorterNoSqlDao.php');
+// pojo
+require(_DIR_NAME . '/pojo/ResultPojo.php');
+// service
+require(_DIR_NAME . '/service/AdminService.php');
+require(_DIR_NAME . '/service/GoodsService.php');
 

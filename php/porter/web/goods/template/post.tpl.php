@@ -1,3 +1,10 @@
+<?php
+
+// post.tpl.php
+
+(!defined('_APP') ? exit('Access Denied!') : '');
+
+$html = <<<EOF
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,16 +33,21 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <h3 class="text-left">Porter post-form</h3>
-            <form role="form">
+            <form role="form" action="?action=set">
                 <div class="form-group">
                     <label for="text">Text</label>
                     <textarea id="text" class="form-control" maxlength="200"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
+                <input id="userId" type="hidden" value="0" ></input>
             </form>
+            <label for="text"></label>
         </div>
     </div>
 </div>
 </body>
 </html>
+EOF;
+
+return $html;
 
