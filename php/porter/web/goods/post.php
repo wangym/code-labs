@@ -32,7 +32,7 @@ render_html(dirname(__FILE__), 'post', $data);
  */
 function response_post($userId) {
 
-    $response = response_json(_STATUS_VERIFY_ERROR);
+    $response = response_json(_STATUS_VERIFY_ERROR, 'method-response_post');
 
     $time = http_receive('time');
     $token = http_receive('token');
@@ -46,7 +46,7 @@ function response_post($userId) {
             'time' => _TIME,
             'secret' => get_secret($json, _TIME)
         );
-        $response = http_post(_API_POST, $post);
+        $response = http_post(_API_POST, $post, $_REQUEST);
     }
 
     return $response;

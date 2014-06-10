@@ -8,7 +8,7 @@
  * 数组转换成字符串支持KeyValue对应
  *
  * @param array $array 必需是一维数组
- * @return string key1=value1,key2=value2,....
+ * @return string key1=value1&key2=value2&key3=value3....
  */
 function array_to_string($array) {
 
@@ -16,7 +16,7 @@ function array_to_string($array) {
 
     if (!empty($array) && is_array($array)) {
         foreach ($array as $key => $value) {
-            $string .= ",$key=$value";
+            $string .= "&$key=$value";
         }
         $string = substr($string, 1);
     }
@@ -83,12 +83,12 @@ function http_post($url, array $post = array()) {
     $options = array('http' =>
         array(
             'method' => 'POST',
-            // 'header' => 'Content-type: application/x-www-form-urlencoded',
+            'header' => 'Content-type: application/x-www-form-urlencoded',
             'content' => $query,
             'timeout' => 5
         )
     );
-    var_dump($options);
+    // var_dump($options);
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
 
@@ -107,7 +107,7 @@ function http_receive($key, $default = '') {
     $value = $default;
 
     if (isset($_REQUEST[$key])) {
-        $value = strip_tags(trim($_REQUEST[$key]));
+        $value = strip_tags(urldecode(trim($_REQUEST[$key])));
     }
 
     return $value;
@@ -167,20 +167,23 @@ function render_json($json) {
  * 依据入参生成接口返回用的JSON字符串
  *
  * @param int $status
+ * @param string $tag
  * @param mixed $data
  * @return string $json
  */
-function response_json($status, $data = '') {
+function response_json($status, $tag, $data = '') {
 
     global $_message;
     $json = json_encode(!empty($data) && is_array($data)
             ? array(
                 'status' => $status,
+                'tag' => $tag,
                 'message' => get_array_value($status, $_message),
                 'data' => $data
             )
             : array(
                 'status' => $status,
+                'tag' => $tag,
                 'message' => get_array_value($status, $_message)
             )
     );
@@ -227,20 +230,20 @@ function to_kv_array($keys, $values, $defaults = array()) {
  *
  * @return array $params 参数集合
  */
-function get_params() {
+function get_api_params() {
 
     $json = http_receive('json');
     $time = http_receive('time');
     if (empty($json) || empty($time)) {
-        render_json(response_json(_STATUS_PARAMETER_ERROR));
+        render_json(response_json(_STATUS_PARAMETER_ERROR, 'method-get_api_params'));
     }
     $secret = http_receive('secret');
     if (!_DEBUG && !verify_secret($secret, $json, $time)) {
-        render_json(response_json(_STATUS_VERIFY_ERROR));
+        render_json(response_json(_STATUS_VERIFY_ERROR, 'method-get_api_params'));
     }
     $params = json_decode($json, true);
     if (empty($params) || !is_array($params)) {
-        render_json(response_json(_STATUS_DECODE_ERROR));
+        render_json(response_json(_STATUS_DECODE_ERROR, 'method-get_api_params'));
     }
 
     return $params;
@@ -277,11 +280,17 @@ function verify_secret($secret, $content, $time) {
     $result = false;
 
     if (!empty($secret) && !empty($content) && is_numeric($time)) {
-        if (_TIME >= (((int)$time) + 1 * 60)) { // minute * second
+        if (_TIME <= (((int)$time) + 1 * 60)) { // minute * second
             if ($secret === get_secret($content, $time)) {
                 $result = true;
+            } else {
+                render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-1'));
             }
+        } else {
+            render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-2'));
         }
+    } else {
+        render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-3'));
     }
 
     return $result;
