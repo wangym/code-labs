@@ -5,13 +5,16 @@
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
-/* constant */
+/* constant-api */
+define('_API_POST', 'http://' . $_SERVER['SERVER_NAME'] . '/api/goods/post.php');
+
+/* constant-status */
 define('_STATUS_OK', 200);
 define('_STATUS_GET_ERROR', 993);
 define('_STATUS_POST_ERROR', 994);
 define('_STATUS_ENCODE_ERROR', 995);
 define('_STATUS_DECODE_ERROR', 996);
-define('_STATUS_SIGN_ERROR', 997);
+define('_STATUS_VERIFY_ERROR', 997);
 define('_STATUS_PARAMETER_ERROR', 998);
 define('_STATUS_ERROR', 999);
 
@@ -22,7 +25,7 @@ $_message = array(
     _STATUS_POST_ERROR => '资源创建错误',
     _STATUS_ENCODE_ERROR => '译码错误',
     _STATUS_DECODE_ERROR => '解码错误',
-    _STATUS_SIGN_ERROR => '签名错误',
+    _STATUS_VERIFY_ERROR => '验证错误',
     _STATUS_PARAMETER_ERROR => '参数错误',
     _STATUS_ERROR => '错误'
 );

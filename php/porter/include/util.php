@@ -5,30 +5,6 @@
 (!defined('_APP') ? exit('Access Denied!') : '');
 
 /**
- * 接口签名验证入口
- *
- * @return array $params 参数集合
- */
-function api_sign_verify() {
-
-	$json = http_receive('json');
-	if (empty($json)) {
-		exit(response_json(_STATUS_PARAMETER_ERROR));
-	}
-	$sign = http_receive('sign');
-	$time = http_receive('time');
-	if (!_DEBUG && !sign_verify($sign, $json . $time)) {
-		exit(response_json(_STATUS_SIGN_ERROR));
-	}
-	$params = json_decode($json, true);
-	if (empty($params) || !is_array($params)) {
-		exit(response_json(_STATUS_PARAMETER_ERROR));
-	}
-
-	return $params;
-}
-
-/**
  * 数组转换成字符串支持KeyValue对应
  *
  * @param array $array 必需是一维数组
@@ -36,16 +12,16 @@ function api_sign_verify() {
  */
 function array_to_string($array) {
 
-	$string = '';
+    $string = '';
 
-	if (!empty($array) && is_array($array)) {
-		foreach ($array as $key => $value) {
-			$string .= ",$key=$value";
-		}
-		$string = substr($string, 1);
-	}
+    if (!empty($array) && is_array($array)) {
+        foreach ($array as $key => $value) {
+            $string .= ",$key=$value";
+        }
+        $string = substr($string, 1);
+    }
 
-	return $string;
+    return $string;
 }
 
 /**
@@ -57,13 +33,13 @@ function array_to_string($array) {
  */
 function get_array_value($key, $array) {
 
-	$value = '';
+    $value = '';
 
-	if (!empty($key) && !empty($array) && is_array($array)) {
-		$value = (isset($array[$key]) ? $array[$key] : '');
-	}
+    if (!empty($key) && !empty($array) && is_array($array)) {
+        $value = (isset($array[$key]) ? $array[$key] : '');
+    }
 
-	return $value;
+    return $value;
 }
 
 /**
@@ -73,26 +49,26 @@ function get_array_value($key, $array) {
  */
 function get_ip() {
 
-	$ip = '';
+    $ip = '';
 
-	if (getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
-		$ip = getenv('HTTP_CLIENT_IP');
-	} else if (getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
-		$ip = getenv('HTTP_X_FORWARDED_FOR');
-	} else if (getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
-		$ip = getenv('REMOTE_ADDR');
-	} else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
-		$ip = $_SERVER['REMOTE_ADDR'];
-	}
+    if (getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
+        $ip = getenv('HTTP_CLIENT_IP');
+    } else if (getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
+        $ip = getenv('HTTP_X_FORWARDED_FOR');
+    } else if (getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
+        $ip = getenv('REMOTE_ADDR');
+    } else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
 
-	return $ip;
+    return $ip;
 }
 
 /**
  * 将数据集POST到指定URL并获取返回结果
  *
  * @param string $url 请求的地址
- * @param array $data 发送的数组(可选)
+ * @param array $post 发送的数组(可选)
  * 一维数组格式,如:
  * array(
  *  'key1' => 'val1',
@@ -101,21 +77,22 @@ function get_ip() {
  * );
  * @return string $result URL服务器的返回结果
  */
-function http_post($url, array $data = array()) {
+function http_post($url, array $post = array()) {
 
-	$query = (!empty($data) && is_array($data) ? http_build_query($data) : '');
-	$options = array('http' => 
-		array(
-			'method' => 'POST',
-			'header' => 'Content-type: application/x-www-form-urlencoded',
-			'content' => $query,
-			'timeout' => 5
-		)
-	);
-	$context = stream_context_create($options);
-	$result = file_get_contents($url, false, $context);
+    $query = (!empty($post) && is_array($post) ? http_build_query($post) : '');
+    $options = array('http' =>
+        array(
+            'method' => 'POST',
+            // 'header' => 'Content-type: application/x-www-form-urlencoded',
+            'content' => $query,
+            'timeout' => 5
+        )
+    );
+    var_dump($options);
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
 
-	return $result;
+    return $result;
 }
 
 /**
@@ -123,17 +100,17 @@ function http_post($url, array $data = array()) {
  *
  * @param string $key 键名称
  * @param mixed $default 默认值
- * @return string $value 获取值
+ * @return mixed $value 获取值
  */
 function http_receive($key, $default = '') {
 
-	$value = $default;
+    $value = $default;
 
-	if (isset($_REQUEST[$key])) {
-		$value = strip_tags(trim($_REQUEST[$key]));
-	}
+    if (isset($_REQUEST[$key])) {
+        $value = strip_tags(trim($_REQUEST[$key]));
+    }
 
-	return $value;
+    return $value;
 }
 
 /**
@@ -144,17 +121,17 @@ function http_receive($key, $default = '') {
  */
 function is_true_status($status) {
 
-	$result = false;
+    $result = false;
 
-	if (200 === $status) {
-		$result = true;
-	}
+    if (200 === $status) {
+        $result = true;
+    }
 
-	return $result;
+    return $result;
 }
 
 /**
- * 渲染页面并传参数
+ * 渲染HTML页面
  *
  * @param string $dirname
  * @param string $template
@@ -163,62 +140,53 @@ function is_true_status($status) {
 function render_html($dirname, $template, array $data = array()) {
 
     if (is_array($data)) {
-        $html = require($dirname . '/template/' . $template . '.tpl.php');
-        unset($data);
         // 渲染
         header('Content-type: text/html');
-        echo $html;
-        unset($html);
+        require($dirname . '/template/' . $template . '.tpl.php');
+        unset($data);
     }
 }
 
 /**
- * 依据入参生成接口响应用的JSON字符串
+ * 渲染JSON页面
  *
- * @param int $status
- * @param mixed $data
+ * @param string $json
  */
-function response_json($status, $data = '') {
+function render_json($json) {
 
-	global $_message;
-	$json = json_encode(!empty($data) && is_array($data)
-		? array(
-			'status' => $status,
-			'message' => get_array_value($status, $_message),
-			'data' => $data
-		)
-		: array(
-			'status' => $status,
-			'message' => get_array_value($status, $_message)
-		)
-	);
-	unset($_message);
-    // 渲染
-    header('Content-type: application/json');
-    echo $json;
-    unset($json);
+    if (!empty($json)) {
+        // 渲染
+        header('Content-type: application/json');
+        echo $json;
+        unset($json);
+        exit;
+    }
 }
 
 /**
- * 签名验证最小方法
+ * 依据入参生成接口返回用的JSON字符串
  *
- * @param string $sign
- * @param string $content
- * @return boolean $result true=签名验证正确|false=失败
+ * @param int $status
+ * @param mixed $data
+ * @return string $json
  */
-function sign_verify($sign, $content) {
+function response_json($status, $data = '') {
 
-	$result = false;
+    global $_message;
+    $json = json_encode(!empty($data) && is_array($data)
+            ? array(
+                'status' => $status,
+                'message' => get_array_value($status, $_message),
+                'data' => $data
+            )
+            : array(
+                'status' => $status,
+                'message' => get_array_value($status, $_message)
+            )
+    );
+    unset($_message);
 
-	$key = _SECRET_KEY . $content;
-	if ('dev' === _ENV) {
-		echo "<!-- md5($key) -->";
-	}
-	if (!empty($sign) && $sign === md5($key)) {
-		$result = true;
-	}
-
-	return $result;
+    return $json;
 }
 
 /**
@@ -231,22 +199,91 @@ function sign_verify($sign, $content) {
  */
 function to_kv_array($keys, $values, $defaults = array()) {
 
-	$result = array();
+    $result = array();
 
-	if (!empty($defaults) && is_array($defaults)) {
-		foreach($defaults as $key => $value) {
-			if (!isset($values[$key])) {
-				$values[$key] = $value;
-			}
-		}
-	}
-	//print_r($keys);exit;
+    if (!empty($defaults) && is_array($defaults)) {
+        foreach ($defaults as $key => $value) {
+            if (!isset($values[$key])) {
+                $values[$key] = $value;
+            }
+        }
+    }
+    //print_r($keys);exit;
 
-	foreach($keys as $value) {
-		$result[$value] = &$values[$value];
-	}
-	//var_dump($result);
+    foreach ($keys as $value) {
+        $result[$value] = & $values[$value];
+    }
+    //var_dump($result);
 
-	return $result;
+    return $result;
+}
+
+// =========================
+// 以下是生成/验证相关的函数:
+// =========================
+
+/**
+ * 接口签名验证入口
+ *
+ * @return array $params 参数集合
+ */
+function get_params() {
+
+    $json = http_receive('json');
+    $time = http_receive('time');
+    if (empty($json) || empty($time)) {
+        render_json(response_json(_STATUS_PARAMETER_ERROR));
+    }
+    $secret = http_receive('secret');
+    if (!_DEBUG && !verify_secret($secret, $json, $time)) {
+        render_json(response_json(_STATUS_VERIFY_ERROR));
+    }
+    $params = json_decode($json, true);
+    if (empty($params) || !is_array($params)) {
+        render_json(response_json(_STATUS_DECODE_ERROR));
+    }
+
+    return $params;
+}
+
+/**
+ * 生成秘密字符串方法
+ *
+ * @param string $content
+ * @param string $time
+ * @return string $secret
+ */
+function get_secret($content, $time) {
+
+    $secret = '';
+
+    if (!empty($content) && is_numeric($time)) {
+        $secret = md5(_SECRET_KEY . $content . $time);
+    }
+
+    return $secret;
+}
+
+/**
+ * 秘密字符串验证方法
+ *
+ * @param string $secret
+ * @param string $content
+ * @param int $time
+ * @return boolean $result
+ */
+function verify_secret($secret, $content, $time) {
+
+    $result = false;
+
+    if (!empty($secret) && !empty($content) && is_numeric($time)) {
+        if (_TIME >= (((int)$time) + 1 * 60)) { // minute * second
+            if ($secret === get_secret($content, $time)) {
+                $result = true;
+            }
+        }
+    }
+
+    return $result;
 }
 
