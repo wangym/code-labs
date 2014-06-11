@@ -30,8 +30,7 @@ interface IMySqlAdapter {
  */
 (!class_exists('mysqli') ? exit('Fatal error: Class mysqli not found!') : '');
 
-class MySqliAdapter extends mysqli implements IMySqlAdapter
-{
+class MySqliAdapter extends mysqli implements IMySqlAdapter {
 
     /**
      *

@@ -144,6 +144,7 @@ function render_html($dirname, $template, array $data = array()) {
         header('Content-type: text/html');
         require($dirname . '/template/' . $template . '.tpl.php');
         unset($data);
+        exit;
     }
 }
 
