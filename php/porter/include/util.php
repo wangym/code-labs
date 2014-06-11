@@ -10,7 +10,7 @@
  * @param array $array 必需是一维数组
  * @return string key1=value1&key2=value2&key3=value3....
  */
-function array_to_string($array) {
+function array_to_querystring($array) {
 
     $string = '';
 
@@ -123,7 +123,7 @@ function is_true_status($status) {
 
     $result = false;
 
-    if (200 === $status) {
+    if (is_int($status) && 200 === $status) {
         $result = true;
     }
 
@@ -139,7 +139,7 @@ function is_true_status($status) {
  */
 function render_html($dirname, $template, array $data = array()) {
 
-    if (is_array($data)) {
+    if (!empty($dirname) && !empty($template)) {
         // 渲染
         header('Content-type: text/html');
         require($dirname . '/template/' . $template . '.tpl.php');
@@ -168,24 +168,24 @@ function render_json($json) {
  * 依据入参生成接口返回用的JSON字符串
  *
  * @param int $status
- * @param string $tag
+ * @param string $trace
  * @param mixed $data
  * @return string $json
  */
-function response_json($status, $tag, $data = '') {
+function get_response_json($status, $trace, $data = '') {
 
     global $_message;
     $json = json_encode(!empty($data) && is_array($data)
             ? array(
                 'status' => $status,
-                'tag' => $tag,
                 'message' => get_array_value($status, $_message),
+                'trace' => $trace,
                 'data' => $data
             )
             : array(
                 'status' => $status,
-                'tag' => $tag,
-                'message' => get_array_value($status, $_message)
+                'message' => get_array_value($status, $_message),
+                'trace' => $trace
             )
     );
     unset($_message);
@@ -212,12 +212,10 @@ function to_kv_array($keys, $values, $defaults = array()) {
             }
         }
     }
-    //print_r($keys);exit;
 
     foreach ($keys as $value) {
         $result[$value] = & $values[$value];
     }
-    //var_dump($result);
 
     return $result;
 }
@@ -234,17 +232,17 @@ function to_kv_array($keys, $values, $defaults = array()) {
 function get_api_params() {
 
     $json = http_receive('json');
-    $time = http_receive('time');
-    if (empty($json) || empty($time)) {
-        render_json(response_json(_STATUS_PARAMETER_ERROR, 'method-get_api_params'));
+    if (empty($json)) {
+        render_json(get_response_json(_STATUS_PARAMETER_ERROR, __METHOD__));
     }
     $secret = http_receive('secret');
+    $time = http_receive('time');
     if (!_DEBUG && !verify_secret($secret, $json, $time)) {
-        render_json(response_json(_STATUS_VERIFY_ERROR, 'method-get_api_params'));
+        render_json(get_response_json(_STATUS_VERIFY_ERROR, __METHOD__));
     }
     $params = json_decode($json, true);
     if (empty($params) || !is_array($params)) {
-        render_json(response_json(_STATUS_DECODE_ERROR, 'method-get_api_params'));
+        render_json(get_response_json(_STATUS_DECODE_ERROR, __METHOD__));
     }
 
     return $params;
@@ -278,20 +276,15 @@ function get_secret($content, $time) {
  */
 function verify_secret($secret, $content, $time) {
 
-    $result = false;
-
-    if (!empty($secret) && !empty($content) && is_numeric($time)) {
-        if (_TIME <= (((int)$time) + 1 * 60)) { // minute * second
-            if ($secret === get_secret($content, $time)) {
-                $result = true;
-            } else {
-                render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-1'));
-            }
-        } else {
-            render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-2'));
-        }
-    } else {
-        render_json(response_json(_STATUS_VERIFY_ERROR, 'method-verify_secret-3'));
+    if (empty($secret) || empty($content) || !is_numeric($time)) {
+        render_json(get_response_json(_STATUS_PARAMETER_ERROR, __METHOD__));
+    }
+    if (_TIME > (((int)$time) + 1 * 60)) {
+        render_json(get_response_json(_STATUS_TIMEOUT_ERROR, __METHOD__));
+    }
+    $result = ($secret === get_secret($content, $time));
+    if (!$result) {
+        render_json(get_response_json(_STATUS_VERIFY_ERROR, __METHOD__));
     }
 
     return $result;

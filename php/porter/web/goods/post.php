@@ -11,8 +11,8 @@ $userId = 1; // TODO:获取登录用户
 $data = array();
 $response = '';
 if ('post' === $action) {
-    // 保存
-    $response = response_post($userId);
+    // 发布
+    $response = call_api_post($userId);
 }
 // 展现
 $data['response'] = $response;
@@ -30,9 +30,9 @@ render_html(dirname(__FILE__), 'post', $data);
  * @param int $userId
  * @return string $response
  */
-function response_post($userId) {
+function call_api_post($userId) {
 
-    $response = response_json(_STATUS_VERIFY_ERROR, 'method-response_post');
+    $response = get_response_json(_STATUS_VERIFY_ERROR, __METHOD__);
 
     $time = http_receive('time');
     $token = http_receive('token');
@@ -46,7 +46,7 @@ function response_post($userId) {
             'time' => _TIME,
             'secret' => get_secret($json, _TIME)
         );
-        $response = http_post(_API_POST, $post, $_REQUEST);
+        $response = http_post(_API_POST, $post);
     }
 
     return $response;

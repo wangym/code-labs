@@ -13,5 +13,5 @@ $result = $goodsService->postText($params);
 unset($goodsService);
 
 /* 响应结果 */
-render_json(response_json($result->status, _FILE_NAME, $result->data->toArray()));
+render_json(get_response_json($result->status, _FILE_NAME, $result->data->toArray()));
 
