@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Porter get-view</title>
-    <?php echo file_get_contents(dirname(__FILE__) . "/common/head.tpl.php"); ?>
+    <?php echo file_get_contents(dirname(__FILE__) . '/common/head.tpl.php'); ?>
 </head>
 <body>
 <div class="container">

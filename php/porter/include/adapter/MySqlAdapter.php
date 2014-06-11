@@ -58,7 +58,7 @@ class MySqliAdapter extends mysqli implements IMySqlAdapter {
             $database[_ENV]['database']
         );
         (mysqli_connect_errno() ? exit(mysqli_connect_error()) : '');
-        $this->query("set names $database[_ENV]['charset']");
+        $this->query('set names ' . $database[_ENV]['charset']);
     }
 
     public function fetchAll($result) {

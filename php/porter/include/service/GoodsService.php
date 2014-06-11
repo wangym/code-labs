@@ -101,7 +101,7 @@ class GoodsService implements IGoodsService {
 
         $userId = get_array_value('userId', $params);
         if (!empty($userId)) {
-            $key = "text-user-$userId";
+            $key = 'text-user-' . $userId;
         }
 
         return $key;

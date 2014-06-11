@@ -14,6 +14,6 @@ if ('flushDB' === $action) {
     $adminService = new AdminService();
     $result = $adminService->flushDB();
     unset($adminService);
-    exit("flushDB=$result");
+    exit('flushDB=' . $result);
 }
 

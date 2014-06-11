@@ -16,7 +16,7 @@ function array_to_querystring($array) {
 
     if (!empty($array) && is_array($array)) {
         foreach ($array as $key => $value) {
-            $string .= "&$key=$value";
+            $string .= '&' . $key . '=' . $value;
         }
         $string = substr($string, 1);
     }
@@ -141,7 +141,7 @@ function render_html($filename, array $data = array()) {
     if (!empty($filename)) {
         // 渲染
         header('Content-type: text/html');
-        require(dirname(__FILE__) . "/template/$filename.tpl.php");
+        require(dirname(__FILE__) . '/template/' . $filename . '.tpl.php');
         unset($data);
         exit;
     }
