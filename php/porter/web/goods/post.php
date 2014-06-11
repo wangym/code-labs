@@ -15,13 +15,13 @@ if ('post' === $action) {
     // 发布
     $response = call_api_post($userId);
 }
-// 展现
+// 结果
 $data['response'] = $response;
 $data['time'] = _TIME;
 $data['token'] = get_secret($userId, _TIME);
 
 /* 响应结果 */
-render_html(dirname(__FILE__), 'post', $data);
+render_html('goods_post', $data);
 
 
 // =========================

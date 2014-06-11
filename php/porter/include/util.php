@@ -133,16 +133,15 @@ function is_true_status($status) {
 /**
  * 渲染HTML页面
  *
- * @param string $dirname
- * @param string $template
+ * @param string $filename
  * @param array $data
  */
-function render_html($dirname, $template, array $data = array()) {
+function render_html($filename, array $data = array()) {
 
-    if (!empty($dirname) && !empty($template)) {
+    if (!empty($filename)) {
         // 渲染
         header('Content-type: text/html');
-        require($dirname . '/template/' . $template . '.tpl.php');
+        require(dirname(__FILE__) . "/template/$filename.tpl.php");
         unset($data);
         exit;
     }
