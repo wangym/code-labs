@@ -19,6 +19,7 @@ define('_TIME', $_SERVER['REQUEST_TIME']);
 /* require */
 require(_DIR_NAME . '/config.php');
 require(_DIR_NAME . '/util.php');
+require(_DIR_NAME . '/validator.php');
 
 /* business */
 // adapter

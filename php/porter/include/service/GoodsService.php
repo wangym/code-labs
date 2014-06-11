@@ -54,7 +54,7 @@ class GoodsService implements IGoodsService {
     public function postText($params) {
 
         $result = new GoodsResultPojo();
-        $result->status = _STATUS_ERROR;
+        $result->status = _STATUS_PARAMETER_ERROR;
         $data = new KvPojo();
 
         if (!empty($params) && is_array($params)) {
