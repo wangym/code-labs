@@ -5,9 +5,6 @@
 
 (!defined('_APP') ? exit('Access Denied!') : '');
 
-/* constant-api */
-define('_API_POST', 'http://' . $_SERVER['SERVER_NAME'] . '/api/goods/post.php');
-
 /* constant-status */
 define('_STATUS_OK', 200);
 define('_STATUS_TIMEOUT_ERROR', 992);

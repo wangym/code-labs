@@ -53,7 +53,7 @@ class GoodsService implements IGoodsService {
 
     public function postText($params) {
 
-        $result = new GoodsResultPojo();
+        $result = new ResultPojo();
         $result->status = _STATUS_PARAMETER_ERROR;
         $data = new KvPojo();
 
@@ -73,8 +73,8 @@ class GoodsService implements IGoodsService {
 
     public function getText($params) {
 
-        $result = new GoodsResultPojo();
-        $result->status = _STATUS_ERROR;
+        $result = new ResultPojo();
+        $result->status = _STATUS_PARAMETER_ERROR;
         $data = new KvPojo();
 
         if (!empty($params) && is_array($params)) {

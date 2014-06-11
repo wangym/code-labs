@@ -10,7 +10,7 @@
 interface IAdminService {
 
     /**
-     * @return boolean $result
+     * @return bool $result
      */
     public function flushDB();
 }

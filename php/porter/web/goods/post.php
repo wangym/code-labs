@@ -13,7 +13,7 @@ $data = array();
 $response = '';
 if ('post' === $action) {
     // 发布
-    $response = call_api_post($userId);
+    $response = post_action($userId);
 }
 // 结果
 $data['response'] = $response;
@@ -32,7 +32,7 @@ render_html('goods_post', $data);
  * @param int $userId
  * @return string $response
  */
-function call_api_post($userId) {
+function post_action($userId) {
 
     $response = get_response_json(_STATUS_VERIFY_ERROR, __METHOD__);
 
@@ -40,16 +40,14 @@ function call_api_post($userId) {
         $time = http_receive('time');
         $token = http_receive('token');
         if (verify_secret($token, $userId, $time)) {
-            $json = json_encode(array(
+            $params = array(
                 'userId' => $userId,
                 'text' => http_receive('text')
-            ));
-            $post = array(
-                'json' => $json,
-                'time' => _TIME,
-                'secret' => get_secret($json, _TIME)
             );
-            $response = http_post(_API_POST, $post);
+            $goodsService = new GoodsService();
+            $result = $goodsService->postText($params);
+            unset($goodsService);
+            $response = get_result_json($result, _FILE_NAME);
         }
     } else {
         $response = get_response_json(_STATUS_PARAMETER_ERROR, __METHOD__);

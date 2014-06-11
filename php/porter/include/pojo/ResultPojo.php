@@ -42,7 +42,7 @@ class KvPojo {
 /**
  *
  */
-class GoodsResultPojo {
+class ResultPojo {
 
     /**
      * @var

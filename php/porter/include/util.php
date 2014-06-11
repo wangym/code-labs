@@ -10,7 +10,7 @@
  * @param array $array 必需是一维数组
  * @return string key1=value1&key2=value2&key3=value3....
  */
-function array_to_querystring($array) {
+function array_to_string($array) {
 
     $string = '';
 
@@ -188,6 +188,23 @@ function get_response_json($status, $trace, $data = '') {
             )
     );
     unset($_message);
+
+    return $json;
+}
+
+/**
+ * @param object $result (see class:ResultPojo)
+ * @param string $from
+ * @return string $json
+ */
+function get_result_json($result, $from) {
+
+    $json = get_response_json(_STATUS_ERROR, __METHOD__);
+
+    if (!empty($result) && !is_null($result->data) && $result->data instanceof KvPojo && is_array($result->data->toArray())) {
+        $json = get_response_json($result->status, $from, $result->data->toArray());
+        unset($result);
+    }
 
     return $json;
 }
