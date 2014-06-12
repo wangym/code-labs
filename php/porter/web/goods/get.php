@@ -31,10 +31,9 @@ function get_action($userId) {
         'userId' => $userId
     );
     $goodsService = new GoodsService();
-    $result = $goodsService->getText($params);
+    $resultPojo = $goodsService->getText($params);
     unset($goodsService);
-    $text = (!empty($result) && !is_null($result->data) && $result->data instanceof KvPojo
-        ? $result->data->value : '');
+    $text = (is_pojo_true($resultPojo) ? $resultPojo->data->value : '');
 
     return $text;
 }

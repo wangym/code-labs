@@ -114,23 +114,6 @@ function http_receive($key, $default = '') {
 }
 
 /**
- * 状态值是否是正确
- *
- * @param int $status
- * @return boolean $result
- */
-function is_true_status($status) {
-
-    $result = false;
-
-    if (is_int($status) && 200 === $status) {
-        $result = true;
-    }
-
-    return $result;
-}
-
-/**
  * 渲染HTML页面
  *
  * @param string $filename
@@ -188,23 +171,6 @@ function get_response_json($status, $trace, $data = '') {
             )
     );
     unset($_message);
-
-    return $json;
-}
-
-/**
- * @param object $result (see class:ResultPojo)
- * @param string $from
- * @return string $json
- */
-function get_result_json($result, $from) {
-
-    $json = get_response_json(_STATUS_ERROR, __METHOD__);
-
-    if (!empty($result) && !is_null($result->data) && $result->data instanceof KvPojo && is_array($result->data->toArray())) {
-        $json = get_response_json($result->status, $from, $result->data->toArray());
-        unset($result);
-    }
 
     return $json;
 }

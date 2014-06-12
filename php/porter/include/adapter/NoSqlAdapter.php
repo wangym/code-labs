@@ -50,7 +50,6 @@ interface INoSqlAdapter {
 (!class_exists('Redis') ? exit('Fatal error: Class Redis not found!') : '');
 
 class RedisNoSqlAdapter extends Redis implements INoSqlAdapter {
-//class RedisNoSqlAdapter implements INoSqlAdapter {
 
     /**
      *
@@ -118,7 +117,7 @@ class RedisNoSqlAdapter extends Redis implements INoSqlAdapter {
 
         $result = false;
 
-        if (!empty($key) && !empty($value)) {
+        if (!empty($key) && !empty($value) && is_int($ttl)) {
             if (0 <= $ttl) {
                 $result = parent::setex($key, $ttl, $value);
             } else {

@@ -45,9 +45,9 @@ function post_action($userId) {
                 'text' => http_receive('text')
             );
             $goodsService = new GoodsService();
-            $result = $goodsService->postText($params);
+            $resultPojo = $goodsService->postText($params);
             unset($goodsService);
-            $response = get_result_json($result, _FILE_NAME);
+            $response = get_pojo_json($resultPojo, _FILE_NAME);
         }
     } else {
         $response = get_response_json(_STATUS_PARAMETER_ERROR, __METHOD__);

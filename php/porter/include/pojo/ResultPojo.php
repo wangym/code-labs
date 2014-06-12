@@ -59,3 +59,39 @@ class ResultPojo {
     }
 }
 
+// =========================
+// 以下是配套函数:
+// =========================
+
+/**
+ * @param object $pojo (@see ResultPojo.php)
+ * @param string $trace
+ * @return string $json
+ */
+function get_pojo_json($pojo, $trace) {
+
+    $json = get_response_json(_STATUS_ERROR, __METHOD__);
+
+    if (is_pojo_true($pojo)) {
+        $json = get_response_json($pojo->status, $trace, $pojo->data->toArray());
+        unset($pojo);
+    }
+
+    return $json;
+}
+
+/**
+ * @param object $pojo (@see ResultPojo.php)
+ * @return bool $result
+ */
+function is_pojo_true($pojo) {
+
+    $result = false;
+
+    if (!empty($pojo) && $pojo instanceof ResultPojo && $pojo->data instanceof KvPojo) {
+        $result = true;
+    }
+
+    return $result;
+}
+

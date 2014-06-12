@@ -11,13 +11,13 @@ interface IGoodsService {
 
     /**
      * @param array $params 原始参数举例:json={"userId":"1","text":"yumin"}
-     * @return object $result
+     * @return object $resultPojo
      */
     public function postText($params);
 
     /**
      * @param array $params 原始参数举例:json={"userId":"1"}
-     * @return object $result
+     * @return object $resultPojo
      */
     public function getText($params);
 }
@@ -53,49 +53,49 @@ class GoodsService implements IGoodsService {
 
     public function postText($params) {
 
-        $result = new ResultPojo();
-        $result->status = _STATUS_PARAMETER_ERROR;
+        $resultPojo = new ResultPojo();
+        $resultPojo->status = _STATUS_PARAMETER_ERROR;
         $data = new KvPojo();
 
         if (!empty($params) && is_array($params)) {
-            $key = self::getTextKey($params);
+            $key = self::getCacheKey($params);
             $value = get_array_value('text', $params);
             if (!empty($key) && !empty($value)) {
-                $result->status = ($this->dao->set($key, $value, self::TTL) ? _STATUS_OK : _STATUS_POST_ERROR);
+                $resultPojo->status = ($this->dao->set($key, $value, self::TTL) ? _STATUS_OK : _STATUS_POST_ERROR);
                 $data->key = $key;
                 $data->value = $value;
             }
         }
-        $result->data = $data;
+        $resultPojo->data = $data;
 
-        return $result;
+        return $resultPojo;
     }
 
     public function getText($params) {
 
-        $result = new ResultPojo();
-        $result->status = _STATUS_PARAMETER_ERROR;
+        $resultPojo = new ResultPojo();
+        $resultPojo->status = _STATUS_PARAMETER_ERROR;
         $data = new KvPojo();
 
         if (!empty($params) && is_array($params)) {
-            $key = self::getTextKey($params);
+            $key = self::getCacheKey($params);
             if (!empty($key)) {
                 $value = $this->dao->get($key);
-                $result->status = (!empty($value) ? _STATUS_OK : _STATUS_GET_ERROR);
+                $resultPojo->status = (!empty($value) ? _STATUS_OK : _STATUS_GET_ERROR);
                 $data->key = $key;
                 $data->value = $value;
             }
         }
-        $result->data = $data;
+        $resultPojo->data = $data;
 
-        return $result;
+        return $resultPojo;
     }
 
     /**
      * @param array $params
      * @return string $key
      */
-    private function getTextKey($params) {
+    private function getCacheKey($params) {
 
         $key = '';
 
