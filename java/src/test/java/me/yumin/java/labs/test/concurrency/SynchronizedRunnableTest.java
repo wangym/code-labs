@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  * @author yumin
  * 
  */
-public class SynchronizedRunnable implements Runnable {
+public class SynchronizedRunnableTest implements Runnable {
 
 	/**
 	 * 使用synchronized方法
@@ -27,7 +27,7 @@ public class SynchronizedRunnable implements Runnable {
 	 */
 	public void struct(String name) {
 
-		synchronized (SynchronizedRunnable.class) {
+		synchronized (SynchronizedRunnableTest.class) {
 			for (int i = 0; i < 50; i++) {
 				System.out.println(String.format("[struct@%s]%s", name, i));
 			}
@@ -51,8 +51,8 @@ public class SynchronizedRunnable implements Runnable {
 	public static void main(String[] args) {
 
 		ExecutorService executor = Executors.newFixedThreadPool(2);
-		executor.execute(new SynchronizedRunnable());
-		executor.execute(new SynchronizedRunnable());
+		executor.execute(new SynchronizedRunnableTest());
+		executor.execute(new SynchronizedRunnableTest());
 		executor.shutdown();
 	}
 }
