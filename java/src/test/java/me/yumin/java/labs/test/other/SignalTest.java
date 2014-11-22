@@ -15,6 +15,7 @@ import java.util.Observer;
 public class SignalTest implements Observer {
 
     /**
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -22,6 +23,9 @@ public class SignalTest implements Observer {
         new SignalTest().go();
     }
 
+    /**
+     *
+     */
     private void go() {
 
         try {
@@ -36,9 +40,6 @@ public class SignalTest implements Observer {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void update(Observable arg0, Object arg1) {
 
@@ -46,9 +47,9 @@ public class SignalTest implements Observer {
     }
 
     /**
-     * HandlerTest Class
+     *
      */
-    class HandlerTest extends Observable implements SignalHandler {
+    public class HandlerTest extends Observable implements SignalHandler {
 
         @Override
         public void handle(Signal signal) {
@@ -58,6 +59,7 @@ public class SignalTest implements Observer {
         }
 
         /**
+         *
          * @param signalName
          * @throws IllegalArgumentException
          */

@@ -87,3 +87,4 @@ public class LockTestClass {
         System.out.println("class synchronized ends.");
     }
 }
+
