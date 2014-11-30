@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.yumin.java.labs.test.concurrency;
+package me.yumin.java.labs.test.concurrency.lock;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

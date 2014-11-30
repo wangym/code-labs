@@ -1,7 +1,7 @@
 /**
  *
  */
-package me.yumin.java.labs.test.concurrency;
+package me.yumin.java.labs.test.concurrency.lock;
 
 /**
  * @author yumin
@@ -21,7 +21,7 @@ public class LockTestClass {
      * @param threadID
      * @param thread
      */
-    public void noSynMethod(long threadID, ObjThread thread) {
+    public void noSynMethod(long threadID, ObjectThread thread) {
 
         System.out.println("nosyn: class obj is " + thread + ", threadId is" + threadID);
     }

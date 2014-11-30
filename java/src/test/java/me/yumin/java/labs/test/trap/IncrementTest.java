@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.yumin.java.labs.test;
+package me.yumin.java.labs.test.trap;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author yumin
  * 
  */
-public class TrapTest {
+public class IncrementTest {
 
 	@Test
 	public void test自增陷阱() {

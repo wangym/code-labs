@@ -1,7 +1,7 @@
 /**
  *
  */
-package me.yumin.java.labs.test.concurrency;
+package me.yumin.java.labs.test.concurrency.lock;
 
 /**
  * @author yumin
@@ -17,7 +17,7 @@ public class ObjectLock {
         System.out.println("start time = " + System.currentTimeMillis() + "ms");
         LockTestClass test = new LockTestClass();
         for (int i = 0; i < 3; i++) {
-            Thread thread = new ObjThread(test, i);
+            Thread thread = new ObjectThread(test, i);
             thread.start();
         }
     }

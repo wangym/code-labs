@@ -1,13 +1,13 @@
 /**
  *
  */
-package me.yumin.java.labs.test.concurrency;
+package me.yumin.java.labs.test.concurrency.lock;
 
 /**
  * @author yumin
  * @since 2014-11-03 11:33
  */
-public class ObjThread extends Thread {
+public class ObjectThread extends Thread {
 
     /**
      *
@@ -19,7 +19,7 @@ public class ObjThread extends Thread {
      * @param lock
      * @param i
      */
-    public ObjThread(LockTestClass lock, int i) {
+    public ObjectThread(LockTestClass lock, int i) {
 
         this.lock = lock;
         this.i = i;
