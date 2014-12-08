@@ -28,6 +28,11 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.linkedin.parseq</groupId>
+            <artifactId>parseq</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 </project>
 
