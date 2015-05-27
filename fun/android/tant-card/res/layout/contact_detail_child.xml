@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_weight="1" 
+	android:paddingTop="10dip" android:paddingBottom="10dip" 
+	>
+
+	<TextView android:id="@+id/contact_detail_tv_key"
+		android:layout_height="fill_parent"
+		android:layout_centerVertical="true"
+		style="@style/DetailKeyText" android:layout_width="70dip"/>
+	<EditText android:id="@+id/contact_detail_tv_val"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_toRightOf="@id/contact_detail_tv_key"
+		android:layout_alignTop="@id/contact_detail_tv_key"
+		android:gravity="left"
+		android:background="@null" 
+		style="@style/DetailValText" android:layout_weight="1"/>
+	<ImageButton android:id="@+id/contact_detail_tv_op"
+		android:layout_height="fill_parent"
+		android:src="@drawable/arrow01"
+		android:background="@null" 
+	 android:layout_width="50dip"/>
+</LinearLayout>

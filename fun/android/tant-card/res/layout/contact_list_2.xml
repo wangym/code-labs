@@ -1,0 +1,9 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<!-- top -->
+	<include android:id="@+id/contact_list_top" layout="@layout/top_v1"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	<com.shimoda.oa.view.CustomGallery android:id="@+id/gallery" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" />
+</LinearLayout>

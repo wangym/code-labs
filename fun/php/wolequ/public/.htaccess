@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule !\.(js|ico|gif|jpg|jpeg|png|css|htm|html|xml|php)$ frontend.php

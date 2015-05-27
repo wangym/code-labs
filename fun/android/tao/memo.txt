@@ -1,0 +1,13 @@
+所有订单
+等待买家付款 WAIT_BUYER_PAY
+等待发货 WAIT_SELLER_SEND_GOODS
+已发货 WAIT_BUYER_CONFIRM_GOODS
+成功的订单 TRADE_FINISHED
+
+-订单 tid
+-成交时间 created
+标题 order.title
+数量 num
+实收款 payment
+状态 status
+买家昵称 buyer_nick

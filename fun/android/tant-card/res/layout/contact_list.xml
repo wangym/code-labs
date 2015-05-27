@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg01">
+
+	<!-- top -->
+	<include android:id="@+id/contact_list_top" layout="@layout/top_v1"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+	<!-- search -->
+	<com.shimoda.oa.view.FindEditText android:id="@+id/contact_list_et_keyword"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/contact_list_top" android:background="@drawable/rounded_edit_text"
+		android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip"
+		android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip"
+		android:paddingTop="5.0dip" android:paddingBottom="5.0dip"
+		android:paddingLeft="12.5dip" android:paddingRight="5.0dip"
+		android:gravity="center_vertical" android:drawableLeft="@drawable/find"
+		android:drawableRight="@drawable/close" android:singleLine="true"  />
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:id="@+id/contact_list_index" android:layout_below="@id/contact_list_et_keyword"
+		android:layout_alignParentRight="true" android:gravity="center" />
+
+	<!-- list -->
+	<ExpandableListView android:id="@+id/contact_list_lv_data"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:dividerHeight="1.0dp"
+		android:fadingEdge="none" 
+		android:layout_below="@id/contact_list_et_keyword" />
+
+</RelativeLayout>

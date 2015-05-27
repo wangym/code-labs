@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/mainTabContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:background="@drawable/white"
+        android:measureAllChildren="true"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/mainTab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/tab_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_post"
+            android:drawablePadding="0dip" />
+
+        <Button
+            android:id="@+id/btnMy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_my"
+            android:drawablePadding="0dip" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_search"
+            android:drawablePadding="0dip" />
+
+        <Button
+            android:id="@+id/btnSetup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_setup"
+            android:drawablePadding="0dip" />
+
+    </LinearLayout>
+
+</LinearLayout>

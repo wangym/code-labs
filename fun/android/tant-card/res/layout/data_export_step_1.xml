@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg01">
+	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:id="@+id/search_ll">
+	<!-- top -->
+	<include android:id="@+id/top" layout="@layout/top_v2"
+		android:layout_width="fill_parent" android:layout_height="50dip" />
+		
+	<!-- search -->
+	<com.shimoda.oa.view.FindEditText android:id="@+id/export_list_et_keyword"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/top" android:background="@drawable/rounded_edit_text"
+		android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip"
+		android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip"
+		android:paddingTop="5.0dip" android:paddingBottom="5.0dip"
+		android:paddingLeft="12.5dip" android:paddingRight="5.0dip"
+		android:gravity="center_vertical" android:drawableLeft="@drawable/find"
+		android:drawableRight="@drawable/close" android:singleLine="true" />
+	</LinearLayout>
+	<!-- expoting -->
+	<include android:id="@+id/exporting" layout="@layout/exporting"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		 />
+	</FrameLayout>
+	<!-- list -->
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		 android:id="@+id/export_ll"
+		>
+		<ListView android:id="@+id/export_list_lv_data"
+			android:layout_width="fill_parent" android:layout_height="wrap_content" />
+	</LinearLayout>
+</LinearLayout>

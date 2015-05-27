@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/white"
+    android:orientation="vertical" >
+
+   <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0"
+        android:background="@drawable/title_bg" >
+
+        <TableRow>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="58dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="设置"
+                android:textSize="20dip"
+                android:textColor="@drawable/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+    
+    
+     <com.diaoyumi.android.activity.element.CornerListView android:id="@+id/listSetting"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/white"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/app_divider_h_gray">
+    </com.diaoyumi.android.activity.element.CornerListView>
+
+     <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:id="@+id/btnLogout"
+        android:text="退出登录" />
+     
+</LinearLayout>

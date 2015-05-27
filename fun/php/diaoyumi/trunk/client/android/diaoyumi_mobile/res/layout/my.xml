@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/white"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:stretchColumns="0" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="58dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="我的钓鱼日记"
+                android:textColor="@drawable/white"
+                android:textSize="22dip"
+                android:textStyle="bold" />
+
+        </TableRow>
+    </TableLayout>
+
+    	<ListView 
+       		android:layout_height="fill_parent"
+       		android:layout_width="fill_parent"
+       		android:dividerHeight="0dip"
+       		android:divider="@drawable/lightgray"
+       		android:background="@drawable/white"
+       		android:scrollbars="none"
+       		android:id="@+id/lvList" />
+</LinearLayout>

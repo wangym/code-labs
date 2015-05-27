@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="status_view">#50000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="half_transparent">#b0000000</color>
+    <color name="progress_start">#ff111111</color>
+    <color name="progress_end">#ff333333</color>
+    <color name="searchlist_categroy">#ff3366cc</color>
+    <color name="welcome_bg">#ffb40000</color>
+    <color name="list_line">#ffcccccc</color>
+    <color name="text_color">#ff3e3e3e</color>
+    <color name="text_red_color">#ffff673e</color>
+    <color name="categoryset_line">#ffbcbcbc</color>
+    <color name="login_edit_hint">#ffc8c8c8</color>
+    <color name="information_text">#ff2477ff</color>
+    <color name="list_goods_name">#ff1e1e1e</color>
+    <color name="list_goods_sell">#ff666666</color>
+    <color name="list_goods_oldprice">#ff999999</color>
+    <color name="list_goods_newprice">#ffff3300</color>
+    <color name="rubriccommend_listline">#ffdcdcdc</color>
+    
+    <color name="diaoyumi_main_color">#27408B</color>
+
+</resources>

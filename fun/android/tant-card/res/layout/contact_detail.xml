@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_weight="1">
+	<!-- name card -->
+	<LinearLayout android:id="@+id/contact_detail_name_card"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:background="@drawable/gray"
+		android:layout_weight="5">
+		<ImageView android:id="@+id/contact_detail_iv_name_card"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip"
+			android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip"
+			android:layout_centerInParent="true" android:layout_weight="3" />
+	</LinearLayout>
+	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="3">
+		<!-- datepick list -->
+		<LinearLayout android:id="@+id/contact_detail_datepick"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:background="@drawable/bg01">
+			<include android:id="@+id/contact_detail_datepick_group_title"
+				layout="@layout/contact_detail_parent" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+			<DatePicker android:id="@+id/contact_detail_datepicker"
+				android:layout_width="fill_parent" android:layout_height="wrap_content">
+			</DatePicker>
+			<LinearLayout android:id="@+id/contact_detail_datepick_btn"
+				android:orientation="horizontal" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:gravity="center">
+				<Button android:id="@+id/contact_detail_datepick_cancel"
+					android:layout_width="wrap_content" android:layout_height="wrap_content" />
+				<Button android:id="@+id/contact_detail_datepick_confirm"
+					android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout android:id="@+id/contact_detail_data_ll"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:layout_weight="1">
+			<!-- data list -->
+			<LinearLayout android:id="@+id/contact_detail_data"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:background="@drawable/bg01"
+				android:layout_weight="1"
+				>
+				<ExpandableListView android:id="@+id/contact_detail_el_data"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:background="@null" />
+			</LinearLayout>
+			<!-- button menu -->
+			<LinearLayout android:id="@+id/contact_detail_button"
+				android:orientation="horizontal" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:paddingTop="5dip"
+				android:paddingBottom="5dip" android:layout_weight="5">
+				<ImageButton android:id="@+id/contact_detail_ib_home"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:src="@drawable/tab_001" android:layout_weight="1"
+					android:scaleType="centerInside" android:background="@null" />
+				<ImageButton android:id="@+id/contact_detail_ib_phone"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:src="@drawable/tab_002" android:layout_weight="1"
+					android:scaleType="centerInside" android:background="@null" />
+				<ImageButton android:id="@+id/contact_detail_ib_mail"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:src="@drawable/tab_003" android:layout_weight="1"
+					android:scaleType="centerInside" android:background="@null" />
+				<ImageButton android:id="@+id/contact_detail_ib_skype"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:src="@drawable/tab_004" android:layout_weight="1"
+					android:scaleType="centerInside" android:background="@null" />
+				<ImageButton android:id="@+id/contact_detail_ib_google"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:src="@drawable/tab_005" android:layout_weight="1"
+					android:scaleType="centerInside" android:background="@null" />
+			</LinearLayout>
+		</LinearLayout>
+	</FrameLayout>
+</LinearLayout>

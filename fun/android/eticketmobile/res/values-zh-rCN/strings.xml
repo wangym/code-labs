@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ##### eticket-seller ##### -->
+    <string name="app_name">淘宝电子券</string>
+    <string name="cancel">取消</string>
+    <string name="code">电子凭证串码</string>
+    <string name="colon">:</string>
+    <string name="confirm">确定</string>
+    <string name="exit">退出</string>
+    <string name="left_num_head">还有</string>
+    <string name="left_num_foot">份未使用</string>
+    <string name="left_square_bracket">[</string>
+    <string name="right_square_bracket">]</string>
+    <string name="manual_input">手工输入</string>
+    <string name="mobile_4">手机号后四位</string>
+    <string name="non_description">non_description</string>
+    <string name="password">密码</string>
+    <string name="prompt">提示</string>
+    <string name="rescan">重新扫描</string>
+    <string name="seller">卖家</string>
+    <string name="username">账户名</string>
+    <!-- btn -->
+    <string name="btn_consume_execute">核　销</string>
+    <string name="btn_consume_query">查　询</string>
+    <string name="btn_login">登　录</string>
+    <!-- colon -->
+    <string name="colon_consume_num">核销份数:</string>
+    <string name="colon_current_status">当前状态:</string>
+    <string name="colon_eticket_unavailable">您扫描的电子凭证不可用:</string>
+    <!-- hint -->
+    <string name="hint_consume_execute_input_num">请输入份数</string>
+    <string name="hint_login_input_password">请输入密码</string>
+    <string name="hint_login_input_username">手机号/会员名/邮箱</string>
+    <!-- phrase -->
+    <string name="phrase_consume_execute_ing">正在核销中,请稍等一下&#8230;</string>
+    <string name="phrase_consume_execute_success">核销成功.</string>
+    <string name="phrase_consume_query_ing">正在查询中,请稍等一下&#8230;</string>
+    <string name="phrase_left_num_error">剩余可核销数错误或不足.</string>
+    <string name="phrase_login_ing">正在登录中,请稍等一下&#8230;</string>
+    <string name="phrase_not_qrcode_format">不是淘宝电子凭证的格式.</string>
+    <string name="phrase_whether_to_exit">确定要退出吗?</string>
+    <!-- title -->
+    <string name="title_consume_execute">淘宝电子凭证核销</string>
+    <string name="title_consume_query">淘宝电子凭证查询</string>
+    <string name="title_login">淘宝会员登录</string>
+    <!-- toast -->
+    <string name="toast_consume_query_input_code">请输入电子凭证串码</string>
+    <string name="toast_consume_query_input_consume_num">请输入正确核销份数</string>
+    <string name="toast_consume_query_input_mobile_4">请输入手机号后四位</string>
+    <string name="toast_exception">请求异常,请重试</string>
+    <string name="toast_fail">请求失败,请重试</string>
+    <string name="toast_login_input_password">请输入您的密码</string>
+    <string name="toast_login_input_username">请输入您的账户名</string>
+    <string name="toast_network_unavailable">网络不可用,会影响使用</string>
+    <string name="toast_sdcard_unavailable">SD卡不可用,会影响使用</string>
+
+</resources>

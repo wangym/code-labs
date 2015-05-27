@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ##### eticket-seller ##### -->
+    <color name="black">#ff000000</color>
+    <color name="darker_gray">#aaa</color>
+    <color name="F_black_light_4">#ff999999</color>
+    <color name="K_black_light_6">#ffe5e5e5</color>
+    <color name="white">#ffffffff</color>
+
+</resources>

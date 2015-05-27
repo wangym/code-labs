@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg01" >
+	<!-- top -->
+	<include android:id="@+id/top" layout="@layout/top_v2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:visibility="gone"
+		 />
+		
+	<TextView 
+		android:id="@+id/import_step_2_msg" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+	/>
+	<TextView 
+		android:id="@+id/import_step_2_name" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+	/>
+	<TextView 
+		android:id="@+id/import_step_2_num" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+	/>
+	<Button 
+		android:id="@+id/import_btn_stop"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/import_btn_stop"
+		android:layout_gravity="center"
+	/>
+	<ProgressBar
+		android:id="@+id/import_progressbar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+	/>
+	<ListView 
+		android:id="@+id/import_step_2_list" 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:listSelector="@android:color/transparent"
+	/>
+</LinearLayout>

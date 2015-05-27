@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/registerStep2Layout" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<!-- 手机输入 -->
+	<EditText android:id="@+id/registerMobileEditText"
+		android:layout_marginTop="50dp" android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:singleLine="true"
+		android:hint="@string/tipsMobile" />
+	<!-- 手机提示 -->
+	<TextView android:layout_alignLeft="@id/registerMobileEditText"
+		android:layout_marginRight="20dp" style="@style/fontBlack14sp"
+		android:layout_below="@id/registerMobileEditText" android:text="@string/memoMobile" />
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg">
+
+	<include android:id="@+id/loginIncludeTop" layout="@layout/top_v1"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+	<RelativeLayout android:id="@+id/loginLayoutInput"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/loginIncludeTop" android:layout_marginTop="10.0dip"
+		android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+		<TextView android:id="@+id/loginTvMobile"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/mobile" android:textSize="18.0sp"
+			android:textColor="@color/text_color" />
+		<EditText android:id="@+id/loginEtMobile"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/loginTvMobile"
+			android:layout_alignTop="@id/loginTvMobile" android:hint="@string/mobile_et_hint"
+			android:maxLength="11" />
+		<EditText android:id="@+id/loginEtPassword"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/loginEtMobile" android:layout_below="@id/loginEtMobile"
+			android:layout_marginTop="5.0dip" android:password="true"
+			android:hint="@string/password_et_hint" android:maxLength="16" />
+		<TextView android:id="@+id/loginTvPassword"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/loginTvMobile" android:layout_alignTop="@id/loginEtPassword"
+			android:text="@string/password" android:textSize="18.0sp"
+			android:textColor="@color/text_color" />
+	</RelativeLayout>
+
+	<RelativeLayout android:id="@+id/loginLayoutButton"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/loginLayoutInput" android:layout_marginTop="10.0dip"
+		android:layout_alignLeft="@id/loginLayoutInput"
+		android:layout_alignRight="@id/loginLayoutInput">
+		<ImageButton android:id="@+id/loginImgBtnRegister"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:textSize="18.0sp"
+			android:background="@drawable/register_btn" />
+		<ImageButton android:id="@+id/loginImgBtnLogin"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/loginImgBtnRegister"
+			android:layout_marginLeft="5.0dip" android:layout_alignParentRight="true"
+			android:textSize="18.0sp" android:background="@drawable/login_btn" />
+	</RelativeLayout>
+
+</RelativeLayout>

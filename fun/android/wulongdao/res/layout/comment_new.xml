@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="#fff4f4f4" >
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/top_v1" />
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/top"
+            android:background="@null"
+            android:gravity="top|left|center" >
+
+            <EditText
+                android:id="@+id/comment_post_et_message"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="3.0px"
+                android:background="@null"
+                android:gravity="top|left|center"
+                android:hint="@string/prompt_hint_comment_post_message"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:singleLine="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_bottom"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

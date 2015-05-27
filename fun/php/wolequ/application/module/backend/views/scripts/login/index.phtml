@@ -1,0 +1,22 @@
+<?php
+
+/* 控制层传入的参数优化 */
+// 变量初始
+// ...
+// 接收参数
+$message = $this->message;
+
+?>
+
+<div id="container">
+	<p class="notice">本站为保护信息安全及隐私，需要您在下方表单内输入账号和密码进行登录才能继续操作。</p>
+	<form id="beLoginForm" name="beLoginForm" method="post">
+	<p>管理账号：<input name="account" type="text" tabindex="1" class="inputText" maxlength="20" /></p>
+	<p>登录密码：<input name="password" type="password" tabindex="2" class="inputText" maxlength="20" /></p>
+	<p></p>
+	<p><input type="submit" tabindex="3" class="submitButton" value="登录" /></p>
+	<p class="errorMsg"><?php echo $message; ?></p>
+	</form>
+</div>
+
+<script type="text/javascript">onLoadFocus("account");</script>

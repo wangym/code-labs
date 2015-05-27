@@ -1,0 +1,4 @@
+cornerRadius:3
+shadowOffset:(2,2)
+shadowColor:rgb(0,0,0)
+shadowOpacity:0.75

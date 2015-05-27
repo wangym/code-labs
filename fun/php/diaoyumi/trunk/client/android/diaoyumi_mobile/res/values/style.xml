@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="fullscreen" parent="android:Theme.NoTitleBar.Fullscreen" />
+
+    <style name="no_titlebar" parent="android:Theme.NoTitleBar" />
+
+    <style name="top_text">
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@drawable/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="normal_text_14sp">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="normal_text_16sp">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="normal_text_18sp">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

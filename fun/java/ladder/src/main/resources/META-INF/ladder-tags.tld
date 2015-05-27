@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<description><![CDATA["Ladder - A fast JSP controls."]]></description>
+	<display-name>Ladder Tags</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>ladder</short-name>
+	<uri>/ladder-tags</uri>
+	<!-- JavaScript head -->
+	<tag>
+		<description><![CDATA[<script src="">...<script/>]]></description>
+		<name>jshead</name>
+		<tag-class>me.yumin.ladder.jsp.javascript.HeadTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	<!-- JavaScript validate -->
+	<tag>
+		<description><![CDATA[<script src="">...<script/>]]></description>
+		<name>jsvalidate</name>
+		<tag-class>me.yumin.ladder.jsp.javascript.ValidateTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>form</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	<!-- HTML input text -->
+	<tag>
+		<description><![CDATA[<input type="text" ... />]]></description>
+		<name>text</name>
+		<tag-class>me.yumin.ladder.jsp.html.TextTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>minlength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>datatype</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>equalTo</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<!-- HTML input password -->
+	<tag>
+		<description><![CDATA[<input type="password" ... />]]></description>
+		<name>password</name>
+		<tag-class>me.yumin.ladder.jsp.html.PasswordTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>minlength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>equalTo</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<!-- HTML input submit -->
+	<tag>
+		<description><![CDATA[<input type="submit" ... />]]></description>
+		<name>submit</name>
+		<tag-class>me.yumin.ladder.jsp.html.SubmitTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<!-- HTML form -->
+	<tag>
+		<description><![CDATA[<form ...>*</form>]]></description>
+		<name>form</name>
+		<tag-class>me.yumin.ladder.jsp.html.FormTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>validate</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>action</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+</taglib>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="shuotao" parent="android:Theme">
+		<item name="android:windowTitleSize">48dp</item>
+		<item name="android:background">#FFFFFF</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleBackgroundStyle">@style/colorLightGrey</item>
+	</style>
+
+	<style name="common" parent="android:Theme">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+
+	<!-- 白色16号 -->
+	<style name="fontWhite16sp" parent="common">
+		<item name="android:textSize">16sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+
+	<!-- 黑色14号 -->
+	<style name="fontBlack14sp" parent="common">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<!-- 黑色16号 -->
+	<style name="fontBlack16sp" parent="common">
+		<item name="android:textSize">16sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<!-- 白色18号 -->
+	<style name="fontWhite18sp" parent="common">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+
+	<!-- 黑色18号 -->
+	<style name="fontBlack18sp" parent="common">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<!-- 黑色24号 -->
+	<style name="fontBlack24sp" parent="common">
+		<item name="android:textSize">24sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<!-- 黑色48号 -->
+	<style name="fontBlack48sp" parent="common">
+		<item name="android:textSize">48sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+
+	<!-- 浅灰色 -->
+	<style name="colorLightGrey">
+		<item name="android:background">#D3D3D3</item>
+	</style>
+
+	<!-- ### Global Var Begin ### -->
+	<style name="background">
+		<item name="android:background">#FFFFFF</item>
+	</style>
+	<!-- ### Global Var End ### -->
+
+	<!-- ### Top menu define Begin ### -->
+	<!-- 顶端左按钮 -->
+	<style name="topLeftButton">
+		<item name="android:layout_alignParentLeft">true</item>
+		<item name="android:layout_marginLeft">2dp</item>
+		<item name="android:layout_marginTop">2dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">wrap_content</item>
+	</style>
+	<!-- 顶端中标题 -->
+	<style name="topCenterTitleView">
+		<item name="android:background">#00000000</item>
+		<item name="android:textSize">26sp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:layout_centerHorizontal">true</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">wrap_content</item>
+	</style>
+	<!-- 顶端右按钮 -->
+	<style name="topRightButton">
+		<item name="android:layout_alignParentRight">true</item>
+		<item name="android:layout_marginRight">2dp</item>
+		<item name="android:layout_marginTop">2dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">wrap_content</item>
+	</style>
+	<!-- ### Top menu define End ### -->
+
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">身材秀</string>
+	<string name="login">登录</string>
+	<string name="register">注册</string>
+	<string name="mobile">手机</string>
+	<string name="mobile_et_hint">请输入手机号码</string>
+	<string name="password">密码</string>
+	<string name="password_et_hint">请输入登录密码</string>
+	<string name="sex">性别</string>
+	<string name="male">男</string>
+	<string name="female">女</string>
+
+</resources>

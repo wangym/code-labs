@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/chooseLayout" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<!-- 应用名称 -->
+	<TextView android:id="@+id/loadingAppNameTextView"
+		android:layout_centerHorizontal="true" android:layout_marginTop="50dp"
+		style="@style/fontBlack48sp" android:text="@string/appName" />
+	<!-- 欢迎口号 -->
+	<TextView android:id="@+id/loadingSloganTextView"
+		android:layout_centerHorizontal="true" style="@style/fontBlack24sp"
+		android:layout_below="@id/loadingAppNameTextView" android:text="@string/slogan" />
+
+	<!-- 逛逛按钮 -->
+	<Button android:id="@+id/loadingStrollButton"
+		android:layout_centerHorizontal="true" android:layout_marginTop="50dp"
+		android:layout_height="wrap_content" android:layout_width="200dp"
+		android:layout_below="@id/loadingSloganTextView" android:text="@string/stroll" />
+	<!-- 登录按钮 -->
+	<Button android:id="@+id/loadingLoginButton"
+		android:layout_alignLeft="@id/loadingStrollButton"
+		android:layout_height="wrap_content" android:layout_width="100dp"
+		android:layout_below="@+id/loadingStrollButton" android:text="@string/login" />
+	<!-- 注册按钮 -->
+	<Button android:id="@+id/loadingRegisterButton"
+		android:layout_alignRight="@id/loadingStrollButton"
+		android:layout_alignTop="@id/loadingLoginButton"
+		android:layout_height="wrap_content" android:layout_width="100dp"
+		android:layout_below="@+id/loadingStrollButton" android:text="@string/register" />
+	<!-- 退出按钮 -->
+	<Button android:id="@+id/loadingExitButton"
+		android:layout_centerHorizontal="true" android:layout_height="wrap_content"
+		android:layout_width="200dp" android:layout_below="@id/loadingRegisterButton"
+		android:text="@string/exit" />
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">HappyLife</string>
+	<string name="store_list_title">搜店铺</string>
+	<string name="coupon_list_title">抢优惠</string>
+
+</resources>

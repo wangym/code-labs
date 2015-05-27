@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="me.shuotao.activity" android:versionCode="1" android:versionName="1.0">
+	<application android:icon="@drawable/icon" android:label="@string/appName">
+		<!-- activity -->
+		<activity android:name=".LoadingActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".ChooseActivity" android:theme="@style/shuotao" />
+		<activity android:name=".FollowTagsActivity" android:theme="@style/shuotao" />
+		<activity android:name=".IndexActivity" android:theme="@style/shuotao" />
+		<activity android:name=".LoginActivity" android:theme="@style/shuotao" />
+		<activity android:name=".ModifyPasswordActivity" android:theme="@style/shuotao" />
+		<activity android:name=".PhoneContactsActivity" android:theme="@style/shuotao" />
+		<activity android:name=".RegisterStep1Activity" android:theme="@style/shuotao" />
+		<activity android:name=".RegisterStep2Activity" android:theme="@style/shuotao" />
+		<activity android:name=".RegisterStep3Activity" android:theme="@style/shuotao" />
+	</application>
+	<!-- uses-permission -->
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<!-- other -->
+	<supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4" />
+</manifest>

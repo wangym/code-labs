@@ -1,0 +1,67 @@
+<?php
+
+/* 控制层传入的参数优化 */
+// 变量初始
+$alias = $title = $brief = $content = $tags = '';
+// 接收参数
+$message = $this->message;
+$data = $this->data;
+// 表单数据
+if (!empty($data) && is_array($data))
+{
+	$alias = (isset($data['alias']) ? $data['alias'] : '');
+	$title = (isset($data['title']) ? $data['title'] : '');
+	$brief = (isset($data['brief']) ? $data['brief'] : '');
+	$content = (isset($data['content']) ? $data['content'] : '');
+	$tags = (isset($data['tags']) ? $data['tags'] : '');
+}
+
+?>
+
+<div id="container">
+
+<fieldset>
+<legend><p>发布文章</p></legend>
+<form method="post" enctype="multipart/form-data" name="bePublishForm" id="bePublishForm">
+
+  <table width="100%" border="0" align="center">
+    <tr>
+      <td width="10%">&nbsp;</td>
+      <td width="80%">
+		<p class="errorMsg"><?php echo $message; ?></p>
+		<p><strong>文章标题：</strong><input value="<?php echo $title; ?>" name="title" type="text" tabindex="1" class="inputText" style="width:605px" /></p>
+		<p><strong>链接别名：</strong><input value="<?php echo $alias; ?>" name="alias" type="text" tabindex="2" class="inputText" style="width:392px" /> (一般为标题精华的拼音以 -间隔)</p>
+		<p><strong>封面图片：</strong><input name="title_image" type="file" tabindex="3" class="inputText" style="width:470px" /> (上传50KB以内图片)</p>
+		<p><strong>文章概要：</strong>
+		<script type="text/javascript">
+		var sBasePath = "/static/script/3rd_part/fckeditor/" ;
+		var oFCKeditor = new FCKeditor( 'brief' ) ;
+		oFCKeditor.BasePath	= sBasePath ;
+		oFCKeditor.Height = 150 ;
+		oFCKeditor.Width = 680 ;
+		oFCKeditor.Value = "<?php echo $brief; ?>" ;
+		oFCKeditor.ToolbarSet = 'Basic';
+		oFCKeditor.Create() ;
+		</script></p>
+		<p><strong>具体内容：</strong>
+		<script type="text/javascript">
+		var sBasePath = "/static/script/3rd_part/fckeditor/" ;
+		var oFCKeditor = new FCKeditor( 'content' ) ;
+		oFCKeditor.BasePath	= sBasePath ;
+		oFCKeditor.Height = 300 ;
+		oFCKeditor.Width = 680 ;
+		oFCKeditor.Value = "<?php echo $content; ?>" ;
+		oFCKeditor.ToolbarSet = 'Wolequ_Publish';
+		oFCKeditor.Create() ;
+		</script></p>
+		<p><strong>文章标签：</strong><input value="<?php echo $tags; ?>" name="tags" type="text" tabindex="4" class="inputText" style="width:475px" /> (请以半角空格间隔)</p>
+		<p><label><input type="submit" tabindex="5" class="submitButton" value=" 立即发布文章 " style="width:150px" /></label></p>
+	  </td>
+      <td width="10%">&nbsp;</td>
+    </tr>
+  </table>
+
+</form>
+</fieldset>
+
+</div>

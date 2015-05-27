@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dip"
+    >
+    <ImageView android:id="@+id/del_op"
+    	android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:focusable="false"
+        />
+    <TextView  android:id="@+id/contact_name"
+    	android:layout_toRightOf="@id/del_op"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textColor="#ffffff"
+        android:paddingLeft="10dip"
+         />
+    
+    <TextView android:id="@+id/call_date"
+    	android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textColor="#ffffff"
+        android:textSize="8dip"
+        android:lineSpacingMultiplier="1.5"        
+        android:layout_marginRight="20dip"
+         />
+    <Button android:id="@+id/del_btn"
+    	android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="20dip"
+        android:focusable="false"
+        android:padding="5dip"
+        android:textColor="#ffffff"
+        android:background="@drawable/shape_del_btn"
+        />
+</RelativeLayout>

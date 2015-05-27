@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/registerStep3Layout" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_centerHorizontal="true">
+
+	<!-- 手机标题 -->
+	<TextView android:id="@+id/registerMobileKeyTextView"
+		android:layout_marginLeft="70dp" android:layout_marginTop="60dp"
+		style="@style/fontBlack18sp" android:text="@string/mobile" />
+	<!-- 手机内容 -->
+	<TextView android:id="@+id/registerMobileValTextView"
+		android:layout_marginLeft="10dp" android:layout_alignTop="@id/registerMobileKeyTextView"
+		android:layout_toRightOf="@id/registerMobileKeyTextView"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		style="@style/fontBlack18sp" />
+
+	<!-- 密码标题 -->
+	<TextView android:id="@+id/registerPasswordKeyTextView"
+		android:layout_alignLeft="@id/registerMobileKeyTextView"
+		android:layout_marginTop="20dp" android:layout_below="@id/registerMobileKeyTextView"
+		style="@style/fontBlack18sp" android:text="@string/password" />
+	<!-- 密码内容 -->
+	<TextView android:id="@+id/registerPasswordValTextView"
+		android:layout_marginLeft="10dp" android:layout_alignTop="@id/registerPasswordKeyTextView"
+		android:layout_toRightOf="@id/registerPasswordKeyTextView"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		style="@style/fontBlack18sp" />
+
+	<!-- 修改密码 -->
+	<Button android:id="@+id/registerModifyPasswordButton"
+		android:layout_centerHorizontal="true" android:layout_below="@id/registerPasswordValTextView"
+		android:layout_alignLeft="@id/registerPasswordValTextView"
+		android:layout_marginTop="20dp" android:layout_height="wrap_content"
+		android:layout_width="100dp" android:text="@string/modifyPassword" />
+
+</RelativeLayout>

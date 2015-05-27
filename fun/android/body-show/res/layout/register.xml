@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg">
+
+	<include android:id="@+id/registerIncludeTop" layout="@layout/top_v1"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+	<RelativeLayout android:id="@+id/registerLayoutInput"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/registerIncludeTop"
+		android:layout_marginTop="10.0dip" android:layout_marginLeft="10.0dip"
+		android:layout_marginRight="10.0dip">
+		<TextView android:id="@+id/registerTvMobile"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/mobile" android:textSize="18.0sp"
+			android:textColor="@color/text_color" />
+		<EditText android:id="@+id/registerEtMobile"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/registerTvMobile"
+			android:layout_alignTop="@id/registerTvMobile" android:hint="@string/mobile_et_hint"
+			android:maxLength="11" />
+		<EditText android:id="@+id/registerEtPassword"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/registerEtMobile" android:layout_below="@id/registerEtMobile"
+			android:layout_marginTop="5.0dip" android:password="true"
+			android:hint="@string/password_et_hint" android:maxLength="16" />
+		<TextView android:id="@+id/registerTvPassword"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/registerTvMobile"
+			android:layout_alignTop="@id/registerEtPassword" android:text="@string/password"
+			android:textSize="18.0sp" android:textColor="@color/text_color" />
+		<RadioGroup android:id="@+id/registerRbSex"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_below="@id/registerEtPassword"
+			android:layout_alignLeft="@id/registerEtPassword"
+			android:orientation="horizontal">
+			<RadioButton android:id="@+id/registerRbMale"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/male" android:textSize="18.0sp"
+				android:textColor="@color/text_color" />
+			<RadioButton android:id="@+id/registerRbFemale"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="5.0dip" android:text="@string/female"
+				android:textSize="18.0sp" android:textColor="@color/text_color" />
+		</RadioGroup>
+		<TextView android:id="@+id/registerTvSex"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/registerTvPassword"
+			android:layout_alignTop="@id/registerRbSex" android:text="@string/sex"
+			android:textSize="18.0sp" android:textColor="@color/text_color" />
+	</RelativeLayout>
+
+	<RelativeLayout android:id="@+id/registerLayoutButton"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/registerLayoutInput"
+		android:layout_marginTop="10.0dip" android:layout_alignLeft="@id/registerLayoutInput"
+		android:layout_alignRight="@id/registerLayoutInput">
+		<ImageButton android:id="@+id/registerImgBtnRegister"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_centerInParent="true" android:layout_centerHorizontal="true"
+			android:textSize="18.0sp" android:background="@drawable/submit_btn" />
+	</RelativeLayout>
+
+</RelativeLayout>

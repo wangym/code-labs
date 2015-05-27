@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layoutMySold"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ImageView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/ivOrderPicPath" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/tvOrderTitle"
+		android:layout_toRightOf="@id/ivOrderPicPath"
+		android:layout_marginLeft="10px" android:text="tvOrderTitle"
+		android:textSize="16px" android:textColor="@color/white" />
+
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/tvCreated"
+		android:layout_below="@id/tvOrderTitle" android:text="tvCreated" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/tvPayment"
+		android:layout_below="@id/tvOrderTitle" android:layout_toRightOf="@id/tvCreated"
+		android:layout_marginLeft="10px" android:text="tvPayment" />
+
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/tvTid"
+		android:layout_below="@id/tvCreated" android:text="tvTid" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/tvBuyerNick"
+		android:layout_below="@id/tvCreated" android:layout_toRightOf="@id/tvTid"
+		android:layout_marginLeft="10px" android:text="tvBuyerNick" />
+
+</RelativeLayout>

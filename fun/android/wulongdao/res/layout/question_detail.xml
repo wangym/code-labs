@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_v1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5.0dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/question_detail_tv_nickname"
+            style="@style/text_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/avatar"
+            android:gravity="left" />
+    </LinearLayout>
+
+    <include layout="@layout/divider_v1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5.0dip"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/question_detail_tv_message"
+                style="@style/text_18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:gravity="left" />
+
+            <ImageView
+                android:id="@+id/question_detail_tv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_detail_tv_message"
+                android:layout_centerInParent="true"
+                android:layout_margin="10.0dip"
+                android:contentDescription="@string/app_name_en"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/question_detail_tv_from"
+                style="@style/text_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/question_detail_tv_image"
+                android:layout_marginLeft="5.0dip" />
+
+            <TextView
+                android:id="@+id/question_detail_tv_load_time"
+                style="@style/text_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_detail_tv_image"
+                android:layout_toLeftOf="@id/question_detail_tv_from" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/divider_v1" />
+
+    <ListView
+        android:id="@+id/comment_list_lv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:dividerHeight="1.0dp"
+        android:fadingEdge="none" />
+
+</LinearLayout>

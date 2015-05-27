@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:background="@drawable/red" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="About"
+                android:textColor="@drawable/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="30dip"
+                android:layout_marginTop="2dip"
+                android:gravity="center_horizontal"
+                android:text="完成"
+                android:textColor="@drawable/white"
+                android:textSize="10dip"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/lightgray"
+        android:orientation="vertical" >
+
+        <TextView
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/black"
+            android:autoText="true"
+            android:textSize="15dip"
+            android:autoLink="web"
+            android:text="     爱钓鱼，爱环保！"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/black"
+            android:textSize="9dip"
+            android:autoLink="web"
+            android:text="www.diaoyumi.com"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/black"
+            android:autoText="true"
+            android:textSize="9dp"
+            android:autoLink="phone"
+            android:text="电话:13172910201"/>
+        </LinearLayout>
+
+</LinearLayout>

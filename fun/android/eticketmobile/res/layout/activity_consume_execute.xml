@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_consume_execute"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <include
+        android:id="@+id/layout_include_top_title"
+        layout="@layout/include_top_title" />
+
+    <!-- intro area -->
+
+    <RelativeLayout
+        android:id="@+id/layout_consume_execute_intro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_include_top_title"
+        android:layout_marginLeft="@dimen/default_margin_5"
+        android:layout_marginRight="@dimen/default_margin_5"
+        android:layout_marginTop="@dimen/consume_execute_margin" >
+
+        <ImageView
+            android:id="@+id/iv_consume_execute_item_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/non_description"
+            android:src="@drawable/default_80x80_nopic" />
+
+        <TextView
+            android:id="@+id/tv_consume_execute_item_intro"
+            style="@style/TextView.Newline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_consume_execute_item_pic"
+            android:layout_marginLeft="@dimen/default_margin_5"
+            android:layout_toRightOf="@id/iv_consume_execute_item_pic" />
+    </RelativeLayout>
+
+    <!-- choose area -->
+
+    <RelativeLayout
+        android:id="@+id/layout_consume_execute_choose"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_consume_execute_intro"
+        android:layout_marginBottom="@dimen/consume_execute_margin"
+        android:layout_marginLeft="@dimen/default_margin_10"
+        android:layout_marginRight="@dimen/default_margin_10"
+        android:layout_marginTop="@dimen/consume_execute_margin"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/tv_consume_execute_current_status"
+            style="@style/TextView.SingleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/consume_execute_margin"
+            android:layout_marginTop="@dimen/consume_execute_margin"
+            android:text="@string/colon_current_status" />
+
+        <TextView
+            android:id="@+id/tv_consume_execute_left_num"
+            style="@style/TextView.SingleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_consume_execute_current_status"
+            android:layout_below="@id/tv_consume_execute_current_status"
+            android:layout_marginTop="@dimen/default_margin_10"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/tv_consume_execute_consume_num"
+            style="@style/TextView.SingleLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_consume_execute_current_status"
+            android:layout_below="@id/tv_consume_execute_left_num"
+            android:layout_marginTop="@dimen/default_margin_10"
+            android:text="@string/colon_consume_num" />
+
+        <EditText
+            android:id="@+id/et_consume_execute_consume_num"
+            style="@style/EditText.Input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_consume_execute_current_status"
+            android:layout_below="@id/tv_consume_execute_consume_num"
+            android:layout_marginTop="@dimen/default_margin_10"
+            android:hint="@string/hint_consume_execute_input_num"
+            android:inputType="number" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_consume_execute"
+        style="@style/Button.Normal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/layout_consume_execute_choose"
+        android:layout_alignRight="@id/layout_consume_execute_choose"
+        android:layout_below="@id/layout_consume_execute_choose"
+        android:layout_marginTop="@dimen/consume_execute_margin"
+        android:text="@string/btn_consume_execute" />
+
+</RelativeLayout>

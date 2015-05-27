@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ##### yaya ##### -->
+    <string name="app_name">芽芽</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="exit">退出</string>
+    <string name="non_description">non_description</string>
+    <string name="prompt">提示</string>
+    <!-- phrase -->
+    <string name="phrase_whether_to_exit">确定要退出吗?</string>
+    <!-- toast -->
+    <string name="toast_exception">请求异常,请重试</string>
+    <string name="toast_fail">请求失败,请重试</string>
+    <string name="toast_network_unavailable">网络不可用,会影响使用</string>
+    <string name="toast_sdcard_unavailable">SD卡不可用,会影响使用</string>
+
+</resources>

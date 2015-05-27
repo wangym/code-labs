@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/top_v1" />
+
+    <RelativeLayout
+        android:id="@+id/user_register_layout_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="10.0dip" >
+
+        <TextView
+            android:id="@+id/user_register_tv_nickname"
+            style="@style/text_18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nickname" />
+
+        <EditText
+            android:id="@+id/user_register_et_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/user_register_tv_nickname"
+            android:layout_marginLeft="5.0dip"
+            android:layout_toRightOf="@id/user_register_tv_nickname"
+            android:hint="@string/prompt_hint_nickname" />
+
+        <EditText
+            android:id="@+id/user_register_et_email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/user_register_et_nickname"
+            android:layout_below="@id/user_register_et_nickname"
+            android:layout_marginTop="5.0dip"
+            android:hint="@string/prompt_hint_email"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/user_register_tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/user_register_tv_nickname"
+            android:layout_alignTop="@id/user_register_et_email"
+            android:text="@string/email"
+            android:textColor="@color/text_color"
+            android:textSize="18.0sp" />
+
+        <EditText
+            android:id="@+id/user_register_et_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/user_register_et_nickname"
+            android:layout_below="@id/user_register_et_email"
+            android:layout_marginTop="5.0dip"
+            android:hint="@string/prompt_hint_password"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/user_register_tv_password"
+            style="@style/text_18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/user_register_tv_nickname"
+            android:layout_alignTop="@id/user_register_et_password"
+            android:text="@string/password" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/user_register_layout_input"
+        android:layout_alignRight="@id/user_register_layout_input"
+        android:layout_below="@id/user_register_layout_input"
+        android:layout_marginTop="10.0dip" >
+
+        <ImageButton
+            android:id="@+id/user_register_ib_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/submit_btn"
+            android:contentDescription="@string/app_name_en"
+            android:textSize="18.0sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

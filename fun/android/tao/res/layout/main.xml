@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layoutMain"
+	android:background="@color/white" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<ImageView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_centerHorizontal="true"
+		android:layout_marginTop="10px" android:src="@drawable/taobao"
+		android:id="@+id/ivLogo" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_centerHorizontal="true"
+		android:layout_marginTop="5px" android:layout_below="@id/ivLogo"
+		android:id="@+id/tvUsername" android:text="@string/username"
+		android:textSize="20px" />
+	<EditText android:layout_height="wrap_content"
+		android:layout_width="250px" android:layout_centerHorizontal="true"
+		android:layout_marginTop="5px" android:layout_below="@id/tvUsername"
+		android:id="@+id/etUsername" android:text="" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_centerHorizontal="true"
+		android:layout_marginTop="5px" android:layout_below="@id/etUsername"
+		android:id="@+id/tvAuthCode" android:text="@string/authCode"
+		android:textSize="20px" />
+	<EditText android:layout_height="wrap_content"
+		android:layout_width="250px" android:layout_centerHorizontal="true"
+		android:layout_marginTop="5px" android:layout_below="@id/tvAuthCode"
+		android:id="@+id/etAuthCode" android:text="" />
+	<Button android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:width="125px"
+		android:layout_alignLeft="@id/etAuthCode" android:layout_marginTop="5px"
+		android:layout_below="@id/etAuthCode" android:id="@+id/btnLogin"
+		android:text="@string/login" android:textSize="20px" />
+	<Button android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:width="125px"
+		android:layout_alignRight="@id/etAuthCode" android:layout_marginTop="5px"
+		android:layout_below="@id/etAuthCode" android:id="@+id/btnReset"
+		android:text="@string/reset" android:textSize="20px" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_centerHorizontal="true"
+		android:layout_marginTop="10px" android:layout_below="@id/btnLogin"
+		android:id="@+id/tvGetAuthCodeTips" android:text="@string/getAuthCodeTips"
+		android:textSize="20px" />
+
+</RelativeLayout>

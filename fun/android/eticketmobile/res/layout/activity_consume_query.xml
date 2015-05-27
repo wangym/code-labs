@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_consume_query"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <include
+        android:id="@+id/layout_include_top_title"
+        layout="@layout/include_top_title" />
+
+    <!-- input area -->
+
+    <RelativeLayout
+        android:id="@+id/layout_consume_query_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_include_top_title"
+        android:layout_marginLeft="@dimen/default_margin_10"
+        android:layout_marginRight="@dimen/default_margin_10"
+        android:layout_marginTop="@dimen/consume_query_margin"
+        android:background="@drawable/background_input" >
+
+        <!-- code -->
+
+        <TextView
+            android:id="@+id/tv_consume_query_code"
+            style="@style/TextView.SingleLine.Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/consume_query_margin"
+            android:layout_marginTop="@dimen/consume_query_margin"
+            android:text="@string/code" />
+
+        <EditText
+            android:id="@+id/et_consume_query_code"
+            style="@style/EditText.Input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/tv_consume_query_code"
+            android:layout_marginLeft="@dimen/consume_query_margin"
+            android:layout_marginRight="@dimen/consume_query_margin"
+            android:layout_toRightOf="@id/tv_consume_query_code"
+            android:inputType="number" />
+
+        <!-- mobile -->
+
+        <TextView
+            android:id="@+id/tv_consume_query_mobile_4bit"
+            style="@style/TextView.SingleLine.Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_consume_query_code"
+            android:layout_below="@id/et_consume_query_code"
+            android:layout_marginTop="@dimen/consume_query_margin"
+            android:text="@string/mobile_4" />
+
+        <EditText
+            android:id="@+id/et_consume_query_mobile"
+            style="@style/EditText.Input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/et_consume_query_code"
+            android:layout_alignRight="@id/et_consume_query_code"
+            android:layout_alignTop="@id/tv_consume_query_mobile_4bit"
+            android:inputType="number"
+            android:maxLength="4" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_consume_query"
+        style="@style/Button.Normal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/layout_consume_query_input"
+        android:layout_alignRight="@id/layout_consume_query_input"
+        android:layout_below="@id/layout_consume_query_input"
+        android:layout_marginTop="@dimen/consume_query_margin"
+        android:text="@string/btn_consume_query" />
+
+</RelativeLayout>

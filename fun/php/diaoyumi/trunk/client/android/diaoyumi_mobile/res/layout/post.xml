@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/white"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:stretchColumns="0" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="58dip"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="发布"
+                android:textColor="@drawable/white"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="4"/>
+        
+        <Button
+            android:id="@+id/btnLandScape"
+            android:layout_margin="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/map"
+            android:text="风  景"
+            android:textSize="30dip" />
+
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="4"/>
+        
+        <Button
+            android:id="@+id/btnBigFish"
+            android:layout_margin="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/fishing_catch"
+            android:text="大  鱼"
+            android:textSize="30dip" />
+
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="4"/>
+        
+        <Button
+            android:id="@+id/btnMultiFish"
+            android:layout_margin="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/fishing_catch"
+            android:text="多条鱼"
+            android:textSize="30dip" />
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="4"/>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

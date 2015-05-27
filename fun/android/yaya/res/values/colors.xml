@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ##### yaya ##### -->
+    <color name="black">#ff000000</color>
+    <color name="darker_gray">#aaa</color>
+    <color name="white">#ffffffff</color>
+
+</resources>

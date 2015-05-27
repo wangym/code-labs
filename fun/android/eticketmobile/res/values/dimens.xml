@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ##### eticket-seller ##### -->
+    <dimen name="default_margin_15">15.0dp</dimen>
+    <dimen name="default_margin_10">10.0dp</dimen>
+    <dimen name="default_margin_5">5.0dp</dimen>
+    <dimen name="login_margin">15.0dp</dimen>
+    <dimen name="consume_query_margin">15.0dp</dimen>
+    <dimen name="consume_execute_margin">15.0dp</dimen>
+
+</resources>

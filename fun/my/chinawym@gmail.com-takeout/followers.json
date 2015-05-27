@@ -1,0 +1,142 @@
+{
+  "friends" : [ {
+    "userIds" : [ "07396665985068033069" ],
+    "profileIds" : [ "114046935657895488639" ],
+    "contactId" : "5175007830338787147",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECP_Yg73psa_4wgEiC3ZjYXJkX3Bob3RvKihiY2ViZmVjOGJjYmFiMTM4MTQ4NDFkOTM2NzFiNDJjYjU5NjFjOTc2MAFImR-iKmvXismnE4-ROSk7_4oDBg",
+    "location" : "杭州",
+    "stream" : "user/07396665985068033069/state/com.google/broadcast",
+    "flags" : 544,
+    "types" : [ 0, 1, 3, 6, 7 ],
+    "displayName" : "王曜",
+    "givenName" : "曜",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "系统管理员",
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/114046935657895488639/buzz"
+    } ]
+  }, {
+    "userIds" : [ "11232392832674281633" ],
+    "profileIds" : [ "111049834804878064029" ],
+    "contactId" : "3299568914085407456",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECJ3zhJzexrmsmQEiC3ZjYXJkX3Bob3RvKig3OTVhZmNlYWJkZGE3NGE3NTllMWZkMTQ2YWU1NjgzZDcxZTEwOTUxMAFcGkNuNIQlUFTGS_m_E5Hf9oKT_w",
+    "location" : "杭州",
+    "stream" : "user/11232392832674281633/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3, 4, 6, 7 ],
+    "displayName" : "林孝旦",
+    "givenName" : "孝旦",
+    "n" : "",
+    "p" : "",
+    "groupId" : [ "18" ],
+    "occupation" : "IT",
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/111049834804878064029/buzz"
+    } ]
+  }, {
+    "userIds" : [ "13293670304689270667" ],
+    "profileIds" : [ "112681294878113671028" ],
+    "contactId" : "7687332045077751991",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECPTOyK-N0MD-rwEiC3ZjYXJkX3Bob3RvKigyMDJhYmNkMjA3ZmZlYmM3OTg2MWJlOTVmMzc0OGEzMjIwMTIyM2UxMAE-ZS-Azek0spV_kzGLwSDTbvslnw",
+    "location" : "AP IIIT,RK Valley",
+    "stream" : "user/13293670304689270667/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3 ],
+    "displayName" : "Dasari Gopinath",
+    "givenName" : "Dasari",
+    "n" : "",
+    "p" : "",
+    "occupation" : "Engineer",
+    "websites" : [ {
+      "title" : "http://dasarigopi.blogspot.com",
+      "url" : "http://dasarigopi.blogspot.com"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/112681294878113671028/buzz"
+    } ]
+  }, {
+    "userIds" : [ "15248737395049797558" ],
+    "profileIds" : [ "113801866238405775498" ],
+    "contactId" : "1357454912668220382",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECIqhiM3-hoXFvwEiC3ZjYXJkX3Bob3RvKihkMjFiODUzNjQ1ZmIxOGRiZjQ5MzQzZDI0NzJiNzUxOWI1ZWJmODQwMAGKgGJEExKdhFMXsH2QfcyFJ7d1IA",
+    "stream" : "user/15248737395049797558/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0, 3 ],
+    "displayName" : "mengjie xiang",
+    "givenName" : "mengjie",
+    "n" : "",
+    "p" : "",
+    "websites" : [ {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/113801866238405775498/buzz"
+    }, {
+      "title" : "Picasa 网络相册",
+      "url" : "http://picasaweb.google.com/113801866238405775498"
+    } ]
+  }, {
+    "userIds" : [ "17915932093660008705" ],
+    "profileIds" : [ "109970742022186702014" ],
+    "contactId" : "-1",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABECL6p_turocyvigEiC3ZjYXJkX3Bob3RvKihiZTdiMzU2NzE3MzMzYzU1ZTZmNDgxZWYzMGQyNmQ3MTJmNDc2ODRlMAFQq5KZOvhtGfIVO-pluHdRY9ftFw",
+    "location" : "北京 中关村",
+    "stream" : "user/17915932093660008705/state/com.google/broadcast",
+    "flags" : 32,
+    "types" : [ 0 ],
+    "displayName" : "李坚",
+    "givenName" : "坚",
+    "n" : "",
+    "p" : "",
+    "occupation" : "Android and PHP development Engineer",
+    "websites" : [ {
+      "title" : "大屏幕现场互动平台",
+      "url" : "http://www.dzs.mobi/manage/"
+    }, {
+      "title" : "Picasa 网络相册",
+      "url" : "https://picasaweb.google.com/hzjerry"
+    }, {
+      "title" : "媒体短信平台",
+      "url" : "http://media.dzs.mobi/media/manage/"
+    }, {
+      "title" : "Google Reader",
+      "url" : "http://www.google.com/reader/shared/17915932093660008705"
+    }, {
+      "title" : "Buzz",
+      "url" : "https://profiles.google.com/109970742022186702014/buzz"
+    }, {
+      "title" : "我的博客",
+      "url" : "http://b.dzs.mobi"
+    }, {
+      "title" : "淘宝小店",
+      "url" : "http://shop.dzs.mobi"
+    }, {
+      "title" : "坚 李",
+      "url" : "http://www.youtube.com/channel/UCpFlmtTdkth5NTvxx1YBa6A"
+    }, {
+      "title" : "QRCode应用平台",
+      "url" : "http://w2w.dzs.mobi/Module/QRCodeNameCard.html"
+    } ]
+  }, {
+    "userIds" : [ "06079683711886564499" ],
+    "profileIds" : [ "109152629874170800104" ],
+    "contactId" : "-1",
+    "photoUrl" : "/s2/photos/public/AIbEiAIAAABDCOjP0NSLjKuCfyILdmNhcmRfcGhvdG8qKGY5NWJlNGJkNzM3NGMzYjIyYmMxODdlNTE5ZTVlOTNjYzFmZDJkY2UwAYHqJP6ba-4m5_0LplK-vhWprPcb",
+    "location" : "浙江杭州",
+    "stream" : "user/06079683711886564499/state/com.google/broadcast",
+    "flags" : 33,
+    "displayName" : "Yumin Wang",
+    "givenName" : "Yumin",
+    "n" : "",
+    "p" : "",
+    "occupation" : "程序员",
+    "websites" : [ {
+      "title" : "Picasa 网络相册",
+      "url" : "http://picasaweb.google.com/chinawym"
+    } ],
+    "hasSharedItemsOnProfile" : false
+  } ],
+  "encodedSharersList" : "CJKcj__jEhDmwe21rAQ"
+}

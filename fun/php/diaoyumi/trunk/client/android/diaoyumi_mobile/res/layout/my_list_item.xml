@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.diaoyumi.android.activity.element.ExtendImageView
+        android:id="@+id/my_list_item_img"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dip"
+        android:background="@drawable/white"
+        android:scaleType="center" />
+
+    <TextView 
+        android:layout_alignRight="@id/my_list_item_img"
+        android:layout_alignTop="@id/my_list_item_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/red"
+        android:textColor="@drawable/white"
+        android:textStyle="bold"
+        android:text="2012-05-06 12:39"
+        android:id="@+id/my_list_item_date"/>
+    <TextView
+        android:layout_alignLeft="@id/my_list_item_img"
+        android:layout_alignBottom="@id/my_list_item_img"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dip"
+        android:textStyle="bold"
+        android:textSize="15dip"
+        android:text="于 府苑新村 "
+        android:id="@+id/my_list_item_place"/>
+</RelativeLayout>

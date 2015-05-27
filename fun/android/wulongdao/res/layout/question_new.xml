@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="#fff4f4f4" >
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/top_v1" />
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/top"
+            android:background="@null"
+            android:gravity="top|left|center" >
+
+            <EditText
+                android:id="@+id/question_post_et_message"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="3.0px"
+                android:background="@null"
+                android:gravity="top|left|center"
+                android:hint="@string/prompt_hint_question_post_message"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:singleLine="false" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/preview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom"
+            android:layout_margin="5.0dip"
+            android:background="@null"
+            android:gravity="top|left|center" >
+
+            <ImageView
+                android:id="@+id/question_post_iv_image"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_alignParentLeft="true"
+                android:background="@null"
+                android:contentDescription="@string/app_name_en"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/question_post_iv_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/question_post_iv_image"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_toRightOf="@id/question_post_iv_image"
+                android:background="@null"
+                android:contentDescription="@string/app_name_en"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_bottom"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/question_post_ib_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10.0dip"
+                android:background="@drawable/camera_btn"
+                android:contentDescription="@string/app_name_en" />
+
+            <ImageButton
+                android:id="@+id/question_post_ib_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/question_post_ib_image"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10.0dip"
+                android:layout_toRightOf="@id/question_post_ib_image"
+                android:background="@drawable/record_btn"
+                android:contentDescription="@string/app_name_en" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

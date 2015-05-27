@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:background="@drawable/bg02">
+
+	<!-- 左按钮(默认隐藏) -->
+	<Button android:id="@+id/top_v1_ib_left" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_centerVertical="true"
+		android:layout_marginLeft="10.0dip" android:layout_alignParentLeft="true"
+		android:visibility="invisible" style="@style/TopButtonText" />
+
+	<!-- 右按钮(默认隐藏) -->
+	<Button android:id="@+id/top_v1_ib_right" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_centerVertical="true"
+		android:layout_marginRight="10.0dip" android:layout_alignParentRight="true"
+		android:visibility="invisible" style="@style/TopButtonText" />
+
+	<!-- 中文本(默认显示) -->
+	<TextView android:id="@+id/top_v1_tv_center"
+		android:layout_width="wrap_content" android:layout_height="50.0dip"
+		android:singleLine="true"
+		style="@style/TitleText" android:layout_centerInParent="false" android:layout_marginLeft="80dip" android:textSize="18sp"/>
+
+</RelativeLayout>

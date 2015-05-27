@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/loginLayout" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<!-- 手机文本 -->
+	<TextView android:id="@+id/loginMobileTextView"
+		android:layout_marginLeft="20dp" android:layout_marginTop="50dp"
+		style="@style/fontBlack16sp" android:text="@string/mobile" />
+	<!-- 手机输入 -->
+	<EditText android:id="@+id/loginMobileEditText"
+		android:layout_marginRight="20dp" android:layout_alignLeft="@id/loginMobileTextView"
+		android:layout_below="@id/loginMobileTextView" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:singleLine="true" />
+	<!-- 密码文本 -->
+	<TextView android:id="@+id/loginPasswordTextView"
+		android:layout_alignLeft="@id/loginMobileTextView"
+		android:layout_below="@id/loginMobileEditText" style="@style/fontBlack16sp"
+		android:text="@string/password" />
+	<!-- 密码输入 -->
+	<EditText android:id="@+id/loginPasswordEditText"
+		android:layout_marginRight="20dp" android:layout_alignLeft="@id/loginMobileTextView"
+		android:layout_below="@id/loginPasswordTextView"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:password="true" android:singleLine="true" />
+
+	<!-- 注册按钮 -->
+	<Button android:id="@+id/loginRegisterButton" android:text="@string/register"
+		android:layout_marginTop="20dp" android:layout_alignLeft="@id/loginMobileTextView"
+		android:layout_below="@id/loginPasswordEditText"
+		android:layout_height="wrap_content" android:layout_width="140dp" />
+	<!-- 登录按钮 -->
+	<Button android:id="@+id/loginLoginButton" android:text="@string/login"
+		android:layout_alignRight="@id/loginMobileEditText"
+		android:layout_alignTop="@id/loginRegisterButton"
+		android:layout_below="@id/loginPasswordEditText"
+		android:layout_height="wrap_content" android:layout_width="140dp" />
+
+</RelativeLayout>

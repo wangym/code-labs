@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- layout -->
+	<string name="appName">AndroidTao</string>
+	<string name="username">帐户名</string>
+	<string name="authCode">授权码</string>
+	<string name="login">登录</string>
+	<string name="reset">重填</string>
+	<string name="getAuthCodeTips">
+		<a href="http://open.taobao.com/isv/authorize.php?appkey=12009979">获取授权码</a>
+	</string>
+
+</resources>

@@ -1,0 +1,154 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+table,tr,td {
+	font-size:12px;
+	font-family:Verdana;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+a.blue:link {
+	color: #0066B5;
+	text-decoration: none;
+}
+a.blue:visited {
+	text-decoration: none;
+	color: #0066B5;
+}
+a.blue:hover {
+	text-decoration: underline;
+	color: #0066B5;
+}
+a.blue:active {
+	text-decoration: none;
+	color: #0066B5;
+}
+a.blue2:link {
+	color: #1835D1;
+	text-decoration: none;
+}
+a.blue2:visited {
+	text-decoration: none;
+	color: #1835D1;
+}
+a.blue2:hover {
+	text-decoration: underline;
+	color: #1835D1;
+}
+a.blue2:active {
+	text-decoration: none;
+	color: #1835D1;
+}
+a.white:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.white:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a.white:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+a.white:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.blueBold14 {
+	font-size:14px;
+	font-weight:bold;
+	color:#005D8E;
+}
+.Bold14 {
+	font-size:14px;
+	font-weight:bold;
+}
+.Bold16 {
+	font-size:16px;
+	font-weight:bold;
+}
+.blue2 {
+	color:#1835D1;
+}
+.yellowBold {
+	font-weight:bold;
+	color:#FF570D;
+	font-size:14px;
+}
+.white {
+	color:#FFFFFF;
+}
+.redBold {
+	font-size:14px;
+	font-weight:bold;
+	color:#FF0000;
+}
+.content {
+	background-color:#E6EFF8;
+	background-position:center top;
+	background-repeat:repeat-x;
+	padding-bottom:3px;
+	padding-top:3px;
+}
+#container {
+	width:930px;
+	text-align:center;
+}
+#wrap {
+	width:930px;
+	margin:0 auto;
+}
+p {
+	font-size:14px;
+}
+img {
+	border: none;
+}
+.inputText {
+	padding:2px;
+	border:1px solid #BDC7D8;
+	line-height:normal;
+	width:150px;
+}
+.inputTextArea {
+	padding:2px;
+	border:1px solid #BDC7D8;
+	line-height:normal;
+	width:600px;
+	height:100px;
+}
+.notice {
+	text-align:center;
+	background:#FFFFCC;
+	border:1px solid #FFCC33;
+	padding:10px;
+	margin:10px 20px;
+	font-size:14px;
+}
+.errorMsg {
+	font-size:14px;
+	color: #FF0000;
+}
+.submitButton {
+	background-color:#DADADA;
+	width:80px;
+	height:30px;
+}

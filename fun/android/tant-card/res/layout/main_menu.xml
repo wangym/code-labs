@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:scrollbars="vertical" android:background="@drawable/bg01">
+
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<!-- top -->
+		<include android:id="@+id/main_menu_top" layout="@layout/top_v1"
+			android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+		<!-- part 1 -->
+		<TextView android:id="@+id/main_menu_tv_title_contact"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip"
+			android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip"
+			android:text="@string/menu_contact_op_title" android:layout_below="@id/main_menu_top"
+			style="@style/MainMenuTitle" />
+
+		<Button android:id="@+id/main_menu_btn_contact"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_tv_title_contact"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_contact_list"
+			android:background="@drawable/bg_menu_top" android:drawableLeft="@drawable/menu_contact" />
+
+		<Button android:id="@+id/main_menu_btn_bookmark"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_btn_contact"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_bookmark_list"
+			android:background="@drawable/bg_menu_middle" android:drawableLeft="@drawable/menu_bookmark" />
+
+		<Button android:id="@+id/main_menu_btn_calllog"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_btn_bookmark"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_call_list"
+			android:background="@drawable/bg_menu_bottom" android:drawableLeft="@drawable/menu_calllog" />
+
+		<!-- part 2 -->
+		<TextView android:id="@+id/main_menu_tv_title_setting"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip"
+			android:text="@string/menu_setting_list_title" android:layout_below="@id/main_menu_btn_calllog"
+			style="@style/MainMenuTitle" />
+
+		<Button android:id="@+id/main_menu_btn_import"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_tv_title_setting"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_data_import"
+			android:background="@drawable/bg_menu_top_2" />
+
+		<Button android:id="@+id/main_menu_btn_export"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_btn_import"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_data_export"
+			android:background="@drawable/bg_menu_middle_2" />
+
+		<Button android:id="@+id/main_menu_btn_help"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_btn_export"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_help"
+			android:background="@drawable/bg_menu_middle_3" />
+
+		<Button android:id="@+id/main_menu_btn_about"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@id/main_menu_btn_help"
+			android:layout_alignLeft="@id/main_menu_tv_title_contact"
+			android:layout_alignRight="@id/main_menu_tv_title_contact"
+			android:padding="10.0dip" style="@style/MainMenuText" android:text="@string/menu_about"
+			android:background="@drawable/bg_menu_bottom_2" />
+
+	</RelativeLayout>
+
+</ScrollView>

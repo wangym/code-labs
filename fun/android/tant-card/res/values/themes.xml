@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="WindowTitleBackground">
+		<item name="android:background">@drawable/bg_title</item>
+	</style>
+	<style name="TitleTheme" parent="android:Theme">
+		<item name="android:windowTitleSize">50dip</item>
+		<item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+	</style>
+	<style name="Fullscreen" parent="android:Theme.NoTitleBar.Fullscreen" />
+	<style name="NoTitlebar" parent="android:Theme.NoTitleBar" />
+	<style name="TitleText">
+		<item name="android:textSize">22.0sp</item>
+		<item name="android:textColor">@drawable/black</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	<style name="TopButtonText">
+		<item name="android:textSize">14.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">center</item>
+	</style>
+	<style name="MainMenuTitle">
+		<item name="android:textSize">16.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">left</item>
+	</style>
+	<style name="MainMenuText">
+		<item name="android:textSize">16.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">left</item>
+	</style>
+	<style name="ContactListNameText">
+		<item name="android:textSize">20.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	<style name="ContactListCompanyText">
+		<item name="android:textSize">10.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">center</item>
+	</style>
+	<style name="DetailTitleText">
+		<item name="android:textSize">16.0sp</item>
+		<item name="android:textColor">@drawable/yellow</item>
+		<item name="android:gravity">center</item>
+	</style>
+	<style name="DetailKeyText">
+		<item name="android:textSize">14.0sp</item>
+		<item name="android:textColor">@drawable/yellow</item>
+		<item name="android:gravity">center</item>
+	</style>
+	<style name="DetailValText">
+		<item name="android:textSize">16.0sp</item>
+		<item name="android:textColor">@drawable/white</item>
+		<item name="android:gravity">center</item>
+	</style>
+
+</resources>

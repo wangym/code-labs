@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.NoBackgroundAndTitle" parent="@android:Theme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NoBackgroundAndTitleWithTranslucent" parent="@android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="TextView.TopTitle" parent="@android:Widget.TextView">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.SingleLine" parent="@android:Widget.TextView">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.SingleLine.Input" parent="TextView.SingleLine">
+        <item name="android:textColor">@color/darker_gray</item>
+    </style>
+
+    <style name="TextView.Newline" parent="@android:Widget.TextView">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="EditText.Input" parent="@android:Widget.EditText">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="android:textColorHint">@color/darker_gray</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Button.Normal" parent="@android:Widget.Button">
+        <item name="android:background">@drawable/btn_normal_background</item>
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@drawable/btn_normal_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+</resources>

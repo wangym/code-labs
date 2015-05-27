@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:background="@drawable/title">
+
+	<!-- 左按钮 中文本 右按钮 -->
+
+	<ImageButton android:id="@+id/topV1ImgBtnLeft"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginLeft="10.0dip" android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+		android:visibility="invisible" />
+
+	<ImageButton android:id="@+id/topV1ImgBtnRight"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginRight="10.0dip" android:layout_alignParentRight="true"
+		android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+		android:visibility="invisible" />
+
+	<TextView android:id="@+id/topV1TvCenter"
+		android:layout_width="wrap_content" android:layout_height="50.0dip"
+		android:layout_centerInParent="true" android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true" android:singleLine="true"
+		style="@style/titleText" />
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- global -->
+	<string name="appName">说淘</string>
+	<string name="register">注册</string>
+	<string name="email">邮箱</string>
+	<string name="password">密码</string>
+	<string name="login">登录</string>
+	<string name="cancel">取消</string>
+	<string name="exit">退出</string>
+	<string name="back">返回</string>
+	<string name="nick">昵称</string>
+	<string name="mobile">手机</string>
+	<string name="stroll">逛逛</string>
+	<string name="username">帐号</string>
+	<string name="modifyPassword">修改密码</string>
+
+	<!-- activity label -->
+	<string name="loadingLabel">loading</string>
+	<string name="indexLabel">index</string>
+	<string name="chooseLabel">choose</string>
+	<string name="loginLabel">login</string>
+	<string name="registerLabel">register</string>
+
+	<!-- activity variable -->
+	<string name="slogan">查周边团购,和朋友分享.</string>
+	<string name="tipsUsername">请输入你的名字</string>
+	<string name="tipsMobile">请输入手机号码</string>
+	<string name="memoUsername">说淘是一个团购分享社区,输入名字可以让更多朋友找到你.</string>
+	<string name="memoMobile">请输入你的常用手机号码以获取密码,并帮你找到更多好友.</string>
+
+</resources>

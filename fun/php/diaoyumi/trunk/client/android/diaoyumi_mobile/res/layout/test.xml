@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <RadioGroup
+        android:id="@+id/rgTabGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="74.0dip"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:background="@drawable/tab_bg"
+        android:orientation="horizontal" >
+
+        
+        <RadioButton
+            android:id="@+id/rbtnPost"
+   android:drawableTop="@drawable/tab_post"
+            android:tag="rbtnPost"/>
+
+        <RadioButton
+            android:id="@+id/rbtnMy"
+            android:drawableTop="@drawable/tab_my"
+            android:tag="rbtnMy"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbtnSearch"
+            android:drawableTop="@drawable/tab_search"
+            android:tag="rbtnSearch"/>
+
+        <RadioButton
+            android:id="@+id/rbtnSetup"
+            android:drawableTop="@drawable/tab_setup"
+            android:tag="rbtnSetup"/>
+    </RadioGroup>
+
+</LinearLayout>

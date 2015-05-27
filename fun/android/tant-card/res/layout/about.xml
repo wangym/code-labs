@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:scrollbars="vertical" android:background="@drawable/bg01" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<ImageView android:id="@+id/about_img" android:src="@drawable/about" android:scaleType="centerInside" android:layout_width="160dip"
+	android:layout_height="160dip" android:layout_marginTop="10dip"
+	android:layout_gravity="center"
+	 />
+	<TextView android:id="@+id/about_app_name" android:text="@string/about_app_name" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center" android:textStyle="bold" android:textColor="#ffffff" android:layout_marginTop="10dip" />
+	<TextView android:id="@+id/about_app_version" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="10dip" />
+	<TextView android:id="@+id/about_app_copyright" android:text="@string/about_app_copyright" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="10dip" android:lineSpacingMultiplier="1.2" />
+	<Button android:id="@+id/about_btn_homepage" android:text="@string/about_btn_homepage" android:layout_width="wrap_content"
+	android:layout_height="wrap_content" android:layout_gravity="center" android:layout_marginTop="20dip" />
+</LinearLayout>
+</ScrollView>
