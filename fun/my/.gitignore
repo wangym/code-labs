@@ -1,6 +1,7 @@
 /.idea/
 /.settings/
 /bin/
+/build/
 /gen/
 /out/
 /target/
@@ -8,4 +9,3 @@
 .classpath
 .DS_Store
 .project
-

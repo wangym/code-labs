@@ -1,1 +1,2 @@
 include ':app', ':autotool'
+include ':android-common'
