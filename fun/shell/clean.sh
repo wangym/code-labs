@@ -4,4 +4,4 @@ cd ~
 rm -rf ~/amsdata ~/forest ~/diamond ~/logs ~/pandora ~/configclient ~/vipsrv-logs
 rm antx.properties
 cd ~/alibaba/workspace/project/
-rm config.client.log* serviceConfig*
+rm config.client.log* serviceConfig* ipmclient*
