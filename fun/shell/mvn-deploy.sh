@@ -1,3 +1,3 @@
 #!/bin/sh
 #set -x
-mvn deploy -DskipTest=true
+mvn deploy -DskipTests=true
