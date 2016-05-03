@@ -6,7 +6,7 @@
 /gen/
 /out/
 /target/
-*.iml
+.iml
 .classpath
 .DS_Store
 .project
